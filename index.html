@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Richmond International School – Doha</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f7f7f7;
+}
+
+/* HEADER */
+header {
+    background: #071b3a;
+    color: white;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-area img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+}
+
+.school-name h1 {
+    font-size: 22px;
+}
+
+.school-name p {
+    color: #d4af37;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* HERO */
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    background:
+    linear-gradient(rgba(7,27,58,0.78), rgba(7,27,58,0.78)),
+    url("school.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+    padding: 30px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: #d4af37;
+    color: #071b3a;
+    padding: 14px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #071b3a;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 280px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #071b3a;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: #071b3a;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+.gold {
+    color: #d4af37;
+}
+
+/* MOBILE */
+@media(max-width: 800px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 8px;
+        display: inline-block;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo-area">
+
+        <img src="logo.jfif" alt="Richmond International School Logo">
+
+        <div class="school-name">
+            <h1>Richmond International School – Doha</h1>
+            <p>Nurturing tomorrow’s leaders</p>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h2>Inspiring Young Minds. Building Future Leaders.</h2>
+
+        <p>
+            Nurturing tomorrow’s leaders through education,
+            creativity and excellence.
+        </p>
+
+        <a href="#admissions" class="button">
+            Apply for Admission
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="about">
+
+    <h2 class="section-title">About Our School</h2>
+
+    <p class="section-text">
+        At Richmond International School – Doha, we believe every child
+        a supportive, inclusive and inspiring learning environment.
+        We encourage our students to learn, grow and become confident
+        future leaders.
+    </p>
+
+</section>
+
+
+<section id="academics">
+
+    <h2 class="section-title">Academics</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🌱 Early Years</h3>
+            <p>
+                A caring and engaging environment where young learners
+                develop confidence and essential skills.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Primary School</h3>
+            <p>
+                Building strong academic foundations through creative
+                and engaging learning experiences.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌟 Secondary School</h3>
+            <p>
+                Supporting academic, social and personal development
+                beyond the classroom.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="admissions">
+
+    <h2 class="section-title">Admissions</h2>
+
+    <p class="section-text">
+        We welcome families who are looking for a caring and inspiring
+        learning environment for their children.
+    </p>
+
+    <div style="text-align:center; margin-top:30px;">
+        <a href="mailto:admissions@richmonddoha.com" class="button">
+            Contact Admissions
+        </a>
+    </div>
+
+</section>
+
+<section id="gallery">
+
+    <h2 class="section-title">School Gallery</h2>
+
+    <p class="section-text">
+        Explore moments from life at Richmond International School – Doha.
+    </p>
+
+    <div style="text-align:center; margin-top:35px;">
+        <img src="school.jpg"
+             alt="Richmond International School – Doha"
+             style="width:90%; max-width:900px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.15);">
+    </div>
+
+</section>
+<section id="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <p class="section-text">
+        <strong>Richmond International School – Doha</strong><br><br>
+
+        📧 admissions@richmonddoha.com<br><br>
+
+        ☎ +974 4017 1991<br>
+        ☎ +974 7476 7266
+    </p>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Richmond International School – Doha
+    </p>
+
+    <p class="gold">
+        Nurturing tomorrow’s leaders
+    </p>
+
+</footer>
+
+</body>
+</html>
