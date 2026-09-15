@@ -22,15 +22,24 @@ body {
 
 .hero {
     min-height: 100vh;
-   background: linear-gradient(rgba(45,15,75,0.88), rgba(7,27,58,0.94)),
-                url("school.jpg") center/cover no-repeat;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(45,15,75,0.94),
+            rgba(7,27,58,0.88)
+        ),
+        url("school.jpg") center/cover no-repeat;
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px 20px;
-}
 
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
 .container {
     max-width: 1000px;
     width: 100%;
