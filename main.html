@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Richmond International School – Al Markhiya Main Branch</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f7f7f7;
+}
+
+/* HEADER */
+header {
+    background: #071b3a;
+    color: white;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-area img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+}
+
+.school-name h1 {
+    font-size: 21px;
+}
+
+.school-name p {
+    color: #d4af37;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* HERO */
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    background:
+    linear-gradient(rgba(7,27,58,0.72), rgba(7,27,58,0.72)),
+    url("school.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 30px;
+}
+
+.hero h2 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 21px;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    background: #d4af37;
+    color: #071b3a;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.button:hover {
+    background: white;
+}
+
+/* SECTIONS */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #071b3a;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 290px;
+    padding: 32px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #071b3a;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.card p {
+    line-height: 1.7;
+}
+
+/* GALLERY */
+.gallery-image {
+    display: block;
+    width: 90%;
+    max-width: 950px;
+    margin: 35px auto 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* CONTACT */
+.contact-box {
+    max-width: 700px;
+    margin: 35px auto 0;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    line-height: 2;
+}
+
+/* FOOTER */
+footer {
+    background: #071b3a;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+.gold {
+    color: #d4af37;
+}
+
+/* MOBILE */
+@media(max-width: 800px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        margin: 7px;
+        display: inline-block;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo-area">
+
+        <img src="logo.jfif" alt="Richmond International School Logo">
+
+        <div class="school-name">
+            <h1>Richmond International School</h1>
+            <p>Al Markhiya Main Branch • Nurturing tomorrow’s leaders</p>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h2>Inspiring Young Minds. Building Future Leaders.</h2>
+
+        <p>
+            Welcome to Richmond International School – Al Markhiya Main Branch.
+            We provide a safe, supportive and inspiring environment
+            where every child can learn, grow and succeed.
+        </p>
+
+        <a href="#admissions" class="button">
+            Apply for Admission
+        </a>
+
+        <a href="#contact" class="button">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">About Our School</h2>
+
+    <p class="section-text">
+
+        Richmond International School – Al Markhiya Main Branch
+        is committed to providing quality education in a caring,
+        safe and supportive environment.
+
+        We believe every child has the potential to achieve great things.
+        Our aim is to develop confident, responsible and successful
+        young people through education, creativity and excellence.
+
+    </p>
+
+</section>
+
+
+<!-- ACADEMICS -->
+
+<section id="academics">
+
+    <h2 class="section-title">Our Academics</h2>
+
+    <p class="section-text">
+        Our learning programmes support students at every stage
+        of their educational journey.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🌱 Early Years</h3>
+
+            <p>
+                A caring and engaging environment where young learners
+                develop confidence, communication and essential skills.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>📚 Primary School</h3>
+
+            <p>
+                Building strong academic foundations through creative,
+                engaging and meaningful learning experiences.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🌟 Secondary School</h3>
+
+            <p>
+                Preparing students for future academic success while
+                developing independence, leadership and responsibility.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ADMISSIONS -->
+
+<section id="admissions">
+
+    <h2 class="section-title">Admissions</h2>
+
+    <p class="section-text">
+
+        We welcome families who are looking for a caring,
+        inspiring and supportive learning environment for their children.
+
+        Contact our admissions team to learn more about
+        enrolment and available places.
+
+    </p>
+
+    <div style="text-align:center; margin-top:30px;">
+
+        <a href="mailto:admissions@richmonddoha.com" class="button">
+            Email Admissions
+        </a>
+
+        <a href="https://wa.me/97474767266"
+           target="_blank"
+           class="button">
+            💬 WhatsApp Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+    <h2 class="section-title">School Gallery</h2>
+
+    <p class="section-text">
+        Explore moments from life at Richmond International School
+        – Al Markhiya Main Branch.
+    </p>
+
+    <img src="school.jpg"
+         alt="Richmond International School – Al Markhiya Main Branch"
+         class="gallery-image">
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact-box">
+
+        <strong>
+            Richmond International School – Al Markhiya Main Branch
+        </strong>
+
+        <br><br>
+
+        📧 admissions@richmonddoha.com
+
+        <br>
+
+        ☎ +974 4017 1991
+
+        <br>
+
+        ☎ +974 7476 7266
+
+        <br><br>
+
+        <a href="https://wa.me/97474767266"
+           target="_blank"
+           class="button">
+            💬 Chat with us on WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Richmond International School – Al Markhiya Main Branch
+    </p>
+
+    <p class="gold">
+        Nurturing tomorrow’s leaders
+    </p>
+
+</footer>
+
+</body>
+</html>
