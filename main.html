@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +11,9 @@
 
 <style>
 
-/* =========================================================
+/* =========================
    GLOBAL
-========================================================= */
+========================= */
 
 * {
     margin: 0;
@@ -22,7 +23,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 110px;
 }
 
 body {
@@ -32,82 +32,70 @@ body {
     line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-}
 
-button,
-input,
-textarea {
-    font-family: Arial, sans-serif;
-}
-
-::selection {
-    background: #d4af37;
-    color: #32145f;
-}
-
-
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 header {
-    background: rgba(50,20,95,0.98);
+    background: #32145f;
     color: white;
-    padding: 10px 5%;
+    padding: 12px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.20);
+    box-shadow: 0 5px 22px rgba(0,0,0,0.20);
     border-bottom: 3px solid #d4af37;
-    min-height: 92px;
 }
 
 
-/* =========================================================
+/* =========================
    LOGO AREA
-========================================================= */
+========================= */
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 20px;
 }
 
 .logo-area img {
-    width: 210px;
-    height: 78px;
+    width: 230px;
+    height: 95px;
     object-fit: contain;
     background: white;
-    padding: 7px 13px;
-    border-radius: 10px;
+    padding: 9px 15px;
+    border-radius: 13px;
     border: 2px solid #d4af37;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.30),
+        0 0 0 3px rgba(212,175,55,0.12);
     transition: all 0.3s ease;
 }
 
 .logo-area img:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(212,175,55,0.25);
+    transform: scale(1.03);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        0 0 18px rgba(212,175,55,0.35);
 }
 
 
-/* =========================================================
+/* =========================
    SCHOOL NAME
-========================================================= */
+========================= */
 
 .school-name {
     border-left: 2px solid #d4af37;
-    padding-left: 16px;
+    padding-left: 17px;
 }
 
 .school-name h1 {
     color: white;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
     white-space: nowrap;
@@ -116,15 +104,14 @@ header {
 .school-name p {
     color: #e6c96a;
     margin-top: 5px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.2px;
 }
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* =========================
+   NAVBAR
+========================= */
 
 .main-nav {
     display: flex;
@@ -136,9 +123,9 @@ header {
     position: relative;
     color: white;
     text-decoration: none;
-    padding: 10px 12px;
-    border-radius: 7px;
-    font-size: 13px;
+    padding: 11px 13px;
+    border-radius: 6px;
+    font-size: 14px;
     font-weight: 600;
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -146,7 +133,7 @@ header {
 
 .main-nav a:hover {
     color: #d4af37;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.07);
 }
 
 .main-nav a.active {
@@ -156,28 +143,28 @@ header {
 .main-nav a.active::after {
     content: "";
     position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 2px;
+    left: 13px;
+    right: 13px;
+    bottom: 3px;
     height: 2px;
     background: #d4af37;
     border-radius: 5px;
 }
 
 
-/* =========================================================
+/* =========================
    APPLY BUTTON
-========================================================= */
+========================= */
 
 .main-nav .apply-btn {
-    margin-left: 8px;
-    padding: 10px 18px;
+    margin-left: 10px;
+    padding: 11px 20px;
     background: #d4af37;
     color: #32145f;
     border: 2px solid #d4af37;
-    border-radius: 7px;
+    border-radius: 6px;
     font-weight: 700;
-    box-shadow: 0 5px 15px rgba(212,175,55,0.22);
+    box-shadow: 0 4px 13px rgba(212,175,55,0.25);
 }
 
 .main-nav .apply-btn:hover {
@@ -192,36 +179,12 @@ header {
 }
 
 
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
-
-.menu-toggle {
-    display: none;
-    width: 45px;
-    height: 42px;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: rgba(255,255,255,0.08);
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 23px;
-    line-height: 1;
-    transition: 0.3s ease;
-}
-
-.menu-toggle:hover {
-    background: #d4af37;
-    color: #32145f;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
+/* =========================
+   PREMIUM HERO
+========================= */
 
 .hero {
-    min-height: 680px;
+    min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -233,14 +196,13 @@ header {
     background:
         linear-gradient(
             135deg,
-            rgba(50,20,95,0.86),
-            rgba(7,27,58,0.72)
+            rgba(50,20,95,0.94),
+            rgba(7,27,58,0.78)
         ),
         url("school.jpg");
 
     background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+    background-position: center;
 }
 
 .hero::before {
@@ -250,12 +212,13 @@ header {
 
     background:
         radial-gradient(
-            circle at 15% 25%,
-            rgba(212,175,55,0.20),
-            transparent 34%
+            circle at 20% 30%,
+            rgba(212,175,55,0.18),
+            transparent 35%
         ),
+
         radial-gradient(
-            circle at 85% 75%,
+            circle at 80% 70%,
             rgba(255,255,255,0.08),
             transparent 30%
         );
@@ -280,139 +243,108 @@ header {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 1000px;
-    padding: 55px 25px;
+    max-width: 950px;
+    padding: 40px 25px;
 }
 
 .hero-content::before {
     content: "";
     display: block;
-    width: 80px;
+    width: 75px;
     height: 4px;
     background: #d4af37;
-    margin: 0 auto 24px;
+    margin: 0 auto 25px;
     border-radius: 10px;
 }
 
-
-/* HERO LABEL */
-
-.hero-label {
-    color: #d4af37;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 17px;
-    text-transform: uppercase;
-}
-
-
-/* HERO TITLE */
-
 .hero h2 {
-    font-size: 60px;
-    line-height: 1.1;
+    font-size: 58px;
+    line-height: 1.12;
     font-weight: 800;
-    letter-spacing: -1.2px;
+    letter-spacing: -1px;
     margin-bottom: 25px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 
     text-shadow:
-        0 4px 18px rgba(0,0,0,0.45);
+        0 4px 18px rgba(0,0,0,0.35);
 }
-
-
-/* HERO DESCRIPTION */
 
 .hero p {
-    max-width: 760px;
-    margin: 0 auto 35px;
-    font-size: 18px;
+    max-width: 780px;
+    margin: 0 auto 38px;
+    font-size: 19px;
     line-height: 1.8;
     color: #f5f5f5;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.30);
 }
 
 
-/* =========================================================
-   GENERAL BUTTONS
-========================================================= */
+/* =========================
+   BUTTONS
+========================= */
 
 .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-    padding: 13px 25px;
+    display: inline-block;
+    padding: 15px 30px;
     margin: 5px;
-    border-radius: 8px;
+    border-radius: 7px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 15px;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: none;
 }
-
-.button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* HERO BUTTONS */
 
 .hero .button:first-of-type {
     background: #d4af37;
     color: #32145f;
-    border-color: #d4af37;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+    border: 2px solid #d4af37;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.20);
 }
 
 .hero .button:first-of-type:hover {
     background: white;
     color: #32145f;
     border-color: white;
+    transform: translateY(-3px);
 }
 
 .hero .button:last-of-type {
-    background: rgba(255,255,255,0.06);
+    background: transparent;
     color: white;
-    border: 2px solid rgba(255,255,255,0.75);
-    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255,255,255,0.8);
 }
 
 .hero .button:last-of-type:hover {
     background: white;
     color: #32145f;
     border-color: white;
+    transform: translateY(-3px);
 }
 
 
-/* =========================================================
+/* =========================
    SECTIONS
-========================================================= */
+========================= */
 
 section {
-    padding: 80px 8%;
+    padding: 75px 8%;
 }
 
 .section-title {
     text-align: center;
     color: #32145f;
-    font-size: 35px;
-    margin-bottom: 18px;
+    font-size: 34px;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
 .section-title::after {
     content: "";
     display: block;
-    width: 58px;
+    width: 55px;
     height: 3px;
     background: #d4af37;
-    margin: 13px auto 0;
+    margin: 12px auto 0;
     border-radius: 5px;
 }
 
@@ -421,58 +353,42 @@ section {
     margin: auto;
     text-align: center;
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 17px;
     color: #555;
 }
 
 
-/* =========================================================
-   PRINCIPAL
-========================================================= */
+/* =========================
+   PRINCIPAL WELCOME
+========================= */
 
 #principal {
-    background:
-        linear-gradient(
-            180deg,
-            #f7f5fa 0%,
-            #ffffff 100%
-        );
+    background: #f7f5fa;
 }
 
 .principal-wrap {
-    max-width: 1120px;
-    margin: 45px auto 0;
+    max-width: 1100px;
+    margin: 40px auto 0;
     display: grid;
-    grid-template-columns: 290px 1fr;
+    grid-template-columns: 300px 1fr;
     gap: 50px;
     align-items: center;
     background: white;
-    padding: 48px;
-    border-radius: 22px;
-    border: 1px solid #eee7f5;
+    padding: 45px;
+    border-radius: 18px;
     border-left: 5px solid #d4af37;
-    box-shadow: 0 15px 45px rgba(50,20,95,0.09);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
 }
 
 .principal-photo {
-    width: 245px;
-    height: 300px;
+    width: 240px;
+    height: 290px;
     margin: auto;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 14px;
     border: 3px solid #d4af37;
     background: #32145f;
-    box-shadow: 0 15px 35px rgba(50,20,95,0.20);
-    position: relative;
-}
-
-.principal-photo::after {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 12px;
-    pointer-events: none;
+    box-shadow: 0 10px 28px rgba(50,20,95,0.20);
 }
 
 .principal-photo img {
@@ -484,21 +400,21 @@ section {
 
 .principal-content h3 {
     color: #32145f;
-    font-size: 30px;
-    margin-bottom: 5px;
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
 .principal-role {
-    color: #a98300;
-    font-size: 15px;
+    color: #d4af37;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .principal-content p {
     color: #555;
     line-height: 1.85;
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
@@ -506,17 +422,16 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin: 23px 0;
+    margin: 22px 0;
 }
 
 .principal-detail {
-    background: #f7f3fb;
+    background: #f4f1f8;
     color: #32145f;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 700;
-    border: 1px solid #ebe2f5;
+    padding: 9px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
     border-left: 3px solid #d4af37;
 }
 
@@ -531,10 +446,8 @@ section {
 
 .principal-signature {
     margin-top: 25px;
-    padding-top: 18px;
-    border-top: 1px solid #eee;
     color: #555;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.6;
 }
 
@@ -544,22 +457,22 @@ section {
 }
 
 .principal-signature span {
-    color: #a98300;
+    color: #d4af37;
     font-weight: 700;
 }
 
 
-/* =========================================================
-   WHY CHOOSE
-========================================================= */
+/* =========================
+   WHY CHOOSE RICHMOND
+========================= */
 
 #why-choose {
     background: #ffffff;
 }
 
 .why-intro {
-    max-width: 780px;
-    margin: 0 auto 45px;
+    max-width: 760px;
+    margin: 0 auto 40px;
     text-align: center;
     color: #666;
     font-size: 16px;
@@ -567,49 +480,48 @@ section {
 }
 
 .why-grid {
-    max-width: 1120px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 25px;
+    gap: 24px;
 }
 
 .why-card {
-    background: linear-gradient(180deg,#ffffff,#faf8fc);
-    padding: 34px 25px;
+    background: #f7f5fa;
+    padding: 32px 25px;
     text-align: center;
-    border-radius: 18px;
-    border: 1px solid #ece6f3;
+    border-radius: 16px;
+    border: 1px solid #eee7f5;
     border-top: 4px solid #d4af37;
-    box-shadow: 0 8px 28px rgba(50,20,95,0.06);
-    transition: all 0.3s ease;
-    min-height: 245px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .3s ease;
 }
 
 .why-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 18px 38px rgba(50,20,95,0.13);
+    box-shadow: 0 15px 35px rgba(50,20,95,.15);
     border-top-color: #32145f;
 }
 
 .why-icon {
-    width: 64px;
-    height: 64px;
+    width: 65px;
+    height: 65px;
     margin: 0 auto 18px;
-    background: linear-gradient(135deg,#32145f,#4d2580);
-    color: #d4af37;
-    border-radius: 16px;
+    background: #32145f;
+    color: #fff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 27px;
-    box-shadow: 0 8px 20px rgba(50,20,95,0.16);
+    font-size: 28px;
+    box-shadow: 0 6px 18px rgba(50,20,95,.2);
 }
 
 .why-card h3 {
     color: #32145f;
-    font-size: 19px;
-    margin-bottom: 11px;
+    font-size: 20px;
+    margin-bottom: 12px;
 }
 
 .why-card p {
@@ -620,9 +532,9 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    SCHOOL AT A GLANCE
-========================================================= */
+========================= */
 
 #school-glance {
     background: #f7f5fa;
@@ -630,7 +542,7 @@ section {
 
 .glance-intro {
     max-width: 760px;
-    margin: 0 auto 45px;
+    margin: 0 auto 40px;
     text-align: center;
     color: #666;
     font-size: 16px;
@@ -638,48 +550,47 @@ section {
 }
 
 .glance-grid {
-    max-width: 1120px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px;
 }
 
 .glance-card {
     background: #ffffff;
-    padding: 32px 22px;
+    padding: 30px 22px;
     text-align: center;
-    border-radius: 18px;
-    border: 1px solid #ebe5f2;
+    border-radius: 16px;
+    border: 1px solid #eee7f5;
     border-bottom: 4px solid #d4af37;
-    box-shadow: 0 8px 25px rgba(50,20,95,0.06);
-    transition: all 0.3s ease;
-    min-height: 205px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .3s ease;
 }
 
 .glance-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 16px 35px rgba(50,20,95,0.13);
+    box-shadow: 0 15px 35px rgba(50,20,95,.15);
     border-bottom-color: #32145f;
 }
 
 .glance-icon {
-    width: 60px;
-    height: 60px;
+    width: 62px;
+    height: 62px;
     margin: 0 auto 16px;
     background: #32145f;
-    color: #d4af37;
-    border-radius: 15px;
+    color: #ffffff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
+    font-size: 27px;
 }
 
 .glance-card h3 {
     color: #32145f;
-    font-size: 18px;
-    margin-bottom: 9px;
+    font-size: 19px;
+    margin-bottom: 10px;
 }
 
 .glance-card p {
@@ -690,9 +601,9 @@ section {
 }
 
 
-/* =========================================================
-   ABOUT
-========================================================= */
+/* =========================
+   ABOUT US
+========================= */
 
 #about {
     background: #ffffff;
@@ -743,8 +654,8 @@ section {
     width: 60px;
     height: 60px;
     background: #32145f;
-    color: #d4af37;
-    border-radius: 15px;
+    color: #ffffff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -818,7 +729,6 @@ section {
     color: #ffffff;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(50,20,95,0.15);
 }
 
 .education-approach::after {
@@ -858,248 +768,49 @@ section {
 }
 
 
-/* =========================================================
-   ACADEMICS
-========================================================= */
+/* =========================
+   ACADEMIC CARDS
+========================= */
 
-#academics {
-    background: #f7f5fa;
-}
-
-.academics-intro {
-    max-width: 760px;
-    margin: 0 auto 45px;
-    text-align: center;
-    color: #666;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.academics-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 30px;
-}
-
-.academic-card {
-    background: #ffffff;
-    padding: 40px 34px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid #ece6f3;
-    border-top: 5px solid #d4af37;
-    box-shadow: 0 10px 30px rgba(50,20,95,0.07);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.academic-card::before {
-    content: "";
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background: rgba(212,175,55,0.06);
-    top: -60px;
-    right: -50px;
-}
-
-.academic-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(50,20,95,0.14);
-}
-
-.academic-icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg,#32145f,#4d2580);
-    color: #d4af37;
-    border-radius: 18px;
+.cards {
     display: flex;
-    align-items: center;
+    gap: 25px;
     justify-content: center;
-    font-size: 31px;
-    box-shadow: 0 8px 20px rgba(50,20,95,0.18);
-    position: relative;
-    z-index: 1;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-.academic-card h3 {
-    color: #32145f;
-    font-size: 26px;
-    margin-bottom: 18px;
-    position: relative;
-    z-index: 1;
-}
-
-.curriculum-badge {
-    display: inline-block;
-    background: #f4f1f8;
-    color: #32145f;
-    border: 1px solid #e7dff0;
-    border-left: 4px solid #d4af37;
-    padding: 9px 18px;
-    border-radius: 7px;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    position: relative;
-    z-index: 1;
-}
-
-.eyfs-text,
-.edexcel-text {
-    display: inline-block;
-    color: #32145f;
-    background: rgba(212,175,55,0.10);
-    border: 1px solid rgba(212,175,55,0.35);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 18px;
-    position: relative;
-    z-index: 1;
-}
-
-.academic-card p {
-    color: #666;
-    font-size: 15px;
-    line-height: 1.8;
-    position: relative;
-    z-index: 1;
-}
-
-
-/* =========================================================
-   ADMISSIONS
-========================================================= */
-
-#admissions {
+.card {
     background: white;
-}
-
-.admission-actions {
+    width: 290px;
+    padding: 32px;
+    border-radius: 12px;
     text-align: center;
-    margin: 32px auto 42px;
-}
-
-.admission-primary {
-    background: #32145f;
-    color: white;
-    border-color: #32145f;
-}
-
-.admission-primary:hover {
-    background: #4d2580;
-}
-
-.admission-gold {
-    background: #d4af37;
-    color: #32145f;
-    border-color: #d4af37;
-}
-
-.admission-gold:hover {
-    background: #f0d879;
-}
-
-.admission-form-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    background: #f8f6fb;
-    padding: 38px;
-    border-radius: 20px;
-    border: 1px solid #ebe4f2;
-    box-shadow: 0 12px 35px rgba(50,20,95,0.08);
-}
-
-.admission-form-title {
-    text-align: center;
-    color: #32145f;
-    font-size: 24px;
-    margin-bottom: 7px;
-}
-
-.admission-form-subtitle {
-    text-align: center;
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-
-.admission-form {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group.full {
-    grid-column: 1 / -1;
-}
-
-.form-group label {
-    color: #32145f;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-#admissions input,
-#admissions textarea {
-    width: 100%;
-    border: 1px solid #d9d1e3;
-    border-radius: 8px;
-    background: white;
-    padding: 13px 14px;
-    font-family: Arial,sans-serif;
-    font-size: 14px;
-    outline: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-top: 4px solid #d4af37;
     transition: all 0.3s ease;
 }
 
-#admissions input:focus,
-#admissions textarea:focus {
-    border-color: #32145f;
-    box-shadow: 0 0 0 3px rgba(50,20,95,0.08);
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(50,20,95,0.15);
 }
 
-#admissions textarea {
-    min-height: 130px;
-    resize: vertical;
-}
-
-.form-submit {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-top: 5px;
-}
-
-.form-submit button {
-    background: #d4af37;
+.card h3 {
     color: #32145f;
-    border: 2px solid #d4af37;
+    margin-bottom: 15px;
+    font-size: 21px;
 }
 
-.form-submit button:hover {
-    background: #32145f;
-    color: white;
-    border-color: #32145f;
+.card p {
+    line-height: 1.7;
+    color: #555;
 }
 
 
-/* =========================================================
+/* =========================
    STUDENT LIFE
-========================================================= */
+========================= */
 
 #student-life {
     background: #f1edf7;
@@ -1115,31 +826,22 @@ section {
 
 .student-life-card {
     background: white;
-    padding: 32px 25px;
+    padding: 30px 25px;
     text-align: center;
-    border-radius: 18px;
-    border: 1px solid #ebe4f2;
+    border-radius: 12px;
     border-bottom: 4px solid #d4af37;
-    box-shadow: 0 8px 25px rgba(50,20,95,0.07);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
     transition: all 0.3s ease;
 }
 
 .student-life-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 15px 32px rgba(50,20,95,0.14);
+    box-shadow: 0 12px 28px rgba(50,20,95,0.14);
 }
 
 .student-life-icon {
-    width: 62px;
-    height: 62px;
-    margin: 0 auto 15px;
-    background: #32145f;
-    color: #d4af37;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 27px;
+    font-size: 38px;
+    margin-bottom: 12px;
 }
 
 .student-life-card h3 {
@@ -1155,396 +857,181 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
+   ADMISSIONS
+========================= */
+
+#admissions {
+    background: white;
+}
+
+#admissions input,
+#admissions textarea {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: Arial,sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+#admissions input:focus,
+#admissions textarea:focus {
+    border-color: #32145f;
+}
+
+
+/* =========================
    GALLERY
-========================================================= */
+========================= */
 
 #gallery {
-    background: #ffffff;
+    background: #f7f7f7;
 }
 
-.gallery-grid {
-    max-width: 1100px;
-    margin: 40px auto 0;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    background: #32145f;
-    border: 2px solid #eee7f5;
-    box-shadow: 0 8px 25px rgba(50,20,95,0.09);
-    cursor: pointer;
-    aspect-ratio: 16 / 10;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.gallery-image {
     display: block;
-    transition: transform 0.45s ease;
+    width: 90%;
+    max-width: 950px;
+    margin: 35px auto 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
 }
 
-.gallery-item::after {
-    content: "View Photo";
-    position: absolute;
-    inset: auto 0 0 0;
-    padding: 13px;
-    text-align: center;
-    color: white;
-    background: linear-gradient(
-        transparent,
-        rgba(50,20,95,0.85)
-    );
-    opacity: 0;
-    transition: 0.3s ease;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.06);
-}
-
-.gallery-item:hover::after {
-    opacity: 1;
-}
-
-.gallery-note {
-    text-align: center;
-    color: #777;
-    font-size: 13px;
-    margin-top: 22px;
+.gallery-image:hover {
+    transform: scale(1.01);
 }
 
 
-/* =========================================================
-   LIGHTBOX
-========================================================= */
-
-.lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(10,5,20,0.92);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 3000;
-    padding: 30px;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox img {
-    max-width: 92%;
-    max-height: 88vh;
-    object-fit: contain;
-    border-radius: 10px;
-    border: 2px solid #d4af37;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: #d4af37;
-    color: #32145f;
-    font-size: 25px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-
-/* =========================================================
+/* =========================
    CONTACT
-========================================================= */
+========================= */
 
 #contact {
-    background: #f7f5fa;
+    background: white;
 }
 
 .contact-box {
-    max-width: 950px;
-    margin: 40px auto 0;
-    background: white;
-    padding: 45px;
-    border-radius: 20px;
+    max-width: 700px;
+    margin: 35px auto 0;
+    background: #f7f7f7;
+    padding: 35px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(50,20,95,0.08);
-    border: 1px solid #ebe4f2;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    line-height: 2;
 }
 
 .contact-box strong {
     color: #32145f;
-    font-size: 20px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 18px;
-    margin-top: 30px;
-}
-
-.contact-item {
-    background: #f7f5fa;
-    padding: 22px 15px;
-    border-radius: 12px;
-    border-bottom: 3px solid #d4af37;
-}
-
-.contact-item .contact-icon {
-    font-size: 25px;
-    margin-bottom: 8px;
-}
-
-.contact-item h4 {
-    color: #32145f;
-    margin-bottom: 5px;
-    font-size: 15px;
-}
-
-.contact-item p,
-.contact-item a {
-    color: #666;
-    font-size: 13px;
-}
-
-.contact-item a:hover {
-    color: #32145f;
+    font-size: 18px;
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer {
-    background:
-        linear-gradient(
-            135deg,
-            #32145f,
-            #211038
-        );
+    background: #32145f;
     color: white;
-    padding: 55px 8% 25px;
+    text-align: center;
+    padding: 35px 20px;
     border-top: 4px solid #d4af37;
 }
 
-.footer-grid {
-    max-width: 1150px;
-    margin: 0 auto 40px;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1.2fr;
-    gap: 45px;
-}
-
-.footer-brand h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-.footer-brand p {
-    color: #ddd;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.footer-title {
-    color: #d4af37;
-    font-size: 15px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.footer-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-}
-
-.footer-links a {
-    color: #ddd;
-    font-size: 13px;
-    transition: 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #d4af37;
-    padding-left: 3px;
-}
-
-.footer-contact p {
-    color: #ddd;
-    font-size: 13px;
-    margin-bottom: 8px;
-}
-
-.footer-contact a {
-    color: #ddd;
-}
-
-.footer-contact a:hover {
-    color: #d4af37;
-}
-
-.social-links {
-    display: flex;
-    gap: 9px;
-    margin-top: 15px;
-}
-
-.social-links a {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.08);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 8px;
-    font-size: 15px;
-    transition: 0.3s ease;
-}
-
-.social-links a:hover {
-    background: #d4af37;
-    color: #32145f;
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    max-width: 1150px;
-    margin: auto;
-    padding-top: 22px;
-    border-top: 1px solid rgba(255,255,255,0.12);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.footer-bottom p {
-    color: #ccc;
-    font-size: 12px;
+footer p {
+    margin: 8px;
 }
 
 .gold {
-    color: #d4af37 !important;
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-.back-to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 45px;
-    height: 45px;
-    background: #d4af37;
-    color: #32145f;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    z-index: 1500;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.20);
-}
-
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.back-to-top:hover {
-    background: #32145f;
     color: #d4af37;
+    font-weight: 600;
 }
 
 
-/* =========================================================
+/* =========================
    TABLET
-========================================================= */
+========================= */
 
 @media(max-width:1100px) {
 
     header {
-        padding: 10px 3%;
+        padding: 12px 3%;
     }
 
     .logo-area img {
-        width: 190px;
-        height: 73px;
+        width: 200px;
+        height: 85px;
     }
 
     .school-name h1 {
-        font-size: 17px;
+        font-size: 18px;
+    }
+
+    .school-name p {
+        font-size: 11px;
     }
 
     .main-nav a {
-        padding: 9px 8px;
-        font-size: 12px;
+        padding: 10px 9px;
+        font-size: 13px;
     }
 
     .main-nav .apply-btn {
-        padding: 9px 13px;
+        padding: 10px 14px;
+        margin-left: 5px;
     }
 
     .principal-wrap {
         grid-template-columns: 250px 1fr;
         gap: 35px;
-        padding: 38px;
-    }
-
-    .hero h2 {
-        font-size: 52px;
+        padding: 35px;
     }
 }
 
 
-/* =========================================================
-   TABLET / MOBILE NAV
-========================================================= */
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: white;
+    border: 2px solid #d4af37;
+    border-radius: 7px;
+    width: 46px;
+    height: 42px;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* =========================
+   TABLET / MOBILE
+========================= */
 
 @media(max-width:900px) {
 
     header {
-        min-height: auto;
-        padding: 12px 20px;
+        flex-direction: row;
         flex-wrap: wrap;
+        gap: 0;
+        padding: 12px 20px;
+        text-align: left;
     }
 
     .logo-area {
+        justify-content: center;
         flex: 1;
+        min-width: 0;
     }
 
     .menu-toggle {
         display: block;
+        margin-left: auto;
     }
 
     .main-nav {
@@ -1552,10 +1039,12 @@ footer {
         display: none;
         flex-direction: column;
         align-items: stretch;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
         gap: 5px;
         padding-top: 12px;
-        border-top: 1px solid rgba(255,255,255,0.12);
-        margin-top: 10px;
+        margin-top: 12px;
+        border-top: 1px solid rgba(255,255,255,0.15);
     }
 
     .main-nav.open {
@@ -1566,6 +1055,7 @@ footer {
         width: 100%;
         text-align: center;
         padding: 11px;
+        font-size: 14px;
     }
 
     .main-nav a.active::after {
@@ -1584,7 +1074,7 @@ footer {
     .principal-wrap {
         grid-template-columns: 1fr;
         text-align: center;
-        max-width: 750px;
+        max-width: 700px;
     }
 
     .principal-details {
@@ -1606,90 +1096,111 @@ footer {
     .values-grid {
         grid-template-columns: repeat(2,1fr);
     }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
-@media(max-width:700px) {
+@media(max-width:800px) {
 
     header {
-        padding: 12px 16px;
+        padding: 14px 20px;
+        flex-direction: column;
+        gap: 14px;
     }
 
     .logo-area {
+        flex-direction: column;
         gap: 12px;
     }
 
     .logo-area img {
-        width: 175px;
-        height: 68px;
-        padding: 6px 10px;
+        width: 210px;
+        height: 85px;
+        padding: 8px 12px;
     }
 
     .school-name {
-        display: none;
+        border-left: none;
+        border-top: 2px solid #d4af37;
+        padding-left: 0;
+        padding-top: 9px;
     }
 
+    .school-name h1 {
+        font-size: 18px;
+        white-space: normal;
+    }
+
+    .school-name p {
+        font-size: 12px;
+    }
+
+    .main-nav {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .main-nav .apply-btn {
+        margin-left: 5px;
+        padding: 9px 15px;
+    }
+
+
+    /* HERO */
+
     .hero {
-        min-height: 620px;
-        background-attachment: scroll;
-        padding: 35px 15px;
+        min-height: 580px;
+        padding: 40px 15px;
     }
 
     .hero-content {
-        padding: 35px 10px;
-    }
-
-    .hero-content::before {
-        width: 60px;
-        margin-bottom: 20px;
-    }
-
-    .hero-label {
-        font-size: 11px;
-        letter-spacing: 2px;
-        margin-bottom: 14px;
+        padding: 30px 15px;
     }
 
     .hero h2 {
-        font-size: 39px;
-        line-height: 1.16;
-        letter-spacing: -0.5px;
+        font-size: 38px;
+        line-height: 1.2;
     }
 
     .hero p {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.7;
-        margin-bottom: 27px;
+        margin-bottom: 28px;
     }
 
     .hero .button {
-        display: flex;
-        max-width: 280px;
+        display: block;
+        max-width: 260px;
         margin: 10px auto;
     }
 
+
+    /* SECTIONS */
+
     section {
-        padding: 60px 6%;
+        padding: 55px 6%;
     }
 
     .section-title {
@@ -1697,11 +1208,14 @@ footer {
     }
 
     .section-text {
-        font-size: 15px;
+        font-size: 16px;
     }
 
+
+    /* PRINCIPAL */
+
     .principal-wrap {
-        padding: 30px 22px;
+        padding: 28px 22px;
         border-left: none;
         border-top: 5px solid #d4af37;
     }
@@ -1712,12 +1226,11 @@ footer {
     }
 
     .principal-content h3 {
-        font-size: 25px;
+        font-size: 23px;
     }
 
     .principal-content p {
         font-size: 15px;
-        text-align: left;
     }
 
     .principal-details {
@@ -1725,9 +1238,8 @@ footer {
         align-items: stretch;
     }
 
-    .principal-detail {
-        text-align: left;
-    }
+
+    /* WHY CHOOSE */
 
     .why-grid {
         grid-template-columns: 1fr;
@@ -1735,13 +1247,27 @@ footer {
     }
 
     .why-card {
-        min-height: auto;
+        padding: 28px 22px;
     }
+
+
+    /* SCHOOL AT A GLANCE */
 
     .glance-grid {
         grid-template-columns: 1fr;
         gap: 18px;
     }
+
+    .glance-intro {
+        font-size: 15px;
+    }
+
+    .glance-card {
+        padding: 28px 22px;
+    }
+
+
+    /* ABOUT */
 
     .about-intro h3 {
         font-size: 25px;
@@ -1767,90 +1293,75 @@ footer {
         font-size: 25px;
     }
 
-    .academics-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+
+    /* CARDS */
+
+    .card {
+        width: 100%;
+        max-width: 400px;
     }
 
-    .academic-card {
-        padding: 32px 24px;
-    }
 
-    .academic-card h3 {
-        font-size: 23px;
-    }
+    /* STUDENT LIFE */
 
     .student-life-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
+
+    /* GALLERY */
+
+    .gallery-image {
+        width: 100%;
     }
 
-    .gallery-item {
-        aspect-ratio: 16 / 10;
-    }
 
-    .admission-form-wrap {
-        padding: 28px 20px;
-    }
-
-    .admission-form {
-        grid-template-columns: 1fr;
-    }
-
-    .form-group.full {
-        grid-column: auto;
-    }
-
-    .form-submit {
-        grid-column: auto;
-    }
+    /* CONTACT */
 
     .contact-box {
-        padding: 30px 18px;
+        padding: 25px 18px;
     }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-brand {
-        grid-column: auto;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
 }
 
 
-/* =========================================================
+/* =========================
    SMALL MOBILE
-========================================================= */
+========================= */
 
 @media(max-width:480px) {
 
     .logo-area img {
-        width: 160px;
-        height: 62px;
+        width: 190px;
+        height: 75px;
+        padding: 7px 10px;
     }
 
-    .menu-toggle {
-        width: 42px;
-        height: 40px;
+    .school-name h1 {
+        font-size: 17px;
+    }
+
+    .school-name p {
+        font-size: 11px;
+    }
+
+    .main-nav {
+        gap: 3px;
+    }
+
+    .main-nav a {
+        padding: 7px 8px;
+        font-size: 12px;
+    }
+
+    .main-nav .apply-btn {
+        padding: 8px 12px;
+        margin-left: 2px;
     }
 
     .hero {
-        min-height: 610px;
+        min-height: 560px;
     }
 
     .hero h2 {
@@ -1858,16 +1369,11 @@ footer {
     }
 
     .hero p {
-        font-size: 14px;
-    }
-
-    .hero-label {
-        font-size: 10px;
-        letter-spacing: 1.5px;
+        font-size: 15px;
     }
 
     .hero .button {
-        max-width: 250px;
+        max-width: 240px;
         width: 100%;
     }
 
@@ -1876,36 +1382,147 @@ footer {
         height: 225px;
     }
 
-    .section-title {
-        font-size: 27px;
-    }
-
-    .admission-form-wrap {
-        padding: 24px 16px;
-    }
-
 }
+
 
 
 /* =========================================================
-   REDUCED MOTION
+   FINAL MOBILE NAVIGATION FIX
+   Keeps desktop layout unchanged.
 ========================================================= */
-
-@media(prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
+@media (max-width: 900px) {
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 0 !important;
+        padding: 12px 15px !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 9999 !important;
     }
 
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+    .logo-area {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        gap: 10px !important;
     }
 
+    .logo-area img {
+        width: 145px !important;
+        height: auto !important;
+        max-width: 45vw !important;
+        padding: 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    .school-name {
+        min-width: 0 !important;
+        border-left: 2px solid #d4af37 !important;
+        border-top: none !important;
+        padding: 0 0 0 10px !important;
+    }
+
+    .school-name h1 {
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+    }
+
+    .school-name p {
+        font-size: 9px !important;
+        line-height: 1.3 !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 44px !important;
+        height: 42px !important;
+        margin: 0 0 0 10px !important;
+        padding: 0 !important;
+        flex: 0 0 44px !important;
+        position: relative !important;
+        z-index: 10001 !important;
+    }
+
+    .main-nav,
+    .main-nav.open {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 4px !important;
+        margin: 10px 0 0 0 !important;
+        padding: 10px 0 0 0 !important;
+        border-top: 1px solid rgba(255,255,255,0.18) !important;
+        box-sizing: border-box !important;
+    }
+
+    .main-nav.open {
+        display: flex !important;
+    }
+
+    .main-nav a,
+    .main-nav .apply-btn {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        padding: 11px 12px !important;
+        margin: 0 !important;
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+    }
+
+    .main-nav a.active::after {
+        display: none !important;
+    }
 }
 
+@media (max-width: 480px) {
+    header {
+        padding: 10px 12px !important;
+    }
+
+    .logo-area img {
+        width: 125px !important;
+        max-width: 38vw !important;
+    }
+
+    .school-name h1 {
+        font-size: 12px !important;
+    }
+
+    .school-name p {
+        font-size: 8px !important;
+    }
+
+    .menu-toggle {
+        width: 42px !important;
+        height: 40px !important;
+        flex-basis: 42px !important;
+        font-size: 23px !important;
+    }
+
+    .main-nav a,
+    .main-nav .apply-btn {
+        padding: 10px 8px !important;
+        font-size: 13px !important;
+    }
+}
 </style>
 
 </head>
@@ -1914,9 +1531,9 @@ footer {
 <body>
 
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- =========================
+     HEADER / NAVBAR
+========================= -->
 
 <header>
 
@@ -1945,66 +1562,37 @@ footer {
     <button
         class="menu-toggle"
         id="menuToggle"
+        type="button"
         aria-label="Open navigation menu"
         aria-expanded="false"
     >
         ☰
     </button>
 
-
     <nav class="main-nav" id="mainNav">
-
-        <a href="#home" class="active">
-            Home
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
-        <a href="#academics">
-            Academics
-        </a>
-
-        <a href="#admissions">
-            Admissions
-        </a>
-
-        <a href="#student-life">
-            Student Life
-        </a>
-
-        <a href="#gallery">
-            Gallery
-        </a>
-
-        <a href="#contact">
-            Contact
-        </a>
-
-        <a href="#admissions" class="apply-btn">
-            Apply Now
-        </a>
-
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#student-life">Student Life</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#admissions" class="apply-btn">Apply Now</a>
     </nav>
 
 </header>
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+<!-- =========================
+     HOME / HERO
+========================= -->
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <div class="hero-label">
-            RICHMOND INTERNATIONAL SCHOOL
-        </div>
-
         <h2>
-            Inspiring Young Minds.<br>
+            Inspiring Young Minds.
             Building Future Leaders.
         </h2>
 
@@ -2030,9 +1618,9 @@ footer {
 </section>
 
 
-<!-- =========================================================
-     PRINCIPAL
-========================================================= -->
+<!-- =========================
+     PRINCIPAL WELCOME
+========================= -->
 
 <section id="principal">
 
@@ -2046,16 +1634,14 @@ footer {
 
             <img
                 src="principal.jpg"
-                alt="Kerry Turner - Principal of Richmond International School"
+                alt="Kerryn Turner - Principal of Richmond International School"
             >
 
         </div>
 
         <div class="principal-content">
 
-            <h3>
-                Kerry Turner
-            </h3>
+           <h3>Kerry Turner</h3>
 
             <div class="principal-role">
                 Principal – Al Markhiya Main Branch
@@ -2090,7 +1676,6 @@ footer {
                 educational journey.
             </p>
 
-
             <div class="principal-details">
 
                 <div class="principal-detail">
@@ -2114,28 +1699,22 @@ footer {
                 </div>
 
                 <div class="principal-detail">
-
                     <img
                         src="uk-flag.png"
                         alt="UK Flag"
                         class="uk-flag"
                     >
-
                     British
-
                 </div>
 
             </div>
-
 
             <div class="principal-signature">
 
                 Warm regards,
                 <br>
 
-                <strong>
-                    Kerry Turner
-                </strong>
+               <strong>Kerry Turner</strong>
 
                 <br>
 
@@ -2156,9 +1735,9 @@ footer {
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      WHY CHOOSE RICHMOND
-========================================================= -->
+========================= -->
 
 <section id="why-choose">
 
@@ -2167,123 +1746,66 @@ footer {
     </h2>
 
     <p class="why-intro">
-
         At Richmond International School, we believe that every student
         has the potential to learn, grow and succeed. We provide a
         supportive, inspiring and inclusive environment where students
         are encouraged to develop academically, socially and personally.
-
     </p>
-
 
     <div class="why-grid">
 
-
         <div class="why-card">
-
-            <div class="why-icon">
-                🎓
-            </div>
-
-            <h3>
-                Quality Education
-            </h3>
-
+            <div class="why-icon">🎓</div>
+            <h3>Quality Education</h3>
             <p>
                 We provide a strong educational foundation that supports
                 academic growth and lifelong learning.
             </p>
-
         </div>
 
-
         <div class="why-card">
-
-            <div class="why-icon">
-                🌟
-            </div>
-
-            <h3>
-                Experienced Leadership
-            </h3>
-
+            <div class="why-icon">🌟</div>
+            <h3>Experienced Leadership</h3>
             <p>
                 Our experienced leadership team works closely with staff,
                 students and parents to support school development.
             </p>
-
         </div>
 
-
         <div class="why-card">
-
-            <div class="why-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Safe & Caring Environment
-            </h3>
-
+            <div class="why-icon">❤️</div>
+            <h3>Safe & Caring Environment</h3>
             <p>
                 We create a welcoming and caring environment where students
                 feel safe, valued and supported.
             </p>
-
         </div>
 
-
         <div class="why-card">
-
-            <div class="why-icon">
-                💡
-            </div>
-
-            <h3>
-                Modern Learning
-            </h3>
-
+            <div class="why-icon">💡</div>
+            <h3>Modern Learning</h3>
             <p>
                 We encourage students to develop creativity, confidence,
                 communication and digital skills.
             </p>
-
         </div>
 
-
         <div class="why-card">
-
-            <div class="why-icon">
-                🏆
-            </div>
-
-            <h3>
-                Student Development
-            </h3>
-
+            <div class="why-icon">🏆</div>
+            <h3>Student Development</h3>
             <p>
                 We support students in developing their talents, interests,
                 confidence and personal responsibility.
             </p>
-
         </div>
 
-
         <div class="why-card">
-
-            <div class="why-icon">
-                🤝
-            </div>
-
-            <h3>
-                Strong Community
-            </h3>
-
+            <div class="why-icon">🤝</div>
+            <h3>Strong Community</h3>
             <p>
                 We value strong partnerships between students, parents,
                 teachers and the wider school community.
             </p>
-
         </div>
 
     </div>
@@ -2291,9 +1813,9 @@ footer {
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      SCHOOL AT A GLANCE
-========================================================= -->
+========================= -->
 
 <section id="school-glance">
 
@@ -2302,16 +1824,12 @@ footer {
     </h2>
 
     <p class="glance-intro">
-
         Richmond International School provides a supportive and inspiring
         learning environment where students are encouraged to achieve,
         grow and develop with confidence.
-
     </p>
 
-
     <div class="glance-grid">
-
 
         <div class="glance-card">
 
@@ -2419,9 +1937,9 @@ footer {
 </section>
 
 
-<!-- =========================================================
-     ABOUT
-========================================================= -->
+<!-- =========================
+     ABOUT US
+========================= -->
 
 <section id="about">
 
@@ -2468,7 +1986,6 @@ footer {
 
 
     <div class="about-values">
-
 
         <div class="about-card">
 
@@ -2594,9 +2111,9 @@ footer {
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      ACADEMICS
-========================================================= -->
+========================= -->
 
 <section id="academics">
 
@@ -2604,73 +2121,38 @@ footer {
         Our Academics
     </h2>
 
-    <p class="academics-intro">
-
+    <p class="section-text">
         Our learning programmes support students at every stage
-        of their educational journey, providing a strong foundation
-        for academic and personal development.
-
+        of their educational journey.
     </p>
 
+    <div class="cards">
 
-    <div class="academics-grid">
-
-
-        <!-- EARLY YEARS -->
-
-        <div class="academic-card">
-
-            <div class="academic-icon">
-                🌱
-            </div>
+        <div class="card">
 
             <h3>
-                Early Years
+                🌱 Early Years
             </h3>
 
-            <div class="curriculum-badge">
-                British Curriculum
-            </div>
-
-            <div class="eyfs-text">
-                EYFS · Early Years Foundation Stage
-            </div>
-
             <p>
-                A caring and engaging learning environment where
-                young learners develop confidence, communication,
-                independence and essential skills through meaningful
-                and enjoyable learning experiences.
+                A caring and engaging environment where young
+                learners develop confidence, communication
+                and essential skills.
             </p>
 
         </div>
 
 
-        <!-- PRIMARY SCHOOL -->
-
-        <div class="academic-card">
-
-            <div class="academic-icon">
-                📚
-            </div>
+        <div class="card">
 
             <h3>
-                Primary School
+                📚 Primary School
             </h3>
-
-            <div class="curriculum-badge">
-                British Curriculum
-            </div>
-
-            <div class="edexcel-text">
-                Pearson Edexcel
-            </div>
 
             <p>
                 Building strong academic foundations through
-                creative, engaging and meaningful learning experiences,
-                while developing knowledge, confidence and a love
-                for learning.
+                creative, engaging and meaningful learning
+                experiences.
             </p>
 
         </div>
@@ -2680,9 +2162,9 @@ footer {
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      ADMISSIONS
-========================================================= -->
+========================= -->
 
 <section id="admissions">
 
@@ -2702,175 +2184,355 @@ footer {
     </p>
 
 
-    <div class="admission-actions">
+    <div style="text-align:center;margin-top:30px;">
 
         <a
             href="mailto:admissions@richmonddoha.com"
-            class="button admission-primary"
+            class="button"
+            style="background:#32145f;color:white;"
         >
-            ✉ Email Admissions
+            Email Admissions
         </a>
+
 
         <a
             href="https://wa.me/97474767266"
             target="_blank"
-            rel="noopener"
-            class="button admission-gold"
+            class="button"
+            style="background:#d4af37;color:#32145f;"
         >
             💬 WhatsApp Us
-        </a>
-
-        <a
-            href="#admission-form"
-            class="button"
-            style="
-            background:#f4f1f8;
-            color:#32145f;
-            border-color:#e5dcef;
-            "
-        >
-            📅 Book a Visit
         </a>
 
     </div>
 
 
-    <div
-        class="admission-form-wrap"
-        id="admission-form"
-    >
+    <div style="max-width:600px;margin:40px auto 0;">
 
-        <h3 class="admission-form-title">
+        <h3
+            style="
+            text-align:center;
+            color:#32145f;
+            margin-bottom:20px;
+            "
+        >
             Enquire About Admission
         </h3>
 
-        <p class="admission-form-subtitle">
-            Complete the form below and our admissions team will contact you.
-        </p>
-
 
         <form
-            class="admission-form"
             action="https://formspree.io/f/mbgjnepv"
             method="POST"
         >
 
-
-            <div class="form-group">
-
-                <label for="name">
-                    Parent / Guardian Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                >
-
-            </div>
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                style="
+                width:100%;
+                padding:14px;
+                margin:8px 0;
+                box-sizing:border-box;
+                "
+            >
 
 
-            <div class="form-group">
-
-                <label for="email">
-                    Email Address
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Your Email"
-                    required
-                >
-
-            </div>
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                style="
+                width:100%;
+                padding:14px;
+                margin:8px 0;
+                box-sizing:border-box;
+                "
+            >
 
 
-            <div class="form-group">
-
-                <label for="phone">
-                    Phone Number
-                </label>
-
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="+974"
-                    required
-                >
-
-            </div>
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                style="
+                width:100%;
+                padding:14px;
+                margin:8px 0;
+                box-sizing:border-box;
+                "
+            >
 
 
-            <div class="form-group">
-
-                <label for="student">
-                    Student Name
-                </label>
-
-                <input
-                    type="text"
-                    id="student"
-                    name="student"
-                    placeholder="Student Name"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="year">
-                    Year Group
-                </label>
-
-                <input
-                    type="text"
-                    id="year"
-                    name="year"
-                    placeholder="e.g. FS1, FS2, Year 1"
-                >
-
-            </div>
+            <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                rows="5"
+                style="
+                width:100%;
+                padding:14px;
+                margin:8px 0;
+                box-sizing:border-box;
+                resize:vertical;
+                "
+            ></textarea>
 
 
-            <div class="form-group">
-
-                <label for="visit">
-                    Preferred Visit Date
-                </label>
-
-                <input
-                    type="date"
-                    id="visit"
-                    name="visit_date"
-                >
-
-            </div>
-
-
-            <div class="form-group full">
-
-                <label for="message">
-                    Message
-                </label>
-
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us how we can help..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <div class="form-submit">
+            <div style="text-align:center;margin-top:15px;">
 
                 <button
-                    type="submit
+                    type="submit"
+                    class="button"
+                    style="
+                    background:#d4af37;
+                    color:#32145f;
+                    "
+                >
+                    Send Enquiry
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STUDENT LIFE
+========================= -->
+
+<section id="student-life">
+
+    <h2 class="section-title">
+        Student Life
+    </h2>
+
+    <p class="section-text">
+
+        At Richmond International School, learning extends
+        beyond the classroom. Students are encouraged to
+        participate, explore their interests and develop
+        confidence through a wide range of school experiences.
+
+    </p>
+
+
+    <div class="student-life-grid">
+
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                🎨
+            </div>
+
+            <h3>
+                Activities & Clubs
+            </h3>
+
+            <p>
+                Opportunities for students to discover
+                interests, develop talents and build confidence.
+            </p>
+
+        </div>
+
+
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                ⚽
+            </div>
+
+            <h3>
+                Sports & Wellbeing
+            </h3>
+
+            <p>
+                Encouraging teamwork, healthy lifestyles,
+                confidence and positive relationships.
+            </p>
+
+        </div>
+
+
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                🎉
+            </div>
+
+            <h3>
+                Events & Experiences
+            </h3>
+
+            <p>
+                Celebrating school events, achievements
+                and memorable moments together.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div style="text-align:center;margin-top:35px;">
+
+        <a
+            href="#gallery"
+            class="button"
+            style="
+            background:#32145f;
+            color:white;
+            "
+        >
+            View School Gallery
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section id="gallery">
+
+    <h2 class="section-title">
+        School Gallery
+    </h2>
+
+    <p class="section-text">
+
+        Explore moments from life at Richmond International School
+        – Al Markhiya Main Branch.
+
+    </p>
+
+
+    <img
+        src="school.jpg"
+        alt="Richmond International School – Al Markhiya Main Branch"
+        class="gallery-image"
+    >
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+
+    <div class="contact-box">
+
+        <strong>
+            Richmond International School –
+            Al Markhiya Main Branch
+        </strong>
+
+        <br>
+        <br>
+
+        📧 admissions@richmonddoha.com
+
+        <br>
+
+        ☎ +974 4017 1991
+
+        <br>
+
+        ☎ +974 7476 7266
+
+        <br>
+        <br>
+
+        <a
+            href="https://wa.me/97474767266"
+            target="_blank"
+            class="button"
+            style="
+            background:#32145f;
+            color:white;
+            "
+        >
+            💬 Chat with us on WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Richmond International School –
+        Al Markhiya Main Branch
+    </p>
+
+    <p class="gold">
+        Nurturing tomorrow’s leaders
+    </p>
+
+</footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    if (!menuToggle || !mainNav) return;
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            menuToggle.textContent = "☰";
+        });
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            menuToggle.textContent = "☰";
+        }
+    });
+});
+</script>
+
+</body>
+
+</html>
+
