@@ -768,44 +768,145 @@ section {
 }
 
 
+```css
 /* =========================
-   ACADEMIC CARDS
+   ACADEMICS
 ========================= */
 
-.cards {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    margin-top: 40px;
-    flex-wrap: wrap;
+#academics {
+    background: #f7f5fa;
 }
 
-.card {
-    background: white;
-    width: 290px;
-    padding: 32px;
-    border-radius: 12px;
+.academics-intro {
+    max-width: 760px;
+    margin: 0 auto 45px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-top: 4px solid #d4af37;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.academics-grid {
+    max-width: 950px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.academic-card {
+    background: #ffffff;
+    padding: 38px 32px;
+    border-radius: 18px;
+    text-align: center;
+    border-top: 5px solid #d4af37;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
     transition: all 0.3s ease;
 }
 
-.card:hover {
+.academic-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(50,20,95,0.15);
+    box-shadow: 0 16px 35px rgba(50,20,95,0.15);
 }
 
-.card h3 {
+.academic-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: #32145f;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.academic-card h3 {
     color: #32145f;
-    margin-bottom: 15px;
-    font-size: 21px;
+    font-size: 25px;
+    margin-bottom: 18px;
 }
 
-.card p {
-    line-height: 1.7;
-    color: #555;
+.curriculum-badge {
+    display: inline-block;
+    background: #f4f1f8;
+    color: #32145f;
+    border-left: 4px solid #d4af37;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 18px;
 }
+
+.eyfs-badge {
+    display: inline-block;
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.academic-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+/* Pearson Edexcel Highlight */
+
+.edexcel-highlight {
+    background: #ffffff;
+    border: 1px solid #eee7f5;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 5px auto 22px;
+    max-width: 270px;
+    box-shadow: 0 5px 18px rgba(50,20,95,0.08);
+}
+
+.edexcel-label {
+    display: block;
+    color: #32145f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.edexcel-logo {
+    width: 190px;
+    max-width: 100%;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+
+    .academics-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .academic-card {
+        padding: 32px 24px;
+    }
+
+    .academic-card h3 {
+        font-size: 23px;
+    }
+
+    .academics-intro {
+        font-size: 15px;
+    }
+}
+
+
 
 
 /* =========================
@@ -1922,44 +2023,93 @@ footer p {
      ACADEMICS
 ========================= -->
 
+```html
+<!-- =========================
+     ACADEMICS
+========================= -->
+
 <section id="academics">
 
     <h2 class="section-title">
         Our Academics
     </h2>
 
-    <p class="section-text">
+    <p class="academics-intro">
         Our learning programmes support students at every stage
-        of their educational journey.
+        of their educational journey, providing a strong foundation
+        for academic and personal development.
     </p>
 
-    <div class="cards">
 
-        <div class="card">
+    <div class="academics-grid">
+
+        <!-- EARLY YEARS -->
+
+        <div class="academic-card">
+
+            <div class="academic-icon">
+                🌱
+            </div>
 
             <h3>
-                🌱 Early Years
+                Early Years
             </h3>
 
+            <div class="curriculum-badge">
+                British Curriculum
+            </div>
+
+            <div class="eyfs-badge">
+                EYFS · Early Years Foundation Stage
+            </div>
+
             <p>
-                A caring and engaging environment where young
-                learners develop confidence, communication
-                and essential skills.
+                A caring and engaging learning environment where
+                young learners develop confidence, communication,
+                independence and essential skills through meaningful
+                and enjoyable learning experiences.
             </p>
 
         </div>
 
 
-        <div class="card">
+        <!-- PRIMARY SCHOOL -->
+
+        <div class="academic-card">
+
+            <div class="academic-icon">
+                📚
+            </div>
 
             <h3>
-                📚 Primary School
+                Primary School
             </h3>
+
+            <div class="curriculum-badge">
+                British Curriculum
+            </div>
+
+            <!-- Pearson Edexcel Highlight -->
+
+            <div class="edexcel-highlight">
+
+                <span class="edexcel-label">
+                    Curriculum & Qualifications
+                </span>
+
+                <img
+                    src="edexcel-logo.png"
+                    alt="Pearson Edexcel"
+                    class="edexcel-logo"
+                >
+
+            </div>
 
             <p>
                 Building strong academic foundations through
-                creative, engaging and meaningful learning
-                experiences.
+                creative, engaging and meaningful learning experiences,
+                while developing knowledge, confidence and a love
+                for learning.
             </p>
 
         </div>
@@ -1967,6 +2117,7 @@ footer p {
     </div>
 
 </section>
+
 
 
 <!-- =========================
