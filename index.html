@@ -9,10 +9,6 @@
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +32,6 @@ body {
 
 .hero {
     min-height: 100vh;
-
     position: relative;
     overflow: hidden;
 
@@ -190,17 +185,10 @@ h1 {
         0 4px 25px rgba(0, 0, 0, 0.35);
 }
 
-
-/* WHITE TEXT */
-
 .welcome-text {
     color: #ffffff;
-
     font-weight: 700;
 }
-
-
-/* GOLD SCHOOL NAME */
 
 h1 strong {
     color: #e0bd63;
@@ -288,7 +276,7 @@ h1 strong {
 .branch-card {
     position: relative;
 
-    min-height: 390px;
+    min-height: 430px;
 
     padding: 38px 34px;
 
@@ -411,7 +399,61 @@ h1 strong {
 
     letter-spacing: 1.5px;
 
+    margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   CURRICULUM BADGE
+========================================================= */
+
+.curriculum-badge {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 15px;
+
     margin-bottom: 20px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #32145f,
+            #4b237c
+        );
+
+    color: #ffffff;
+
+    border: 1px solid rgba(212, 175, 55, 0.75);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.1px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 6px 16px rgba(50, 20, 95, 0.18);
+}
+
+.curriculum-badge::before {
+    content: "✦";
+
+    color: #e0bd63;
+
+    font-size: 12px;
 }
 
 
@@ -432,7 +474,7 @@ h1 strong {
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .icon img {
@@ -710,7 +752,7 @@ h1 strong {
     }
 
     .branch-card {
-        min-height: 350px;
+        min-height: 390px;
 
         padding:
             32px
@@ -724,6 +766,12 @@ h1 strong {
 
     .branch-card h3 {
         font-size: 21px;
+    }
+
+    .curriculum-badge {
+        font-size: 9px;
+        padding: 7px 12px;
+        letter-spacing: 0.8px;
     }
 
     .footer {
@@ -763,7 +811,7 @@ h1 strong {
     }
 
     .branch-card {
-        min-height: 335px;
+        min-height: 375px;
     }
 
     .branch-card h3 {
@@ -780,6 +828,12 @@ h1 strong {
             19px;
 
         font-size: 13px;
+    }
+
+    .curriculum-badge {
+        font-size: 8px;
+        padding: 7px 10px;
+        letter-spacing: 0.6px;
     }
 }
 
@@ -894,6 +948,17 @@ h1 strong {
                 </div>
 
 
+                <!-- CURRICULUM -->
+
+                <div class="curriculum-badge">
+
+                    British Curriculum
+                    •
+                    Pearson Edexcel
+
+                </div>
+
+
                 <div class="icon">
 
                     <img
@@ -945,6 +1010,17 @@ h1 strong {
                 <div class="card-badge">
 
                     EARLY YEARS
+
+                </div>
+
+
+                <!-- CURRICULUM -->
+
+                <div class="curriculum-badge">
+
+                    British Curriculum
+                    •
+                    EYFS
 
                 </div>
 
