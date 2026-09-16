@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -532,11 +533,80 @@ section {
 
 
 /* =========================
+   SCHOOL AT A GLANCE
+========================= */
+
+#school-glance {
+    background: #f7f5fa;
+}
+
+.glance-intro {
+    max-width: 760px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.glance-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.glance-card {
+    background: #ffffff;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid #eee7f5;
+    border-bottom: 4px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .3s ease;
+}
+
+.glance-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(50,20,95,.15);
+    border-bottom-color: #32145f;
+}
+
+.glance-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 16px;
+    background: #32145f;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.glance-card h3 {
+    color: #32145f;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.glance-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================
    ABOUT US
 ========================= */
 
 #about {
-    background: #f7f5fa;
+    background: #ffffff;
 }
 
 .about-intro {
@@ -567,7 +637,7 @@ section {
 }
 
 .about-card {
-    background: #ffffff;
+    background: #f7f5fa;
     padding: 35px;
     border-radius: 18px;
     border-top: 5px solid #d4af37;
@@ -962,6 +1032,10 @@ footer p {
         grid-template-columns: repeat(2,1fr);
     }
 
+    .glance-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
     .about-values {
         grid-template-columns: 1fr;
     }
@@ -1108,6 +1182,22 @@ footer p {
     }
 
     .why-card {
+        padding: 28px 22px;
+    }
+
+
+    /* SCHOOL AT A GLANCE */
+
+    .glance-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .glance-intro {
+        font-size: 15px;
+    }
+
+    .glance-card {
         padding: 28px 22px;
     }
 
@@ -1476,63 +1566,171 @@ footer p {
     <div class="why-grid">
 
         <div class="why-card">
-
-            <div class="why-icon">
-                🎓
-            </div>
-
-            <h3>
-                Quality Education
-            </h3>
-
+            <div class="why-icon">🎓</div>
+            <h3>Quality Education</h3>
             <p>
                 We provide a strong educational foundation that supports
                 academic growth and lifelong learning.
             </p>
-
         </div>
 
-
         <div class="why-card">
-
-            <div class="why-icon">
-                🌟
-            </div>
-
-            <h3>
-                Experienced Leadership
-            </h3>
-
+            <div class="why-icon">🌟</div>
+            <h3>Experienced Leadership</h3>
             <p>
                 Our experienced leadership team works closely with staff,
                 students and parents to support school development.
             </p>
-
         </div>
 
-
         <div class="why-card">
-
-            <div class="why-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Safe & Caring Environment
-            </h3>
-
+            <div class="why-icon">❤️</div>
+            <h3>Safe & Caring Environment</h3>
             <p>
                 We create a welcoming and caring environment where students
                 feel safe, valued and supported.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">💡</div>
+            <h3>Modern Learning</h3>
+            <p>
+                We encourage students to develop creativity, confidence,
+                communication and digital skills.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🏆</div>
+            <h3>Student Development</h3>
+            <p>
+                We support students in developing their talents, interests,
+                confidence and personal responsibility.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🤝</div>
+            <h3>Strong Community</h3>
+            <p>
+                We value strong partnerships between students, parents,
+                teachers and the wider school community.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCHOOL AT A GLANCE
+========================= -->
+
+<section id="school-glance">
+
+    <h2 class="section-title">
+        School at a Glance
+    </h2>
+
+    <p class="glance-intro">
+        Richmond International School provides a supportive and inspiring
+        learning environment where students are encouraged to achieve,
+        grow and develop with confidence.
+    </p>
+
+    <div class="glance-grid">
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                🎓
+            </div>
+
+            <h3>
+                British Curriculum
+            </h3>
+
+            <p>
+                Broad, balanced and rigorous British education.
             </p>
 
         </div>
 
 
-        <div class="why-card">
+        <div class="glance-card">
 
-            <div class="why-icon">
-                💡
+            <div class="glance-icon">
+                👨‍🎓
+            </div>
+
+            <h3>
+                500+ Students
+            </h3>
+
+            <p>
+                A growing and diverse school community.
+            </p>
+
+        </div>
+
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                📅
+            </div>
+
+            <h3>
+                Established 2019
+            </h3>
+
+            <p>
+                Serving students and families in Doha since 2019.
+            </p>
+
+        </div>
+
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                🌍
+            </div>
+
+            <h3>
+                International School
+            </h3>
+
+            <p>
+                A welcoming community with an international outlook.
+            </p>
+
+        </div>
+
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                👩‍🏫
+            </div>
+
+            <h3>
+                Experienced Teachers
+            </h3>
+
+            <p>
+                Dedicated educators supporting every student's development.
+            </p>
+
+        </div>
+
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                💻
             </div>
 
             <h3>
@@ -1540,44 +1738,7 @@ footer p {
             </h3>
 
             <p>
-                We encourage students to develop creativity, confidence,
-                communication and digital skills.
-            </p>
-
-        </div>
-
-
-        <div class="why-card">
-
-            <div class="why-icon">
-                🏆
-            </div>
-
-            <h3>
-                Student Development
-            </h3>
-
-            <p>
-                We support students in developing their talents, interests,
-                confidence and personal responsibility.
-            </p>
-
-        </div>
-
-
-        <div class="why-card">
-
-            <div class="why-icon">
-                🤝
-            </div>
-
-            <h3>
-                Strong Community
-            </h3>
-
-            <p>
-                We value strong partnerships between students, parents,
-                teachers and the wider school community.
+                Technology-supported learning for future-ready students.
             </p>
 
         </div>
@@ -1635,8 +1796,6 @@ footer p {
     </div>
 
 
-    <!-- VISION & MISSION -->
-
     <div class="about-values">
 
         <div class="about-card">
@@ -1688,8 +1847,6 @@ footer p {
     </div>
 
 
-    <!-- CORE VALUES -->
-
     <div class="core-values">
 
         <h3>
@@ -1727,8 +1884,6 @@ footer p {
 
     </div>
 
-
-    <!-- EDUCATIONAL APPROACH -->
 
     <div class="education-approach">
 
@@ -2154,3 +2309,4 @@ footer p {
 </body>
 
 </html>
+```
