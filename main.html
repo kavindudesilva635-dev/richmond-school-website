@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -768,7 +767,6 @@ section {
 }
 
 
-```css
 /* =========================
    ACADEMICS
 ========================= */
@@ -855,27 +853,10 @@ section {
     margin-bottom: 22px;
 }
 
-/* Pearson Edexcel Highlight */
 
-.edexcel-highlight {
-    background: #ffffff;
-    border: 1px solid #eee7f5;
-    border-radius: 12px;
-    padding: 18px;
-    margin: 5px auto 22px;
-    max-width: 270px;
-    box-shadow: 0 5px 18px rgba(50,20,95,0.08);
-}
-
-.edexcel-label {
-    display: block;
-    color: #32145f;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
+/* =========================
+   PEARSON EDEXCEL LOGO
+========================= */
 
 .edexcel-logo {
     width: 190px;
@@ -883,8 +864,13 @@ section {
     height: 60px;
     object-fit: contain;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 22px;
 }
+
+
+/* =========================
+   ACADEMICS RESPONSIVE
+========================= */
 
 @media (max-width: 800px) {
 
@@ -904,9 +890,12 @@ section {
     .academics-intro {
         font-size: 15px;
     }
+
+    .edexcel-logo {
+        width: 180px;
+        height: 58px;
+    }
 }
-
-
 
 
 /* =========================
@@ -1418,6 +1407,11 @@ footer p {
         height: 225px;
     }
 
+    .edexcel-logo {
+        width: 165px;
+        height: 55px;
+    }
+
 }
 
 </style>
@@ -1549,7 +1543,7 @@ footer p {
 
         <div class="principal-content">
 
-           <h3>Kerry Turner</h3>
+            <h3>Kerry Turner</h3>
 
             <div class="principal-role">
                 Principal – Al Markhiya Main Branch
@@ -1607,12 +1601,15 @@ footer p {
                 </div>
 
                 <div class="principal-detail">
+
                     <img
                         src="uk-flag.png"
                         alt="UK Flag"
                         class="uk-flag"
                     >
+
                     British
+
                 </div>
 
             </div>
@@ -1622,7 +1619,7 @@ footer p {
                 Warm regards,
                 <br>
 
-               <strong>Kerry Turner</strong>
+                <strong>Kerry Turner</strong>
 
                 <br>
 
@@ -1663,57 +1660,98 @@ footer p {
     <div class="why-grid">
 
         <div class="why-card">
+
             <div class="why-icon">🎓</div>
-            <h3>Quality Education</h3>
+
+            <h3>
+                Quality Education
+            </h3>
+
             <p>
                 We provide a strong educational foundation that supports
                 academic growth and lifelong learning.
             </p>
+
         </div>
 
+
         <div class="why-card">
+
             <div class="why-icon">🌟</div>
-            <h3>Experienced Leadership</h3>
+
+            <h3>
+                Experienced Leadership
+            </h3>
+
             <p>
                 Our experienced leadership team works closely with staff,
                 students and parents to support school development.
             </p>
+
         </div>
 
+
         <div class="why-card">
+
             <div class="why-icon">❤️</div>
-            <h3>Safe & Caring Environment</h3>
+
+            <h3>
+                Safe & Caring Environment
+            </h3>
+
             <p>
                 We create a welcoming and caring environment where students
                 feel safe, valued and supported.
             </p>
+
         </div>
 
+
         <div class="why-card">
+
             <div class="why-icon">💡</div>
-            <h3>Modern Learning</h3>
+
+            <h3>
+                Modern Learning
+            </h3>
+
             <p>
                 We encourage students to develop creativity, confidence,
                 communication and digital skills.
             </p>
+
         </div>
 
+
         <div class="why-card">
+
             <div class="why-icon">🏆</div>
-            <h3>Student Development</h3>
+
+            <h3>
+                Student Development
+            </h3>
+
             <p>
                 We support students in developing their talents, interests,
                 confidence and personal responsibility.
             </p>
+
         </div>
 
+
         <div class="why-card">
+
             <div class="why-icon">🤝</div>
-            <h3>Strong Community</h3>
+
+            <h3>
+                Strong Community
+            </h3>
+
             <p>
                 We value strong partnerships between students, parents,
                 teachers and the wider school community.
             </p>
+
         </div>
 
     </div>
@@ -2023,11 +2061,6 @@ footer p {
      ACADEMICS
 ========================= -->
 
-```html
-<!-- =========================
-     ACADEMICS
-========================= -->
-
 <section id="academics">
 
     <h2 class="section-title">
@@ -2042,6 +2075,7 @@ footer p {
 
 
     <div class="academics-grid">
+
 
         <!-- EARLY YEARS -->
 
@@ -2089,21 +2123,15 @@ footer p {
                 British Curriculum
             </div>
 
-            <!-- Pearson Edexcel Highlight -->
 
-            <div class="edexcel-highlight">
+            <!-- PEARSON EDEXCEL LOGO -->
 
-                <span class="edexcel-label">
-                    Curriculum & Qualifications
-                </span>
+            <img
+                src="Pearson-Edexcel-logo.svg"
+                alt="Pearson Edexcel"
+                class="edexcel-logo"
+            >
 
-                <img
-                    src="edexcel-logo.png"
-                    alt="Pearson Edexcel"
-                    class="edexcel-logo"
-                >
-
-            </div>
 
             <p>
                 Building strong academic foundations through
@@ -2117,7 +2145,6 @@ footer p {
     </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -2456,4 +2483,3 @@ footer p {
 </body>
 
 </html>
-
