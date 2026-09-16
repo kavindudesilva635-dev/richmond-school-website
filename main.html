@@ -1523,6 +1523,73 @@ footer p {
         font-size: 13px !important;
     }
 }
+
+/* =========================================================
+   ADMISSION ENQUIRY - MOBILE MATCHES DESKTOP DESIGN
+========================================================= */
+@media (max-width: 900px) {
+    #admissions > div[style*="max-width:600px"] {
+        width: 100% !important;
+        max-width: 600px !important;
+        margin: 40px auto 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] h3 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 20px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] form {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] input,
+    #admissions > div[style*="max-width:600px"] textarea {
+        width: 100% !important;
+        display: block !important;
+        font-size: 16px !important;
+        border: 1px solid #d8d8d8 !important;
+        border-radius: 5px !important;
+        background: #fff !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] textarea {
+        min-height: 130px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] .button {
+        display: inline-block !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 5px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #admissions > div[style*="max-width:600px"] {
+        padding: 0 2px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] h3 {
+        font-size: 22px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] input,
+    #admissions > div[style*="max-width:600px"] textarea {
+        font-size: 15px !important;
+        padding: 14px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] .button {
+        width: calc(100% - 10px) !important;
+        box-sizing: border-box !important;
+        margin: 5px !important;
+    }
+}
+
 </style>
 
 </head>
@@ -2207,93 +2274,61 @@ footer p {
     </div>
 
 
-    <div style="max-width:600px;margin:40px auto 0;">
+    <div class="admission-enquiry-form" style="max-width:600px;margin:40px auto 0;">
 
-        <h3
-            style="
-            text-align:center;
-            color:#32145f;
-            margin-bottom:20px;
-            "
-        >
+        <h3 style="text-align:center;color:#32145f;margin-bottom:10px;">
             Enquire About Admission
         </h3>
 
+        <p style="text-align:center;color:#555;margin-bottom:20px;">
+            Complete the form below and our admissions team will contact you.
+        </p>
 
-        <form
-            action="https://formspree.io/f/mbgjnepv"
-            method="POST"
-        >
+        <form action="https://formspree.io/f/mbgjnepv" method="POST">
 
-            <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                style="
-                width:100%;
-                padding:14px;
-                margin:8px 0;
-                box-sizing:border-box;
-                "
-            >
+            <label for="parentName"><strong>Parent / Guardian Name</strong></label>
+            <input id="parentName" type="text" name="parent_guardian_name" placeholder="Parent / Guardian Name" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
 
+            <label for="email"><strong>Email Address</strong></label>
+            <input id="email" type="email" name="email" placeholder="Email Address" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                style="
-                width:100%;
-                padding:14px;
-                margin:8px 0;
-                box-sizing:border-box;
-                "
-            >
+            <label for="phone"><strong>Phone Number</strong></label>
+            <input id="phone" type="tel" name="phone" placeholder="Phone Number" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
 
+            <label for="studentName"><strong>Student Name</strong></label>
+            <input id="studentName" type="text" name="student_name" placeholder="Student Name" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
 
-            <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                style="
-                width:100%;
-                padding:14px;
-                margin:8px 0;
-                box-sizing:border-box;
-                "
-            >
+            <label for="yearGroup"><strong>Year Group</strong></label>
+            <select id="yearGroup" name="year_group" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;background:white;">
+                <option value="" disabled selected>Select Year Group</option>
+                <option value="FS1">FS1</option>
+                <option value="FS2">FS2</option>
+                <option value="Year 1">Year 1</option>
+                <option value="Year 2">Year 2</option>
+                <option value="Year 3">Year 3</option>
+                <option value="Year 4">Year 4</option>
+                <option value="Year 5">Year 5</option>
+                <option value="Year 6">Year 6</option>
+            </select>
 
+            <label for="visitDate"><strong>Preferred Visit Date</strong></label>
+            <input id="visitDate" type="date" name="preferred_visit_date"
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
 
-            <textarea
-                name="message"
-                placeholder="Your Message"
-                required
-                rows="5"
-                style="
-                width:100%;
-                padding:14px;
-                margin:8px 0;
-                box-sizing:border-box;
-                resize:vertical;
-                "
-            ></textarea>
-
+            <label for="message"><strong>Message</strong></label>
+            <textarea id="message" name="message" placeholder="Message" required rows="5"
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;resize:vertical;"></textarea>
 
             <div style="text-align:center;margin-top:15px;">
-
-                <button
-                    type="submit"
-                    class="button"
-                    style="
-                    background:#d4af37;
-                    color:#32145f;
-                    "
-                >
+                <button type="submit" class="button"
+                    style="background:#d4af37;color:#32145f;">
                     Send Enquiry
                 </button>
-
             </div>
 
         </form>
