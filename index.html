@@ -49,16 +49,87 @@ body {
     flex-wrap: wrap;
 }
 
+/* =========================
+   PROFESSIONAL LOGO AREA
+========================= */
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 35px;
+
+    margin: 0 auto 35px;
+
+    padding: 22px 35px;
+
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid rgba(224, 189, 99, 0.65);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(8px);
+
+    position: relative;
+}
+
 .logo-main {
-    width: 250px;
+    width: 280px;
     height: auto;
+    max-height: 100px;
     object-fit: contain;
+
+    filter: drop-shadow(
+        0 4px 8px rgba(0, 0, 0, 0.15)
+    );
+
+    transition: transform 0.3s ease;
 }
 
 .logo-rikah {
-    width: 230px;
+    width: 250px;
     height: auto;
+    max-height: 95px;
     object-fit: contain;
+
+    filter: drop-shadow(
+        0 4px 8px rgba(0, 0, 0, 0.15)
+    );
+
+    transition: transform 0.3s ease;
+}
+
+.logo-main:hover,
+.logo-rikah:hover {
+    transform: scale(1.04);
+}
+
+.logos::after {
+    content: "";
+
+    position: absolute;
+
+    width: 2px;
+    height: 55px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #d4af37,
+        transparent
+    );
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
 }
 
 /* MAIN TITLE */
