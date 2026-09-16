@@ -8,9 +8,9 @@
 
 <style>
 
-/* =========================
+/* =========================================================
    RESET
-========================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -18,134 +18,263 @@
     box-sizing: border-box;
 }
 
-
-/* =========================
-   BODY
-========================= */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f5f8;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07152f;
     color: #17233c;
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
     min-height: 100vh;
 
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 20px 35px;
+
     background:
         linear-gradient(
             135deg,
-            rgba(31, 15, 58, 0.96),
-            rgba(6, 24, 55, 0.94)
+            rgba(25, 10, 52, 0.97),
+            rgba(5, 25, 55, 0.96)
         ),
-        url("school.jpg") center/cover no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 55px 20px;
-
-    position: relative;
-    overflow: hidden;
+        url("school.jpg") center center / cover no-repeat;
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(212, 175, 55, 0.12);
+
+    top: -220px;
+    right: -180px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    bottom: -190px;
+    left: -150px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
 
 .container {
-    max-width: 1000px;
     width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
 }
 
 
-/* =========================
-   MAIN TITLE
-========================= */
+/* =========================================================
+   TOP BADGE
+========================================================= */
 
-h1 {
+.top-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 9px 18px;
+
+    margin-bottom: 24px;
+
+    border: 1px solid rgba(212, 175, 55, 0.55);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.06);
+
     color: #e0bd63;
 
-    font-size: 56px;
+    font-size: 12px;
+
     font-weight: 700;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
 
-    margin-bottom: 15px;
+    text-transform: uppercase;
 
-    text-shadow:
-        0 3px 18px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+}
+
+.top-badge span {
+    width: 6px;
+    height: 6px;
+
+    background: #d4af37;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.8);
 }
 
 
-/* =========================
-   SUBTITLE
-========================= */
+/* =========================================================
+   MAIN TITLE
+========================================================= */
 
-.subtitle {
-    color: #f1f3f6;
+h1 {
+    color: #ffffff;
+
+    font-size: clamp(38px, 5vw, 64px);
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 4px 25px rgba(0, 0, 0, 0.35);
+}
+
+h1 strong {
+    color: #e0bd63;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.tagline {
+    color: #e0bd63;
 
     font-size: 20px;
 
-    line-height: 1.6;
+    font-weight: 600;
 
-    margin-bottom: 45px;
+    letter-spacing: 0.4px;
+
+    margin-bottom: 8px;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 42px;
 }
 
 
-/* =========================
-   BRANCHES
-========================= */
+/* =========================================================
+   CAMPUS SECTION HEADER
+========================================================= */
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+.section-heading p {
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   BRANCH CARDS
+========================================================= */
 
 .branches {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 32px;
+    gap: 28px;
 
-    max-width: 850px;
+    max-width: 900px;
 
     margin: 0 auto;
 }
 
 
-/* =========================
-   BRANCH CARD
-========================= */
+/* =========================================================
+   CARD
+========================================================= */
 
 .branch-card {
     position: relative;
 
-    min-height: 370px;
+    min-height: 390px;
+
+    padding: 38px 34px;
 
     background:
         linear-gradient(
             145deg,
-            #ffffff 0%,
-            #f8f6fc 100%
+            rgba(255, 255, 255, 0.98),
+            rgba(247, 246, 251, 0.98)
         );
 
-    border:
-        1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 24px;
 
-    border-radius: 26px;
-
-    padding: 42px 32px;
+    border: 1px solid rgba(212, 175, 55, 0.28);
 
     text-decoration: none;
-
-    color: #17233c;
 
     display: flex;
 
@@ -158,7 +287,7 @@ h1 {
     overflow: hidden;
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.22);
+        0 20px 55px rgba(0, 0, 0, 0.25);
 
     transition:
         transform 0.35s ease,
@@ -167,9 +296,7 @@ h1 {
 }
 
 
-/* =========================
-   CARD TOP LINE
-========================= */
+/* TOP GOLD LINE */
 
 .branch-card::before {
     content: "";
@@ -180,7 +307,7 @@ h1 {
     left: 0;
 
     width: 100%;
-    height: 5px;
+    height: 4px;
 
     background:
         linear-gradient(
@@ -192,71 +319,92 @@ h1 {
 }
 
 
-/* =========================
-   CARD DECORATION
-========================= */
+/* BACKGROUND CIRCLE */
 
 .branch-card::after {
     content: "";
 
     position: absolute;
 
-    width: 170px;
-    height: 170px;
-
-    background:
-        rgba(212, 175, 55, 0.08);
+    width: 230px;
+    height: 230px;
 
     border-radius: 50%;
 
-    top: -75px;
-    right: -75px;
+    background:
+        rgba(50, 20, 95, 0.035);
+
+    top: -120px;
+    right: -100px;
 
     transition:
-        transform 0.4s ease;
+        transform 0.5s ease;
 }
 
 
-/* =========================
-   CARD HOVER
-========================= */
+/* HOVER */
 
 .branch-card:hover {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
 
     border-color:
-        rgba(212, 175, 55, 0.75);
+        rgba(212, 175, 55, 0.65);
 
     box-shadow:
-        0 28px 60px rgba(0, 0, 0, 0.30);
+        0 30px 65px rgba(0, 0, 0, 0.32);
 }
-
 
 .branch-card:hover::after {
     transform: scale(1.35);
 }
 
 
-/* =========================
-   BRANCH LOGO
-========================= */
+/* =========================================================
+   CARD BADGE
+========================================================= */
+
+.card-badge {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 6px 13px;
+
+    border-radius: 50px;
+
+    background: #f1edf7;
+
+    color: #32145f;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .icon {
-    width: 230px;
-    height: 95px;
+    position: relative;
+
+    z-index: 2;
+
+    width: 235px;
+    height: 100px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 25px;
-
-    position: relative;
-
-    z-index: 2;
+    margin-bottom: 20px;
 }
-
 
 .icon img {
     width: 100%;
@@ -266,76 +414,75 @@ h1 {
 
     filter:
         drop-shadow(
-            0 3px 6px rgba(0, 0, 0, 0.12)
+            0 4px 8px rgba(0, 0, 0, 0.10)
         );
 
     transition:
-        transform 0.3s ease;
+        transform 0.35s ease;
 }
-
 
 .branch-card:hover .icon img {
-    transform: scale(1.04);
+    transform: scale(1.045);
 }
 
 
-/* =========================
+/* =========================================================
    CARD TITLE
-========================= */
+========================================================= */
 
-.branch-card h2 {
+.branch-card h3 {
     position: relative;
 
     z-index: 2;
 
     color: #32145f;
 
-    font-size: 24px;
+    font-size: 23px;
+
+    line-height: 1.3;
 
     font-weight: 700;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
     text-align: center;
 }
 
 
-/* =========================
-   GOLD UNDERLINE
-========================= */
+/* GOLD LINE */
 
-.branch-card h2::after {
-    content: "";
+.card-line {
+    position: relative;
 
-    display: block;
+    z-index: 2;
 
-    width: 45px;
+    width: 42px;
     height: 3px;
 
     background: #d4af37;
 
-    border-radius: 5px;
+    border-radius: 10px;
 
-    margin: 10px auto 0;
+    margin-bottom: 15px;
 }
 
 
-/* =========================
-   DESCRIPTION
-========================= */
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
 
 .branch-card p {
     position: relative;
 
     z-index: 2;
 
-    color: #667085;
+    max-width: 330px;
 
-    font-size: 15px;
+    color: #687084;
 
-    line-height: 1.7;
+    font-size: 14px;
 
-    max-width: 280px;
+    line-height: 1.65;
 
     text-align: center;
 
@@ -343,9 +490,9 @@ h1 {
 }
 
 
-/* =========================
+/* =========================================================
    BUTTON
-========================= */
+========================================================= */
 
 .button {
     position: relative;
@@ -357,137 +504,272 @@ h1 {
     align-items: center;
     justify-content: center;
 
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    border-radius: 9px;
+
     background: #32145f;
 
     color: #ffffff;
 
-    padding: 13px 28px;
-
-    border-radius: 10px;
-
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 700;
 
+    letter-spacing: 0.2px;
+
     box-shadow:
-        0 8px 18px rgba(50, 20, 95, 0.25);
+        0 8px 18px rgba(50, 20, 95, 0.22);
 
     transition:
         background 0.3s ease,
+        color 0.3s ease,
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
 
-/* =========================
-   BUTTON HOVER
-========================= */
+/* ARROW */
+
+.arrow {
+    font-size: 18px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* BUTTON HOVER */
 
 .branch-card:hover .button {
     background: #d4af37;
 
     color: #17233c;
 
-    transform: translateY(-2px);
-
     box-shadow:
-        0 10px 22px rgba(212, 175, 55, 0.30);
+        0 10px 24px rgba(212, 175, 55, 0.28);
+}
+
+.branch-card:hover .arrow {
+    transform: translateX(4px);
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer {
-    margin-top: 45px;
+    margin-top: 42px;
 
-    color: #d9dce3;
+    padding-top: 18px;
 
-    font-size: 14px;
+    border-top:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 12px;
 
     letter-spacing: 0.3px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
 
-@media (max-width: 700px) {
+.branch-card:focus-visible {
+    outline: 3px solid #e0bd63;
+
+    outline-offset: 5px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
 
     .hero {
-        padding: 40px 15px;
+        padding:
+            55px
+            20px
+            30px;
     }
 
+    .branches {
+        gap: 20px;
+    }
 
-    /* TITLE */
+    .branch-card {
+        padding: 32px 22px;
+    }
+
+    .icon {
+        width: 210px;
+        height: 90px;
+    }
+
+    .branch-card h3 {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+    .hero {
+        min-height: 100vh;
+
+        padding:
+            45px
+            16px
+            25px;
+    }
+
+    .top-badge {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+        padding: 8px 14px;
+
+        margin-bottom: 20px;
+    }
 
     h1 {
-        font-size: 38px;
+        font-size: 39px;
+
+        letter-spacing: -0.5px;
     }
 
-
-    .subtitle {
-        font-size: 17px;
-
-        margin-bottom: 35px;
+    .tagline {
+        font-size: 18px;
     }
 
+    .description {
+        font-size: 14px;
 
-    /* BRANCHES */
+        margin-bottom: 32px;
+    }
+
+    .section-heading {
+        margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 18px;
+    }
 
     .branches {
         grid-template-columns: 1fr;
 
-        max-width: 380px;
+        max-width: 410px;
 
-        gap: 25px;
+        gap: 20px;
     }
-
-
-    /* CARD */
 
     .branch-card {
         min-height: 350px;
 
-        padding: 38px 25px;
+        padding:
+            32px
+            22px;
     }
-
-
-    /* CARD LOGO */
 
     .icon {
         width: 220px;
         height: 90px;
     }
+
+    .branch-card h3 {
+        font-size: 21px;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
 }
 
 
-/* =========================
+/* =========================================================
    SMALL MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 400px) {
+
+    .hero {
+        padding:
+            35px
+            13px
+            22px;
+    }
 
     h1 {
         font-size: 32px;
     }
 
-
-    .subtitle {
+    .tagline {
         font-size: 16px;
     }
 
-
-    .icon {
-        width: 200px;
-        height: 85px;
+    .description {
+        font-size: 13px;
     }
 
+    .icon {
+        width: 195px;
+        height: 82px;
+    }
 
-    .branch-card h2 {
-        font-size: 21px;
+    .branch-card {
+        min-height: 335px;
+    }
+
+    .branch-card h3 {
+        font-size: 19px;
+    }
+
+    .branch-card p {
+        font-size: 13px;
+    }
+
+    .button {
+        padding:
+            11px
+            19px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
     }
 }
 
@@ -503,94 +785,168 @@ h1 {
     <div class="container">
 
 
-        <!-- =========================
-             MAIN TITLE
-        ========================== -->
+        <!-- TOP BADGE -->
+
+        <div class="top-badge">
+
+            <span></span>
+
+            RICHMOND INTERNATIONAL SCHOOL • DOHA
+
+        </div>
+
+
+        <!-- MAIN TITLE -->
 
         <h1>
-            Welcome to Richmond International School – Doha
+
+            Welcome to
+            <strong>Richmond International School</strong>
+
         </h1>
 
 
-        <p class="subtitle">
+        <!-- TAGLINE -->
+
+        <div class="tagline">
+
             Nurturing tomorrow’s leaders
-            <br>
-            Please select your school branch
+
+        </div>
+
+
+        <p class="description">
+
+            Explore our campuses and discover the right learning environment
+            for your child.
+
         </p>
 
 
-        <!-- =========================
-             BRANCH CARDS
-        ========================== -->
+        <!-- SECTION TITLE -->
+
+        <div class="section-heading">
+
+            <h2>
+                Explore Our Campuses
+            </h2>
+
+            <p>
+                Please select a campus to continue
+            </p>
+
+        </div>
+
+
+        <!-- BRANCHES -->
 
         <div class="branches">
 
 
-            <!-- MAIN BRANCH -->
+            <!-- MAIN CAMPUS -->
 
             <a
                 href="main.html"
                 class="branch-card"
+                aria-label="Visit Al Markhiya Main Branch"
             >
+
+                <div class="card-badge">
+
+                    MAIN CAMPUS
+
+                </div>
+
 
                 <div class="icon">
 
                     <img
                         src="Rich_logo_250x88-01.png"
-                        alt="Richmond International School"
+                        alt="Richmond International School logo"
                     >
 
                 </div>
 
 
-                <h2>
+                <h3>
+
                     Al Markhiya Main Branch
-                </h2>
+
+                </h3>
+
+
+                <div class="card-line"></div>
 
 
                 <p>
+
                     Richmond International School –
                     Al Markhiya Main Branch
+
                 </p>
 
 
                 <span class="button">
+
                     Visit Main Branch
+
+                    <span class="arrow">→</span>
+
                 </span>
 
             </a>
 
 
-            <!-- KINDERGARTEN BRANCH -->
+
+            <!-- KINDERGARTEN CAMPUS -->
 
             <a
                 href="kindergarten.html"
                 class="branch-card"
+                aria-label="Visit Abu Hamour Kindergarten Branch"
             >
+
+                <div class="card-badge">
+
+                    EARLY YEARS
+
+                </div>
+
 
                 <div class="icon">
 
                     <img
                         src="RIKAH_LOGO_525x185.png"
-                        alt="Richmond International Kindergarten"
+                        alt="Richmond International Kindergarten logo"
                     >
 
                 </div>
 
 
-                <h2>
+                <h3>
+
                     Abu Hamour Kindergarten Branch
-                </h2>
+
+                </h3>
+
+
+                <div class="card-line"></div>
 
 
                 <p>
+
                     Richmond International Kindergarten –
                     Abu Hamour Branch
+
                 </p>
 
 
                 <span class="button">
+
                     Visit Kindergarten
+
+                    <span class="arrow">→</span>
+
                 </span>
 
             </a>
@@ -599,13 +955,13 @@ h1 {
         </div>
 
 
-        <!-- =========================
-             FOOTER
-        ========================== -->
+        <!-- FOOTER -->
 
         <div class="footer">
 
             © 2026 Richmond International School – Doha
+            &nbsp;•&nbsp;
+            All Rights Reserved
 
         </div>
 
