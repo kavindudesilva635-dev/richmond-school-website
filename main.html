@@ -39,19 +39,14 @@ body {
 header {
     background: #32145f;
     color: white;
-
     padding: 12px 5%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     position: sticky;
     top: 0;
     z-index: 1000;
-
     box-shadow: 0 5px 22px rgba(0, 0, 0, 0.20);
-
     border-bottom: 3px solid #d4af37;
 }
 
@@ -66,36 +61,22 @@ header {
     gap: 20px;
 }
 
-
-/* SCHOOL LOGO */
-
 .logo-area img {
     width: 230px;
     height: 95px;
-
     object-fit: contain;
-
     background: white;
-
     padding: 9px 15px;
-
     border-radius: 13px;
-
     border: 2px solid #d4af37;
-
     box-shadow:
         0 5px 18px rgba(0, 0, 0, 0.30),
         0 0 0 3px rgba(212, 175, 55, 0.12);
-
     transition: all 0.3s ease;
 }
 
-
-/* LOGO HOVER */
-
 .logo-area img:hover {
     transform: scale(1.03);
-
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.35),
         0 0 18px rgba(212, 175, 55, 0.35);
@@ -113,129 +94,85 @@ header {
 
 .school-name h1 {
     color: white;
-
     font-size: 20px;
-
     font-weight: 700;
-
     line-height: 1.2;
-
     white-space: nowrap;
 }
 
 .school-name p {
     color: #e6c96a;
-
     margin-top: 5px;
-
     font-size: 12px;
-
     font-weight: 600;
 }
 
 
 /* =========================
-   PROFESSIONAL NAVBAR
+   NAVBAR
 ========================= */
 
 .main-nav {
     display: flex;
     align-items: center;
-
     gap: 3px;
 }
 
 .main-nav a {
     position: relative;
-
     color: white;
-
     text-decoration: none;
-
     padding: 11px 13px;
-
     border-radius: 6px;
-
     font-size: 14px;
-
     font-weight: 600;
-
     transition: all 0.3s ease;
-
     white-space: nowrap;
 }
 
-
-/* NAV HOVER */
-
 .main-nav a:hover {
     color: #d4af37;
-
     background: rgba(255, 255, 255, 0.07);
 }
-
-
-/* ACTIVE MENU */
 
 .main-nav a.active {
     color: #d4af37;
 }
 
-
-/* ACTIVE GOLD UNDERLINE */
-
 .main-nav a.active::after {
     content: "";
-
     position: absolute;
-
     left: 13px;
     right: 13px;
-
     bottom: 3px;
-
     height: 2px;
-
     background: #d4af37;
-
     border-radius: 5px;
 }
 
 
 /* =========================
-   APPLY NOW BUTTON
+   APPLY BUTTON
 ========================= */
 
 .main-nav .apply-btn {
     margin-left: 10px;
-
     padding: 11px 20px;
-
     background: #d4af37;
-
     color: #32145f;
-
     border: 2px solid #d4af37;
-
     border-radius: 6px;
-
     font-weight: 700;
-
     box-shadow:
         0 4px 13px rgba(212, 175, 55, 0.25);
 }
 
-
 .main-nav .apply-btn:hover {
     background: transparent;
-
     color: #d4af37;
-
     border-color: #d4af37;
-
     transform: translateY(-2px);
 }
-
 
 .main-nav .apply-btn::after {
     display: none;
@@ -248,19 +185,12 @@ header {
 
 .hero {
     min-height: 650px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     color: white;
-
     position: relative;
-
     overflow: hidden;
 
     background:
@@ -272,18 +202,12 @@ header {
         url("school.jpg");
 
     background-size: cover;
-
     background-position: center;
 }
 
-
-/* HERO LIGHT EFFECT */
-
 .hero::before {
     content: "";
-
     position: absolute;
-
     inset: 0;
 
     background:
@@ -300,19 +224,12 @@ header {
         );
 }
 
-
-/* HERO GOLD BOTTOM LINE */
-
 .hero::after {
     content: "";
-
     position: absolute;
-
     left: 0;
     right: 0;
-
     bottom: 0;
-
     height: 6px;
 
     background: linear-gradient(
@@ -323,68 +240,39 @@ header {
     );
 }
 
-
-/* HERO CONTENT */
-
 .hero-content {
     position: relative;
-
     z-index: 2;
-
     max-width: 950px;
-
     padding: 40px 25px;
 }
 
-
-/* SMALL GOLD LINE */
-
 .hero-content::before {
     content: "";
-
     display: block;
-
     width: 75px;
-
     height: 4px;
-
     background: #d4af37;
-
     margin: 0 auto 25px;
-
     border-radius: 10px;
 }
 
-
-/* HERO TITLE */
-
 .hero h2 {
     font-size: 58px;
-
     line-height: 1.12;
-
     font-weight: 800;
-
     letter-spacing: -1px;
-
     margin-bottom: 25px;
 
     text-shadow:
         0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
-
-/* HERO DESCRIPTION */
-
 .hero p {
     max-width: 780px;
-
     margin: 0 auto 38px;
-
     font-size: 19px;
-
     line-height: 1.8;
-
     color: #f5f5f5;
 }
 
@@ -395,34 +283,20 @@ header {
 
 .button {
     display: inline-block;
-
     padding: 15px 30px;
-
     margin: 5px;
-
     border-radius: 7px;
-
     text-decoration: none;
-
     font-weight: 700;
-
     font-size: 15px;
-
     transition: all 0.3s ease;
-
     cursor: pointer;
-
     border: none;
 }
 
-
-/* HERO PRIMARY BUTTON */
-
 .hero .button:first-of-type {
     background: #d4af37;
-
     color: #32145f;
-
     border: 2px solid #d4af37;
 
     box-shadow:
@@ -431,32 +305,21 @@ header {
 
 .hero .button:first-of-type:hover {
     background: white;
-
     color: #32145f;
-
     border-color: white;
-
     transform: translateY(-3px);
 }
 
-
-/* HERO SECONDARY BUTTON */
-
 .hero .button:last-of-type {
     background: transparent;
-
     color: white;
-
     border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .hero .button:last-of-type:hover {
     background: white;
-
     color: #32145f;
-
     border-color: white;
-
     transform: translateY(-3px);
 }
 
@@ -469,84 +332,197 @@ section {
     padding: 75px 8%;
 }
 
-
-/* SECTION TITLE */
-
 .section-title {
     text-align: center;
-
     color: #32145f;
-
     font-size: 34px;
-
     margin-bottom: 20px;
-
     font-weight: 700;
 }
 
-
-/* GOLD TITLE LINE */
-
 .section-title::after {
     content: "";
-
     display: block;
-
     width: 55px;
-
     height: 3px;
-
     background: #d4af37;
-
     margin: 12px auto 0;
-
     border-radius: 5px;
 }
 
-
-/* SECTION TEXT */
-
 .section-text {
     max-width: 850px;
-
     margin: auto;
-
     text-align: center;
-
     line-height: 1.8;
-
     font-size: 17px;
-
     color: #555;
 }
 
 
 /* =========================
-   CARDS
+   PRINCIPAL WELCOME
+========================= */
+
+#principal {
+    background: #f7f5fa;
+}
+
+.principal-wrap {
+    max-width: 1100px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+    gap: 50px;
+    align-items: center;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 18px;
+
+    border-left: 5px solid #d4af37;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* PRINCIPAL PHOTO */
+
+.principal-photo {
+    width: 240px;
+    height: 290px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 3px solid #d4af37;
+
+    background: #32145f;
+
+    box-shadow:
+        0 10px 28px rgba(50, 20, 95, 0.20);
+}
+
+.principal-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* PRINCIPAL CONTENT */
+
+.principal-content h3 {
+    color: #32145f;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.principal-role {
+    color: #d4af37;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.principal-content p {
+    color: #555;
+
+    line-height: 1.85;
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+}
+
+
+/* PRINCIPAL DETAILS */
+
+.principal-details {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 22px 0;
+}
+
+.principal-detail {
+    background: #f4f1f8;
+
+    color: #32145f;
+
+    padding: 9px 14px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    border-left: 3px solid #d4af37;
+}
+
+
+/* SIGNATURE */
+
+.principal-signature {
+    margin-top: 25px;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+.principal-signature strong {
+    color: #32145f;
+
+    font-size: 18px;
+}
+
+.principal-signature span {
+    color: #d4af37;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   ACADEMIC CARDS
 ========================= */
 
 .cards {
     display: flex;
-
     gap: 25px;
-
     justify-content: center;
-
     margin-top: 40px;
-
     flex-wrap: wrap;
 }
 
-
 .card {
     background: white;
-
     width: 290px;
-
     padding: 32px;
-
     border-radius: 12px;
-
     text-align: center;
 
     box-shadow:
@@ -557,7 +533,6 @@ section {
     transition: all 0.3s ease;
 }
 
-
 .card:hover {
     transform: translateY(-8px);
 
@@ -565,19 +540,14 @@ section {
         0 12px 30px rgba(50, 20, 95, 0.15);
 }
 
-
 .card h3 {
     color: #32145f;
-
     margin-bottom: 15px;
-
     font-size: 21px;
 }
 
-
 .card p {
     line-height: 1.7;
-
     color: #555;
 }
 
@@ -590,7 +560,6 @@ section {
     background: #f1edf7;
 }
 
-
 .student-life-grid {
     display: grid;
 
@@ -602,7 +571,6 @@ section {
 
     margin: 40px auto 0;
 }
-
 
 .student-life-card {
     background: white;
@@ -621,7 +589,6 @@ section {
     transition: all 0.3s ease;
 }
 
-
 .student-life-card:hover {
     transform: translateY(-7px);
 
@@ -629,28 +596,20 @@ section {
         0 12px 28px rgba(50, 20, 95, 0.14);
 }
 
-
 .student-life-icon {
     font-size: 38px;
-
     margin-bottom: 12px;
 }
 
-
 .student-life-card h3 {
     color: #32145f;
-
     margin-bottom: 10px;
-
     font-size: 20px;
 }
 
-
 .student-life-card p {
     color: #555;
-
     line-height: 1.7;
-
     font-size: 15px;
 }
 
@@ -662,9 +621,6 @@ section {
 #admissions {
     background: white;
 }
-
-
-/* FORM */
 
 #admissions input,
 #admissions textarea {
@@ -695,7 +651,6 @@ section {
     background: #f7f7f7;
 }
 
-
 .gallery-image {
     display: block;
 
@@ -713,7 +668,6 @@ section {
     transition: transform 0.3s ease;
 }
 
-
 .gallery-image:hover {
     transform: scale(1.01);
 }
@@ -726,7 +680,6 @@ section {
 #contact {
     background: white;
 }
-
 
 .contact-box {
     max-width: 700px;
@@ -747,10 +700,8 @@ section {
     line-height: 2;
 }
 
-
 .contact-box strong {
     color: #32145f;
-
     font-size: 18px;
 }
 
@@ -771,21 +722,18 @@ footer {
     border-top: 4px solid #d4af37;
 }
 
-
 footer p {
     margin: 8px;
 }
 
-
 .gold {
     color: #d4af37;
-
     font-weight: 600;
 }
 
 
 /* =========================
-   MOBILE
+   TABLET
 ========================= */
 
 @media(max-width: 1100px) {
@@ -816,8 +764,19 @@ footer p {
         padding: 10px 14px;
         margin-left: 5px;
     }
+
+    .principal-wrap {
+        grid-template-columns: 250px 1fr;
+        gap: 35px;
+        padding: 35px;
+    }
+
 }
 
+
+/* =========================
+   TABLET / MOBILE
+========================= */
 
 @media(max-width: 900px) {
 
@@ -829,11 +788,9 @@ footer p {
         text-align: center;
     }
 
-
     .logo-area {
         justify-content: center;
     }
-
 
     .main-nav {
         width: 100%;
@@ -843,17 +800,30 @@ footer p {
         flex-wrap: wrap;
     }
 
-
     .student-life-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .principal-wrap {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        max-width: 700px;
+    }
+
+    .principal-details {
+        justify-content: center;
     }
 
 }
 
 
-@media(max-width: 800px) {
+/* =========================
+   MOBILE
+========================= */
 
-    /* HEADER */
+@media(max-width: 800px) {
 
     header {
         padding: 14px 20px;
@@ -863,8 +833,6 @@ footer p {
         gap: 14px;
     }
 
-
-    /* LOGO */
 
     .logo-area {
         flex-direction: column;
@@ -881,8 +849,6 @@ footer p {
         padding: 8px 12px;
     }
 
-
-    /* SCHOOL NAME */
 
     .school-name {
         border-left: none;
@@ -906,8 +872,6 @@ footer p {
         font-size: 12px;
     }
 
-
-    /* NAVIGATION */
 
     .main-nav {
         width: 100%;
@@ -964,8 +928,6 @@ footer p {
     }
 
 
-    /* BUTTONS */
-
     .hero .button {
         display: block;
 
@@ -989,6 +951,41 @@ footer p {
 
     .section-text {
         font-size: 16px;
+    }
+
+
+    /* PRINCIPAL */
+
+    .principal-wrap {
+        padding: 28px 22px;
+
+        border-left: none;
+
+        border-top: 5px solid #d4af37;
+    }
+
+
+    .principal-photo {
+        width: 200px;
+
+        height: 245px;
+    }
+
+
+    .principal-content h3 {
+        font-size: 23px;
+    }
+
+
+    .principal-content p {
+        font-size: 15px;
+    }
+
+
+    .principal-details {
+        flex-direction: column;
+
+        align-items: stretch;
     }
 
 
@@ -1091,6 +1088,13 @@ footer p {
         width: 100%;
     }
 
+
+    .principal-photo {
+        width: 185px;
+
+        height: 225px;
+    }
+
 }
 
 </style>
@@ -1114,7 +1118,6 @@ footer p {
             alt="Richmond International School Logo"
         >
 
-
         <div class="school-name">
 
             <h1>
@@ -1130,42 +1133,31 @@ footer p {
     </div>
 
 
-    <!-- PROFESSIONAL NAVIGATION -->
-
     <nav class="main-nav">
 
-        <a
-            href="#home"
-            class="active"
-        >
+        <a href="#home" class="active">
             Home
         </a>
-
 
         <a href="#about">
             About
         </a>
 
-
         <a href="#academics">
             Academics
         </a>
-
 
         <a href="#admissions">
             Admissions
         </a>
 
-
         <a href="#student-life">
             Student Life
         </a>
 
-
         <a href="#contact">
             Contact
         </a>
-
 
         <a
             href="#admissions"
@@ -1196,7 +1188,6 @@ footer p {
             Building Future Leaders.
         </h2>
 
-
         <p>
 
             Welcome to Richmond International School –
@@ -1208,7 +1199,6 @@ footer p {
 
         </p>
 
-
         <a
             href="#admissions"
             class="button"
@@ -1216,13 +1206,156 @@ footer p {
             Apply for Admission
         </a>
 
-
         <a
             href="#contact"
             class="button"
         >
             Contact Us
         </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRINCIPAL WELCOME
+========================= -->
+
+<section id="principal">
+
+    <h2 class="section-title">
+        Welcome from the Principal
+    </h2>
+
+
+    <div class="principal-wrap">
+
+
+        <!-- PRINCIPAL PHOTO -->
+
+        <div class="principal-photo">
+
+            <img
+                src="principal.jpg"
+                alt="Kerryn Turner - Principal of Richmond International School"
+            >
+
+        </div>
+
+
+
+        <!-- PRINCIPAL INFORMATION -->
+
+        <div class="principal-content">
+
+            <h3>
+                Kerryn Turner
+            </h3>
+
+
+            <div class="principal-role">
+                Principal – Al Markhiya Main Branch
+            </div>
+
+
+            <p>
+
+                It is my pleasure to welcome you to
+                Richmond International School.
+
+                We are committed to creating a safe,
+                caring and inspiring environment where
+                every student is encouraged to learn,
+                grow and achieve their full potential.
+
+            </p>
+
+
+            <p>
+
+                At Richmond, we believe that education
+                is more than academic success.
+
+                We aim to develop confident, responsible
+                and respectful young people who are
+                prepared to make a positive contribution
+                to the world around them.
+
+            </p>
+
+
+            <p>
+
+                With a strong commitment to education
+                and student development, we look forward
+                to working together with our students,
+                parents and the wider school community
+                to create a successful and memorable
+                educational journey.
+
+            </p>
+
+
+
+            <!-- PRINCIPAL DETAILS -->
+
+            <div class="principal-details">
+
+                <div class="principal-detail">
+                    🎓 BA (Hons) Education
+                </div>
+
+                <div class="principal-detail">
+                    📘 PGCE
+                </div>
+
+                <div class="principal-detail">
+                    🎓 MA
+                </div>
+
+                <div class="principal-detail">
+                    🏫 NPQH
+                </div>
+
+                <div class="principal-detail">
+                    ⭐ 18 Years of Experience
+                </div>
+
+                <div class="principal-detail">
+                    🇬🇧 British
+                </div>
+
+            </div>
+
+
+
+            <!-- SIGNATURE -->
+
+            <div class="principal-signature">
+
+                Warm regards,
+
+                <br>
+
+                <strong>
+                    Kerryn Turner
+                </strong>
+
+                <br>
+
+                <span>
+                    Principal
+                </span>
+
+                <br>
+
+                Richmond International School
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -1279,8 +1412,6 @@ footer p {
     <div class="cards">
 
 
-        <!-- EARLY YEARS -->
-
         <div class="card">
 
             <h3>
@@ -1297,9 +1428,6 @@ footer p {
 
         </div>
 
-
-
-        <!-- PRIMARY -->
 
         <div class="card">
 
@@ -1347,8 +1475,6 @@ footer p {
     </p>
 
 
-    <!-- ADMISSION BUTTONS -->
-
     <div
         style="
         text-align:center;
@@ -1383,8 +1509,6 @@ footer p {
     </div>
 
 
-
-    <!-- ADMISSION FORM -->
 
     <div
         style="
@@ -1517,8 +1641,6 @@ footer p {
     <div class="student-life-grid">
 
 
-        <!-- ACTIVITIES -->
-
         <div class="student-life-card">
 
             <div class="student-life-icon">
@@ -1537,8 +1659,6 @@ footer p {
         </div>
 
 
-
-        <!-- SPORTS -->
 
         <div class="student-life-card">
 
@@ -1559,8 +1679,6 @@ footer p {
 
 
 
-        <!-- EVENTS -->
-
         <div class="student-life-card">
 
             <div class="student-life-icon">
@@ -1580,8 +1698,6 @@ footer p {
 
     </div>
 
-
-    <!-- GALLERY LINK -->
 
     <div
         style="
@@ -1649,35 +1765,26 @@ footer p {
 
     <div class="contact-box">
 
-
         <strong>
             Richmond International School –
             Al Markhiya Main Branch
         </strong>
 
-
         <br>
         <br>
-
 
         📧 admissions@richmonddoha.com
 
-
         <br>
-
 
         ☎ +974 4017 1991
 
-
         <br>
-
 
         ☎ +974 7476 7266
 
-
         <br>
         <br>
-
 
         <a
             href="https://wa.me/97474767266"
@@ -1690,7 +1797,6 @@ footer p {
         >
             💬 Chat with us on WhatsApp
         </a>
-
 
     </div>
 
@@ -1705,17 +1811,13 @@ footer p {
 <footer>
 
     <p>
-
         © 2026 Richmond International School –
         Al Markhiya Main Branch
-
     </p>
 
 
     <p class="gold">
-
         Nurturing tomorrow’s leaders
-
     </p>
 
 </footer>
