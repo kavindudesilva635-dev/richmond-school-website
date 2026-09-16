@@ -25,8 +25,8 @@ body {
 
 /* HEADER */
 header {
-    background: rgba(255, 255, 255, 0.98);
-    color: #071b3a;
+    background: #32145f;
+    color: white;
     padding: 12px 6%;
     display: flex;
     align-items: center;
@@ -34,60 +34,66 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 3px 18px rgba(7, 27, 58, 0.10);
-    border-bottom: 2px solid #d4af37;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    border-bottom: 3px solid #d4af37;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
 }
 
 .logo-area img {
-    width: 185px;
+    width: 190px;
     height: auto;
     object-fit: contain;
 }
 
 .school-name {
-    border-left: 1px solid #d4af37;
-    padding-left: 16px;
+    border-left: 2px solid #d4af37;
+    padding-left: 18px;
 }
 
 .school-name h1 {
-    font-size: 20px;
-    color: #071b3a;
+    color: white;
+    font-size: 21px;
     font-weight: 700;
     line-height: 1.2;
 }
 
 .school-name p {
-    color: #7b641e;
-    margin-top: 5px;
+    color: #e6c96a;
+    margin-top: 6px;
     font-size: 13px;
     font-weight: 600;
 }
 
+/* NAVIGATION */
 nav {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
 }
 
 nav a {
-    color: #071b3a;
+    color: white;
     text-decoration: none;
     padding: 10px 13px;
     border-radius: 6px;
-    font-weight: 600;
     font-size: 14px;
-    transition: 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: white;
-    background: #071b3a;
+    color: #32145f;
+    background: #d4af37;
+}
+
+nav a:first-child {
+    color: #32145f;
+    background: #d4af37;
 }
 
 /* HERO */
@@ -228,26 +234,26 @@ footer p {
 @media(max-width: 800px) {
 
     header {
-        padding: 12px 20px;
+        padding: 14px 20px;
         flex-direction: column;
-        gap: 12px;
+        gap: 14px;
+        text-align: center;
     }
 
     .logo-area {
         flex-direction: column;
-        gap: 8px;
-        text-align: center;
+        gap: 10px;
     }
 
     .logo-area img {
-        width: 170px;
+        width: 175px;
     }
 
     .school-name {
         border-left: none;
-        border-top: 1px solid #d4af37;
+        border-top: 2px solid #d4af37;
         padding-left: 0;
-        padding-top: 8px;
+        padding-top: 9px;
     }
 
     .school-name h1 {
@@ -259,12 +265,13 @@ footer p {
     }
 
     nav {
-        flex-wrap: wrap;
+        width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
     }
 
     nav a {
-        margin: 3px;
         padding: 8px 10px;
         font-size: 13px;
     }
@@ -286,7 +293,7 @@ footer p {
 
     <div class="logo-area">
 
-       <img src="Rich_logo_250x88-01.png" alt="Richmond International School Logo">
+      <img src="Rich_logo_250x88-01.png" alt="Richmond International School Logo">
 
         <div class="school-name">
             <h1>Richmond International School</h1>
