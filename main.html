@@ -25,50 +25,69 @@ body {
 
 /* HEADER */
 header {
-    background: #071b3a;
-    color: white;
-    padding: 15px 6%;
+    background: rgba(255, 255, 255, 0.98);
+    color: #071b3a;
+    padding: 12px 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 3px 18px rgba(7, 27, 58, 0.10);
+    border-bottom: 2px solid #d4af37;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 16px;
 }
 
 .logo-area img {
-    width: 70px;
-    height: 70px;
+    width: 185px;
+    height: auto;
     object-fit: contain;
-    background: white;
-    border-radius: 8px;
+}
+
+.school-name {
+    border-left: 1px solid #d4af37;
+    padding-left: 16px;
 }
 
 .school-name h1 {
-    font-size: 21px;
+    font-size: 20px;
+    color: #071b3a;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .school-name p {
-    color: #d4af37;
+    color: #7b641e;
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 nav a {
-    color: white;
+    color: #071b3a;
     text-decoration: none;
-    margin-left: 18px;
-    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s ease;
 }
 
 nav a:hover {
-    color: #d4af37;
+    color: white;
+    background: #071b3a;
 }
 
 /* HERO */
@@ -209,17 +228,45 @@ footer p {
 @media(max-width: 800px) {
 
     header {
+        padding: 12px 20px;
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
 
-    nav {
+    .logo-area {
+        flex-direction: column;
+        gap: 8px;
         text-align: center;
     }
 
+    .logo-area img {
+        width: 170px;
+    }
+
+    .school-name {
+        border-left: none;
+        border-top: 1px solid #d4af37;
+        padding-left: 0;
+        padding-top: 8px;
+    }
+
+    .school-name h1 {
+        font-size: 18px;
+    }
+
+    .school-name p {
+        font-size: 12px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     nav a {
-        margin: 7px;
-        display: inline-block;
+        margin: 3px;
+        padding: 8px 10px;
+        font-size: 13px;
     }
 
     .hero h2 {
@@ -239,7 +286,7 @@ footer p {
 
     <div class="logo-area">
 
-        <img src="logo.jfif" alt="Richmond International School Logo">
+       <img src="Rich_logo_250x88-01.png" alt="Richmond International School Logo">
 
         <div class="school-name">
             <h1>Richmond International School</h1>
