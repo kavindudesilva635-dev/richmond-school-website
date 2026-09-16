@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,10 +47,21 @@ body {
     padding: 70px 20px 35px;
 
     background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 180, 190, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(120, 55, 190, 0.22),
+            transparent 32%
+        ),
         linear-gradient(
             135deg,
-            rgba(25, 10, 52, 0.97),
-            rgba(5, 25, 55, 0.96)
+            rgba(7, 21, 47, 0.97),
+            rgba(38, 18, 75, 0.96),
+            rgba(5, 45, 70, 0.96)
         ),
         url("school.jpg") center center / cover no-repeat;
 }
@@ -176,6 +188,8 @@ h1 {
 
     text-shadow:
         0 4px 25px rgba(0, 0, 0, 0.35);
+
+    white-space: nowrap;
 }
 
 h1 strong {
@@ -652,6 +666,8 @@ h1 strong {
         font-size: 39px;
 
         letter-spacing: -0.5px;
+
+        white-space: normal;
     }
 
     .tagline {
@@ -798,9 +814,9 @@ h1 strong {
 
         <!-- MAIN TITLE -->
 
-       <h1>
-    Welcome to <strong>Richmond International School</strong>
-</h1>
+        <h1>
+            Welcome to <strong>Richmond International School</strong>
+        </h1>
 
 
         <!-- TAGLINE -->
@@ -970,3 +986,4 @@ h1 strong {
 
 </body>
 </html>
+```
