@@ -7,6 +7,7 @@
 
 <title>Richmond International School – Doha</title>
 
+```css
 <style>
 * {
     margin: 0;
@@ -16,8 +17,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #222;
+    background: #f4f5f8;
+    color: #17233c;
 }
 
 .hero {
@@ -26,8 +27,8 @@ body {
     background:
         linear-gradient(
             135deg,
-            rgba(45,15,75,0.94),
-            rgba(7,27,58,0.88)
+            rgba(31, 15, 58, 0.96),
+            rgba(6, 24, 55, 0.94)
         ),
         url("school.jpg") center/cover no-repeat;
 
@@ -52,7 +53,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     flex-wrap: wrap;
 }
 
@@ -68,21 +69,24 @@ body {
     object-fit: contain;
 }
 
+/* MAIN TITLE */
 h1 {
-    color: #d4af37;
+    color: #e0bd63;
     font-size: 56px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     margin-bottom: 15px;
-    text-shadow: 0 3px 15px rgba(0,0,0,0.4);
+    text-shadow: 0 3px 18px rgba(0,0,0,0.45);
 }
 
 .subtitle {
-    color: #e5e5e5;
+    color: #f1f3f6;
     font-size: 20px;
+    line-height: 1.6;
     margin-bottom: 45px;
 }
 
+/* BRANCH CARDS */
 .branches {
     display: flex;
     justify-content: center;
@@ -92,50 +96,76 @@ h1 {
 
 .branch-card {
     width: 360px;
-    background: white;
+    background: #ffffff;
+    border: 1px solid rgba(224, 189, 99, 0.25);
     border-radius: 18px;
     padding: 35px 25px;
+
     text-decoration: none;
-    color: #4b1f6f;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-    transition: 0.3s;
+    color: #32145f;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.28);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .branch-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
 }
 
+/* ICON */
 .icon {
-    font-size: 55px;
+    font-size: 52px;
     margin-bottom: 18px;
 }
 
+/* CARD TITLE */
 .branch-card h2 {
+    color: #32145f;
     font-size: 23px;
     margin-bottom: 12px;
 }
 
+/* CARD DESCRIPTION */
 .branch-card p {
-    color: #666;
+    color: #606b7a;
     line-height: 1.6;
     margin-bottom: 22px;
 }
 
+/* BUTTON */
 .button {
     display: inline-block;
+
     background: #d4af37;
-    color: #071b3a;
+    color: #111f38;
+
     padding: 12px 25px;
     border-radius: 8px;
+
     font-weight: bold;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
+.branch-card:hover .button {
+    background: #e0bd63;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
 .footer {
     margin-top: 45px;
-    color: #ddd;
+    color: #d9dce3;
     font-size: 14px;
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
 
     h1 {
@@ -164,6 +194,8 @@ h1 {
     }
 }
 </style>
+
+
 </head>
 
 <body>
