@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -27,6 +28,7 @@ body {
     font-family: Arial, sans-serif;
     color: #222;
     background: #f7f7f7;
+    line-height: 1.6;
 }
 
 
@@ -37,7 +39,8 @@ body {
 header {
     background: #32145f;
     color: white;
-    padding: 12px 6%;
+
+    padding: 12px 5%;
 
     display: flex;
     align-items: center;
@@ -47,7 +50,7 @@ header {
     top: 0;
     z-index: 1000;
 
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.20);
 
     border-bottom: 3px solid #d4af37;
 }
@@ -60,23 +63,23 @@ header {
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 20px;
 }
 
 
 /* SCHOOL LOGO */
 
 .logo-area img {
-    width: 240px;
-    height: 100px;
+    width: 230px;
+    height: 95px;
 
     object-fit: contain;
 
     background: white;
 
-    padding: 10px 16px;
+    padding: 9px 15px;
 
-    border-radius: 14px;
+    border-radius: 13px;
 
     border: 2px solid #d4af37;
 
@@ -105,49 +108,51 @@ header {
 
 .school-name {
     border-left: 2px solid #d4af37;
-
-    padding-left: 18px;
+    padding-left: 17px;
 }
 
 .school-name h1 {
     color: white;
 
-    font-size: 21px;
+    font-size: 20px;
 
     font-weight: 700;
 
     line-height: 1.2;
+
+    white-space: nowrap;
 }
 
 .school-name p {
     color: #e6c96a;
 
-    margin-top: 6px;
+    margin-top: 5px;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 600;
 }
 
 
 /* =========================
-   NAVIGATION
+   PROFESSIONAL NAVBAR
 ========================= */
 
-nav {
+.main-nav {
     display: flex;
-
     align-items: center;
 
-    gap: 4px;
+    gap: 3px;
 }
 
-nav a {
+.main-nav a {
+    position: relative;
+
     color: white;
 
     text-decoration: none;
 
-    padding: 10px 13px;
+    padding: 11px 13px;
 
     border-radius: 6px;
 
@@ -156,18 +161,84 @@ nav a {
     font-weight: 600;
 
     transition: all 0.3s ease;
+
+    white-space: nowrap;
 }
 
-nav a:hover {
-    color: #32145f;
 
-    background: #d4af37;
+/* NAV HOVER */
+
+.main-nav a:hover {
+    color: #d4af37;
+
+    background: rgba(255, 255, 255, 0.07);
 }
 
-nav a:first-child {
-    color: #32145f;
+
+/* ACTIVE MENU */
+
+.main-nav a.active {
+    color: #d4af37;
+}
+
+
+/* ACTIVE GOLD UNDERLINE */
+
+.main-nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 13px;
+    right: 13px;
+
+    bottom: 3px;
+
+    height: 2px;
 
     background: #d4af37;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   APPLY NOW BUTTON
+========================= */
+
+.main-nav .apply-btn {
+    margin-left: 10px;
+
+    padding: 11px 20px;
+
+    background: #d4af37;
+
+    color: #32145f;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 6px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 4px 13px rgba(212, 175, 55, 0.25);
+}
+
+
+.main-nav .apply-btn:hover {
+    background: transparent;
+
+    color: #d4af37;
+
+    border-color: #d4af37;
+
+    transform: translateY(-2px);
+}
+
+
+.main-nav .apply-btn::after {
+    display: none;
 }
 
 
@@ -414,6 +485,25 @@ section {
 }
 
 
+/* GOLD TITLE LINE */
+
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+
+    height: 3px;
+
+    background: #d4af37;
+
+    margin: 12px auto 0;
+
+    border-radius: 5px;
+}
+
+
 /* SECTION TEXT */
 
 .section-text {
@@ -493,11 +583,84 @@ section {
 
 
 /* =========================
+   STUDENT LIFE
+========================= */
+
+#student-life {
+    background: #f1edf7;
+}
+
+
+.student-life-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1050px;
+
+    margin: 40px auto 0;
+}
+
+
+.student-life-card {
+    background: white;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    border-bottom: 4px solid #d4af37;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: all 0.3s ease;
+}
+
+
+.student-life-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 28px rgba(50, 20, 95, 0.14);
+}
+
+
+.student-life-icon {
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+
+.student-life-card h3 {
+    color: #32145f;
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+
+.student-life-card p {
+    color: #555;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* =========================
    ADMISSIONS
 ========================= */
 
 #admissions {
-    background: #f1edf7;
+    background: white;
 }
 
 
@@ -529,7 +692,7 @@ section {
 ========================= */
 
 #gallery {
-    background: white;
+    background: #f7f7f7;
 }
 
 
@@ -561,7 +724,7 @@ section {
 ========================= */
 
 #contact {
-    background: #f7f7f7;
+    background: white;
 }
 
 
@@ -570,7 +733,7 @@ section {
 
     margin: 35px auto 0;
 
-    background: white;
+    background: #f7f7f7;
 
     padding: 35px;
 
@@ -625,6 +788,69 @@ footer p {
    MOBILE
 ========================= */
 
+@media(max-width: 1100px) {
+
+    header {
+        padding: 12px 3%;
+    }
+
+    .logo-area img {
+        width: 200px;
+        height: 85px;
+    }
+
+    .school-name h1 {
+        font-size: 18px;
+    }
+
+    .school-name p {
+        font-size: 11px;
+    }
+
+    .main-nav a {
+        padding: 10px 9px;
+        font-size: 13px;
+    }
+
+    .main-nav .apply-btn {
+        padding: 10px 14px;
+        margin-left: 5px;
+    }
+}
+
+
+@media(max-width: 900px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+
+    .logo-area {
+        justify-content: center;
+    }
+
+
+    .main-nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .student-life-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
 @media(max-width: 800px) {
 
     /* HEADER */
@@ -635,12 +861,10 @@ footer p {
         flex-direction: column;
 
         gap: 14px;
-
-        text-align: center;
     }
 
 
-    /* MOBILE LOGO */
+    /* LOGO */
 
     .logo-area {
         flex-direction: column;
@@ -673,6 +897,8 @@ footer p {
 
     .school-name h1 {
         font-size: 18px;
+
+        white-space: normal;
     }
 
 
@@ -683,7 +909,7 @@ footer p {
 
     /* NAVIGATION */
 
-    nav {
+    .main-nav {
         width: 100%;
 
         justify-content: center;
@@ -694,10 +920,17 @@ footer p {
     }
 
 
-    nav a {
+    .main-nav a {
         padding: 8px 10px;
 
         font-size: 13px;
+    }
+
+
+    .main-nav .apply-btn {
+        margin-left: 5px;
+
+        padding: 9px 15px;
     }
 
 
@@ -731,7 +964,7 @@ footer p {
     }
 
 
-    /* MOBILE BUTTONS */
+    /* BUTTONS */
 
     .hero .button {
         display: block;
@@ -763,6 +996,15 @@ footer p {
 
     .card {
         width: 100%;
+
+        max-width: 400px;
+    }
+
+
+    /* STUDENT LIFE */
+
+    .student-life-grid {
+        grid-template-columns: 1fr;
 
         max-width: 400px;
     }
@@ -809,10 +1051,22 @@ footer p {
     }
 
 
-    nav a {
+    .main-nav {
+        gap: 3px;
+    }
+
+
+    .main-nav a {
         padding: 7px 8px;
 
         font-size: 12px;
+    }
+
+
+    .main-nav .apply-btn {
+        padding: 8px 12px;
+
+        margin-left: 2px;
     }
 
 
@@ -848,7 +1102,7 @@ footer p {
 
 
 <!-- =========================
-     HEADER
+     HEADER / NAVBAR
 ========================= -->
 
 <header>
@@ -859,6 +1113,7 @@ footer p {
             src="Rich_logo_250x88-01.png"
             alt="Richmond International School Logo"
         >
+
 
         <div class="school-name">
 
@@ -875,30 +1130,48 @@ footer p {
     </div>
 
 
-    <nav>
+    <!-- PROFESSIONAL NAVIGATION -->
 
-        <a href="#home">
+    <nav class="main-nav">
+
+        <a
+            href="#home"
+            class="active"
+        >
             Home
         </a>
+
 
         <a href="#about">
             About
         </a>
 
+
         <a href="#academics">
             Academics
         </a>
+
 
         <a href="#admissions">
             Admissions
         </a>
 
-        <a href="#gallery">
-            Gallery
+
+        <a href="#student-life">
+            Student Life
         </a>
+
 
         <a href="#contact">
             Contact
+        </a>
+
+
+        <a
+            href="#admissions"
+            class="apply-btn"
+        >
+            Apply Now
         </a>
 
     </nav>
@@ -911,7 +1184,10 @@ footer p {
      HOME / HERO
 ========================= -->
 
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="hero-content">
 
@@ -1133,7 +1409,6 @@ footer p {
             method="POST"
         >
 
-
             <input
                 type="text"
                 name="name"
@@ -1210,8 +1485,121 @@ footer p {
 
             </div>
 
-
         </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     STUDENT LIFE
+========================= -->
+
+<section id="student-life">
+
+    <h2 class="section-title">
+        Student Life
+    </h2>
+
+
+    <p class="section-text">
+
+        At Richmond International School, learning extends
+        beyond the classroom. Students are encouraged to
+        participate, explore their interests and develop
+        confidence through a wide range of school experiences.
+
+    </p>
+
+
+    <div class="student-life-grid">
+
+
+        <!-- ACTIVITIES -->
+
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                🎨
+            </div>
+
+            <h3>
+                Activities & Clubs
+            </h3>
+
+            <p>
+                Opportunities for students to discover
+                interests, develop talents and build confidence.
+            </p>
+
+        </div>
+
+
+
+        <!-- SPORTS -->
+
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                ⚽
+            </div>
+
+            <h3>
+                Sports & Wellbeing
+            </h3>
+
+            <p>
+                Encouraging teamwork, healthy lifestyles,
+                confidence and positive relationships.
+            </p>
+
+        </div>
+
+
+
+        <!-- EVENTS -->
+
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                🎉
+            </div>
+
+            <h3>
+                Events & Experiences
+            </h3>
+
+            <p>
+                Celebrating school events, achievements
+                and memorable moments together.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- GALLERY LINK -->
+
+    <div
+        style="
+        text-align:center;
+        margin-top:35px;
+        "
+    >
+
+        <a
+            href="#gallery"
+            class="button"
+            style="
+            background:#32145f;
+            color:white;
+            "
+        >
+            View School Gallery
+        </a>
 
     </div>
 
@@ -1334,4 +1722,5 @@ footer p {
 
 
 </body>
+
 </html>
