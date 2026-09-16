@@ -256,23 +256,45 @@ header {
     border-radius: 10px;
 }
 
+
+/* HERO SCHOOL LABEL */
+
+.hero-label {
+    color: #d4af37;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+
+/* HERO MAIN TITLE */
+
 .hero h2 {
     font-size: 58px;
     line-height: 1.12;
     font-weight: 800;
     letter-spacing: -1px;
     margin-bottom: 25px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 
     text-shadow:
-        0 4px 18px rgba(0,0,0,0.35);
+        0 4px 18px rgba(0,0,0,0.40);
 }
 
+
+/* HERO DESCRIPTION */
+
 .hero p {
-    max-width: 780px;
+    max-width: 760px;
     margin: 0 auto 38px;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.8;
     color: #f5f5f5;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
 
@@ -855,7 +877,6 @@ section {
 }
 
 
-
 /* =========================
    ACADEMICS RESPONSIVE
 ========================= */
@@ -1188,6 +1209,12 @@ footer p {
         padding: 30px 15px;
     }
 
+    .hero-label {
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+
     .hero h2 {
         font-size: 38px;
         line-height: 1.2;
@@ -1373,6 +1400,11 @@ footer p {
         min-height: 560px;
     }
 
+    .hero-label {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
     .hero h2 {
         font-size: 31px;
     }
@@ -1472,8 +1504,12 @@ footer p {
 
     <div class="hero-content">
 
+        <div class="hero-label">
+            RICHMOND INTERNATIONAL SCHOOL
+        </div>
+
         <h2>
-            Inspiring Young Minds.
+            Inspiring Young Minds.<br>
             Building Future Leaders.
         </h2>
 
@@ -1515,7 +1551,7 @@ footer p {
 
             <img
                 src="principal.jpg"
-                alt="Kerryn Turner - Principal of Richmond International School"
+                alt="Kerry Turner - Principal of Richmond International School"
             >
 
         </div>
@@ -2037,8 +2073,8 @@ footer p {
             </div>
 
             <div class="eyfs-text">
-    EYFS · Early Years Foundation Stage
-</div>
+                EYFS · Early Years Foundation Stage
+            </div>
 
             <p>
                 A caring and engaging learning environment where
@@ -2066,9 +2102,9 @@ footer p {
                 British Curriculum
             </div>
 
-           <div class="edexcel-text">
-    Pearson Edexcel
-</div>
+            <div class="edexcel-text">
+                Pearson Edexcel
+            </div>
 
             <p>
                 Building strong academic foundations through
