@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Richmond International School – Al Markhiya Main Branch</title>
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +29,11 @@ body {
     background: #f7f7f7;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
+
 header {
     background: #32145f;
     color: white;
@@ -34,9 +44,14 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+
     border-bottom: 3px solid #d4af37;
 }
+
+
+/* LOGO AREA */
 
 .logo-area {
     display: flex;
@@ -49,6 +64,9 @@ header {
     height: auto;
     object-fit: contain;
 }
+
+
+/* SCHOOL NAME */
 
 .school-name {
     border-left: 2px solid #d4af37;
@@ -69,7 +87,11 @@ header {
     font-weight: 600;
 }
 
-/* NAVIGATION */
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
     display: flex;
     align-items: center;
@@ -79,10 +101,14 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
+
     padding: 10px 13px;
+
     border-radius: 6px;
+
     font-size: 14px;
     font-weight: 600;
+
     transition: all 0.3s ease;
 }
 
@@ -96,243 +122,763 @@ nav a:first-child {
     background: #d4af37;
 }
 
-/* HERO */
+
+/* =========================
+   PREMIUM HERO
+========================= */
+
 .hero {
-    min-height: 600px;
+    min-height: 650px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     color: white;
 
+    position: relative;
+    overflow: hidden;
+
     background:
-    linear-gradient(rgba(7,27,58,0.72), rgba(7,27,58,0.72)),
-    url("school.jpg");
+        linear-gradient(
+            135deg,
+            rgba(50, 20, 95, 0.94),
+            rgba(7, 27, 58, 0.78)
+        ),
+        url("school.jpg");
 
     background-size: cover;
     background-position: center;
 }
 
-.hero-content {
-    max-width: 900px;
-    padding: 30px;
+
+/* HERO LIGHT EFFECT */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(212, 175, 55, 0.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 255, 255, 0.08),
+            transparent 30%
+        );
 }
+
+
+/* GOLD BOTTOM LINE */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #d4af37,
+        #f1d77a,
+        #d4af37
+    );
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 950px;
+
+    padding: 40px 25px;
+}
+
+
+/* SMALL GOLD LINE */
+
+.hero-content::before {
+    content: "";
+
+    display: block;
+
+    width: 75px;
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 0 auto 25px;
+
+    border-radius: 10px;
+}
+
+
+/* HERO TITLE */
 
 .hero h2 {
-    font-size: 52px;
-    margin-bottom: 20px;
+    font-size: 58px;
+
+    line-height: 1.12;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
+
+/* HERO DESCRIPTION */
+
 .hero p {
-    font-size: 21px;
-    margin-bottom: 35px;
-    line-height: 1.6;
+    max-width: 780px;
+
+    margin: 0 auto 38px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #f5f5f5;
 }
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .button {
     display: inline-block;
-    background: #d4af37;
-    color: #071b3a;
+
     padding: 15px 30px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
+
     margin: 5px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+
+    border: none;
 }
 
-.button:hover {
+
+/* HERO PRIMARY BUTTON */
+
+.hero .button:first-of-type {
+    background: #d4af37;
+
+    color: #32145f;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.20);
+}
+
+.hero .button:first-of-type:hover {
     background: white;
+
+    color: #32145f;
+
+    border-color: white;
+
+    transform: translateY(-3px);
 }
 
-/* SECTIONS */
+
+/* HERO SECONDARY BUTTON */
+
+.hero .button:last-of-type {
+    background: transparent;
+
+    color: white;
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.hero .button:last-of-type:hover {
+    background: white;
+
+    color: #32145f;
+
+    border-color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
 section {
     padding: 75px 8%;
 }
 
+
+/* SECTION TITLE */
+
 .section-title {
     text-align: center;
-    color: #071b3a;
+
+    color: #32145f;
+
     font-size: 34px;
+
     margin-bottom: 20px;
+
+    font-weight: 700;
 }
+
+
+/* SECTION TEXT */
 
 .section-text {
     max-width: 850px;
+
     margin: auto;
+
     text-align: center;
+
     line-height: 1.8;
+
     font-size: 17px;
+
+    color: #555;
 }
 
-/* CARDS */
+
+/* =========================
+   CARDS
+========================= */
+
 .cards {
     display: flex;
+
     gap: 25px;
+
     justify-content: center;
+
     margin-top: 40px;
+
     flex-wrap: wrap;
 }
 
+
 .card {
     background: white;
+
     width: 290px;
+
     padding: 32px;
+
     border-radius: 12px;
+
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    border-top: 4px solid #d4af37;
+
+    transition: all 0.3s ease;
 }
 
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 30px rgba(50, 20, 95, 0.15);
+}
+
+
 .card h3 {
-    color: #071b3a;
+    color: #32145f;
+
     margin-bottom: 15px;
+
     font-size: 21px;
 }
 
+
 .card p {
     line-height: 1.7;
+
+    color: #555;
 }
 
-/* GALLERY */
+
+/* =========================
+   ADMISSIONS
+========================= */
+
+#admissions {
+    background: #f1edf7;
+}
+
+
+/* FORM */
+
+#admissions input,
+#admissions textarea {
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: border 0.3s ease;
+}
+
+#admissions input:focus,
+#admissions textarea:focus {
+    border-color: #32145f;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+#gallery {
+    background: white;
+}
+
+
 .gallery-image {
     display: block;
+
     width: 90%;
+
     max-width: 950px;
+
     margin: 35px auto 0;
+
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.3s ease;
 }
 
-/* CONTACT */
+
+.gallery-image:hover {
+    transform: scale(1.01);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact {
+    background: #f7f7f7;
+}
+
+
 .contact-box {
     max-width: 700px;
+
     margin: 35px auto 0;
+
     background: white;
+
     padding: 35px;
+
     border-radius: 12px;
+
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
     line-height: 2;
 }
 
-/* FOOTER */
-footer {
-    background: #071b3a;
-    color: white;
-    text-align: center;
-    padding: 35px 20px;
+
+.contact-box strong {
+    color: #32145f;
+
+    font-size: 18px;
 }
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #32145f;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    border-top: 4px solid #d4af37;
+}
+
 
 footer p {
     margin: 8px;
 }
 
+
 .gold {
     color: #d4af37;
+
+    font-weight: 600;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width: 800px) {
+
+    /* HEADER */
 
     header {
         padding: 14px 20px;
+
         flex-direction: column;
+
         gap: 14px;
+
         text-align: center;
     }
 
+
+    /* LOGO */
+
     .logo-area {
         flex-direction: column;
+
         gap: 10px;
     }
+
 
     .logo-area img {
         width: 175px;
     }
 
+
+    /* SCHOOL NAME */
+
     .school-name {
         border-left: none;
+
         border-top: 2px solid #d4af37;
+
         padding-left: 0;
+
         padding-top: 9px;
     }
+
 
     .school-name h1 {
         font-size: 18px;
     }
 
+
     .school-name p {
         font-size: 12px;
     }
 
+
+    /* NAVIGATION */
+
     nav {
         width: 100%;
+
         justify-content: center;
+
         flex-wrap: wrap;
+
         gap: 4px;
     }
 
+
     nav a {
         padding: 8px 10px;
+
         font-size: 13px;
     }
 
-    .hero h2 {
-        font-size: 35px;
+
+    /* HERO */
+
+    .hero {
+        min-height: 580px;
+
+        padding: 40px 15px;
     }
+
+
+    .hero-content {
+        padding: 30px 15px;
+    }
+
+
+    .hero h2 {
+        font-size: 38px;
+
+        line-height: 1.2;
+    }
+
 
     .hero p {
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* MOBILE BUTTONS */
+
+    .hero .button {
+        display: block;
+
+        max-width: 260px;
+
+        margin: 10px auto;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+        padding: 55px 6%;
+    }
+
+
+    .section-title {
+        font-size: 29px;
+    }
+
+
+    .section-text {
+        font-size: 16px;
+    }
+
+
+    /* CARDS */
+
+    .card {
+        width: 100%;
+
+        max-width: 400px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-image {
+        width: 100%;
+    }
+
+
+    /* CONTACT */
+
+    .contact-box {
+        padding: 25px 18px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width: 480px) {
+
+    .logo-area img {
+        width: 155px;
+    }
+
+
+    .school-name h1 {
         font-size: 17px;
     }
+
+
+    .school-name p {
+        font-size: 11px;
+    }
+
+
+    nav a {
+        padding: 7px 8px;
+
+        font-size: 12px;
+    }
+
+
+    .hero {
+        min-height: 560px;
+    }
+
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+
+    .hero p {
+        font-size: 15px;
+    }
+
+
+    .hero .button {
+        max-width: 240px;
+
+        width: 100%;
+    }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
     <div class="logo-area">
 
-      <img src="Rich_logo_250x88-01.png" alt="Richmond International School Logo">
+        <img
+            src="Rich_logo_250x88-01.png"
+            alt="Richmond International School Logo"
+        >
 
         <div class="school-name">
-            <h1>Richmond International School</h1>
-            <p>Al Markhiya Main Branch • Nurturing tomorrow’s leaders</p>
+
+            <h1>
+                Richmond International School
+            </h1>
+
+            <p>
+                Al Markhiya Main Branch • Nurturing tomorrow’s leaders
+            </p>
+
         </div>
 
     </div>
 
+
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#academics">Academics</a>
-        <a href="#admissions">Admissions</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#academics">
+            Academics
+        </a>
+
+        <a href="#admissions">
+            Admissions
+        </a>
+
+        <a href="#gallery">
+            Gallery
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
     </nav>
 
 </header>
 
 
-<!-- HOME -->
+
+<!-- =========================
+     HOME / HERO
+========================= -->
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <h2>Inspiring Young Minds. Building Future Leaders.</h2>
+        <h2>
+            Inspiring Young Minds.
+            Building Future Leaders.
+        </h2>
+
 
         <p>
-            Welcome to Richmond International School – Al Markhiya Main Branch.
-            We provide a safe, supportive and inspiring environment
-            where every child can learn, grow and succeed.
+
+            Welcome to Richmond International School –
+            Al Markhiya Main Branch.
+
+            We provide a safe, supportive and inspiring
+            environment where every child can learn,
+            grow and succeed.
+
         </p>
 
-        <a href="#admissions" class="button">
+
+        <a
+            href="#admissions"
+            class="button"
+        >
             Apply for Admission
         </a>
 
-        <a href="#contact" class="button">
+
+        <a
+            href="#contact"
+            class="button"
+        >
             Contact Us
         </a>
 
@@ -341,11 +887,17 @@ footer p {
 </section>
 
 
-<!-- ABOUT -->
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
-    <h2 class="section-title">About Our School</h2>
+    <h2 class="section-title">
+        About Our School
+    </h2>
+
 
     <p class="section-text">
 
@@ -362,121 +914,256 @@ footer p {
 </section>
 
 
-<!-- ACADEMICS -->
+
+<!-- =========================
+     ACADEMICS
+========================= -->
 
 <section id="academics">
 
-    <h2 class="section-title">Our Academics</h2>
+    <h2 class="section-title">
+        Our Academics
+    </h2>
+
 
     <p class="section-text">
+
         Our learning programmes support students at every stage
         of their educational journey.
+
     </p>
+
 
     <div class="cards">
 
+
+        <!-- EARLY YEARS -->
+
         <div class="card">
-            <h3>🌱 Early Years</h3>
+
+            <h3>
+                🌱 Early Years
+            </h3>
 
             <p>
-                A caring and engaging environment where young learners
-                develop confidence, communication and essential skills.
+
+                A caring and engaging environment where young
+                learners develop confidence, communication
+                and essential skills.
+
             </p>
+
         </div>
 
 
+
+        <!-- PRIMARY -->
+
         <div class="card">
-            <h3>📚 Primary School</h3>
+
+            <h3>
+                📚 Primary School
+            </h3>
 
             <p>
-                Building strong academic foundations through creative,
-                engaging and meaningful learning experiences.
+
+                Building strong academic foundations through
+                creative, engaging and meaningful learning
+                experiences.
+
             </p>
+
         </div>
 
 
+
+        <!-- SECONDARY -->
+
         <div class="card">
-            <h3>🌟 Secondary School</h3>
+
+            <h3>
+                🌟 Secondary School
+            </h3>
 
             <p>
-                Preparing students for future academic success while
-                developing independence, leadership and responsibility.
+
+                Preparing students for future academic success
+                while developing independence, leadership
+                and responsibility.
+
             </p>
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ADMISSIONS -->
+
+<!-- =========================
+     ADMISSIONS
+========================= -->
 
 <section id="admissions">
 
-    <h2 class="section-title">Admissions</h2>
+    <h2 class="section-title">
+        Admissions
+    </h2>
+
 
     <p class="section-text">
 
         We welcome families who are looking for a caring,
-        inspiring and supportive learning environment for their children.
+        inspiring and supportive learning environment
+        for their children.
 
         Contact our admissions team to learn more about
         enrolment and available places.
 
     </p>
 
-    <div style="text-align:center; margin-top:30px;">
 
-        <a href="mailto:admissions@richmonddoha.com" class="button">
+    <!-- ADMISSION BUTTONS -->
+
+    <div
+        style="
+        text-align:center;
+        margin-top:30px;
+        "
+    >
+
+        <a
+            href="mailto:admissions@richmonddoha.com"
+            class="button"
+            style="
+            background:#32145f;
+            color:white;
+            "
+        >
             Email Admissions
         </a>
 
-        <a href="https://wa.me/97474767266"
-           target="_blank"
-           class="button">
+
+        <a
+            href="https://wa.me/97474767266"
+            target="_blank"
+            class="button"
+            style="
+            background:#d4af37;
+            color:#32145f;
+            "
+        >
             💬 WhatsApp Us
         </a>
 
     </div>
 
- <div style="max-width:600px; margin:40px auto 0;">
 
-        <h3 style="text-align:center; color:#071b3a;">
+
+    <!-- ADMISSION FORM -->
+
+    <div
+        style="
+        max-width:600px;
+        margin:40px auto 0;
+        "
+    >
+
+        <h3
+            style="
+            text-align:center;
+            color:#32145f;
+            margin-bottom:20px;
+            "
+        >
             Enquire About Admission
         </h3>
 
-       <form action="https://formspree.io/f/mbgjnepv" method="POST">
 
-          <input type="text"
-       name="name"
-       placeholder="Your Name"
-                   required
-                   style="width:100%; padding:14px; margin:8px 0; box-sizing:border-box;">
+        <form
+            action="https://formspree.io/f/mbgjnepv"
+            method="POST"
+        >
 
-           <input type="email"
-       name="email"
-       placeholder="Your Email"
-                   required
-                   style="width:100%; padding:14px; margin:8px 0; box-sizing:border-box;">
 
-           <input type="tel"
-       name="phone"
-       placeholder="Phone Number"
-                   style="width:100%; padding:14px; margin:8px 0; box-sizing:border-box;">
-
-           <textarea
-    name="message"
-    placeholder="Your Message"
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
                 required
-                style="width:100%; padding:14px; margin:8px 0; box-sizing:border-box;"></textarea>
+                style="
+                width:100%;
+                padding:14px;
+                margin:8px 0;
+                box-sizing:border-box;
+                "
+            >
 
-            <div style="text-align:center; margin-top:15px;">
 
-                <button type="submit" class="button">
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                style="
+                width:100%;
+                padding:14px;
+                margin:8px 0;
+                box-sizing:border-box;
+                "
+            >
+
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                style="
+                width:100%;
+                padding:14px;
+                margin:8px 0;
+                box-sizing:border-box;
+                "
+            >
+
+
+            <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                rows="5"
+                style="
+                width:100%;
+                padding:14px;
+                margin:8px 0;
+                box-sizing:border-box;
+                resize:vertical;
+                "
+            ></textarea>
+
+
+            <div
+                style="
+                text-align:center;
+                margin-top:15px;
+                "
+            >
+
+                <button
+                    type="submit"
+                    class="button"
+                    style="
+                    background:#d4af37;
+                    color:#32145f;
+                    "
+                >
                     Send Enquiry
                 </button>
 
             </div>
+
 
         </form>
 
@@ -485,74 +1172,120 @@ footer p {
 </section>
 
 
-<!-- GALLERY -->
+
+<!-- =========================
+     GALLERY
+========================= -->
 
 <section id="gallery">
 
-    <h2 class="section-title">School Gallery</h2>
+    <h2 class="section-title">
+        School Gallery
+    </h2>
+
 
     <p class="section-text">
+
         Explore moments from life at Richmond International School
         – Al Markhiya Main Branch.
+
     </p>
 
-    <img src="school.jpg"
-         alt="Richmond International School – Al Markhiya Main Branch"
-         class="gallery-image">
+
+    <img
+        src="school.jpg"
+        alt="Richmond International School – Al Markhiya Main Branch"
+        class="gallery-image"
+    >
 
 </section>
 
 
-<!-- CONTACT -->
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact">
 
-    <h2 class="section-title">Contact Us</h2>
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
 
     <div class="contact-box">
 
+
         <strong>
-            Richmond International School – Al Markhiya Main Branch
+            Richmond International School –
+            Al Markhiya Main Branch
         </strong>
 
-        <br><br>
+
+        <br>
+        <br>
+
 
         📧 admissions@richmonddoha.com
 
+
         <br>
+
 
         ☎ +974 4017 1991
 
+
         <br>
+
 
         ☎ +974 7476 7266
 
-        <br><br>
 
-        <a href="https://wa.me/97474767266"
-           target="_blank"
-           class="button">
+        <br>
+        <br>
+
+
+        <a
+            href="https://wa.me/97474767266"
+            target="_blank"
+            class="button"
+            style="
+            background:#32145f;
+            color:white;
+            "
+        >
             💬 Chat with us on WhatsApp
         </a>
+
 
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
     <p>
-        © 2026 Richmond International School – Al Markhiya Main Branch
+
+        © 2026 Richmond International School –
+        Al Markhiya Main Branch
+
     </p>
 
+
     <p class="gold">
+
         Nurturing tomorrow’s leaders
+
     </p>
 
 </footer>
+
 
 </body>
 </html>
