@@ -38,9 +38,11 @@ header {
     background: #32145f;
     color: white;
     padding: 12px 6%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -51,39 +53,79 @@ header {
 }
 
 
-/* LOGO AREA */
+/* =========================
+   LOGO AREA
+========================= */
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 22px;
 }
+
+
+/* SCHOOL LOGO */
 
 .logo-area img {
-    width: 190px;
-    height: auto;
+    width: 240px;
+    height: 100px;
+
     object-fit: contain;
+
+    background: white;
+
+    padding: 10px 16px;
+
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.30),
+        0 0 0 3px rgba(212, 175, 55, 0.12);
+
+    transition: all 0.3s ease;
 }
 
 
-/* SCHOOL NAME */
+/* LOGO HOVER */
+
+.logo-area img:hover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(212, 175, 55, 0.35);
+}
+
+
+/* =========================
+   SCHOOL NAME
+========================= */
 
 .school-name {
     border-left: 2px solid #d4af37;
+
     padding-left: 18px;
 }
 
 .school-name h1 {
     color: white;
+
     font-size: 21px;
+
     font-weight: 700;
+
     line-height: 1.2;
 }
 
 .school-name p {
     color: #e6c96a;
+
     margin-top: 6px;
+
     font-size: 13px;
+
     font-weight: 600;
 }
 
@@ -94,12 +136,15 @@ header {
 
 nav {
     display: flex;
+
     align-items: center;
+
     gap: 4px;
 }
 
 nav a {
     color: white;
+
     text-decoration: none;
 
     padding: 10px 13px;
@@ -107,6 +152,7 @@ nav a {
     border-radius: 6px;
 
     font-size: 14px;
+
     font-weight: 600;
 
     transition: all 0.3s ease;
@@ -114,11 +160,13 @@ nav a {
 
 nav a:hover {
     color: #32145f;
+
     background: #d4af37;
 }
 
 nav a:first-child {
     color: #32145f;
+
     background: #d4af37;
 }
 
@@ -131,13 +179,17 @@ nav a:first-child {
     min-height: 650px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
+
     color: white;
 
     position: relative;
+
     overflow: hidden;
 
     background:
@@ -149,6 +201,7 @@ nav a:first-child {
         url("school.jpg");
 
     background-size: cover;
+
     background-position: center;
 }
 
@@ -157,7 +210,9 @@ nav a:first-child {
 
 .hero::before {
     content: "";
+
     position: absolute;
+
     inset: 0;
 
     background:
@@ -175,7 +230,7 @@ nav a:first-child {
 }
 
 
-/* GOLD BOTTOM LINE */
+/* HERO GOLD BOTTOM LINE */
 
 .hero::after {
     content: "";
@@ -184,6 +239,7 @@ nav a:first-child {
 
     left: 0;
     right: 0;
+
     bottom: 0;
 
     height: 6px;
@@ -201,6 +257,7 @@ nav a:first-child {
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     max-width: 950px;
@@ -217,6 +274,7 @@ nav a:first-child {
     display: block;
 
     width: 75px;
+
     height: 4px;
 
     background: #d4af37;
@@ -582,17 +640,21 @@ footer p {
     }
 
 
-    /* LOGO */
+    /* MOBILE LOGO */
 
     .logo-area {
         flex-direction: column;
 
-        gap: 10px;
+        gap: 12px;
     }
 
 
     .logo-area img {
-        width: 175px;
+        width: 210px;
+
+        height: 85px;
+
+        padding: 8px 12px;
     }
 
 
@@ -729,7 +791,11 @@ footer p {
 @media(max-width: 480px) {
 
     .logo-area img {
-        width: 155px;
+        width: 190px;
+
+        height: 75px;
+
+        padding: 7px 10px;
     }
 
 
