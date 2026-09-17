@@ -768,42 +768,322 @@ section {
 
 
 /* =========================
-   ACADEMIC CARDS
+   OUR ACADEMICS
 ========================= */
 
-.cards {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    margin-top: 40px;
-    flex-wrap: wrap;
+#academics {
+    background:
+        linear-gradient(
+            135deg,
+            #f8f6fb,
+            #ffffff
+        );
+    position: relative;
 }
 
-.card {
-    background: white;
-    width: 290px;
-    padding: 32px;
-    border-radius: 12px;
+.academic-programmes {
+    max-width: 1000px;
+    margin: 45px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.academic-programme-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #32145f,
+            #17233c
+        );
+
+    padding: 42px 35px;
+
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-top: 4px solid #d4af37;
-    transition: all 0.3s ease;
+
+    border-radius: 20px;
+
+    border: 2px solid rgba(212,175,55,0.55);
+
+    box-shadow:
+        0 12px 35px rgba(50,20,95,0.18),
+        0 0 20px rgba(212,175,55,0.08);
+
+    overflow: hidden;
+
+    transition: all 0.35s ease;
 }
 
-.card:hover {
+.academic-programme-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(212,175,55,0.08);
+
+    top: -80px;
+    right: -70px;
+}
+
+.academic-programme-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.04);
+
+    bottom: -70px;
+    left: -60px;
+}
+
+.academic-programme-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(50,20,95,0.15);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 20px 45px rgba(50,20,95,0.25),
+        0 0 28px rgba(212,175,55,0.16);
 }
 
-.card h3 {
+
+/* =========================
+   ACADEMIC ICON
+========================= */
+
+.academic-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 22px;
+
+    background: #d4af37;
+
     color: #32145f;
-    margin-bottom: 15px;
-    font-size: 21px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,0.20);
+
+    position: relative;
+    z-index: 2;
 }
 
-.card p {
-    line-height: 1.7;
-    color: #555;
+
+/* =========================
+   ACADEMIC TITLE
+========================= */
+
+.academic-programme-card h3 {
+    color: #ffffff;
+
+    font-size: 27px;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   GOLD DIVIDER
+========================= */
+
+.academic-divider {
+    width: 55px;
+    height: 3px;
+
+    margin: 0 auto 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            #f1d77a,
+            #d4af37
+        );
+
+    border-radius: 5px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   CURRICULUM
+========================= */
+
+.academic-curriculum {
+    color: #f1d77a;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   FS1 / FS2
+========================= */
+
+.academic-years {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.academic-years span {
+    min-width: 75px;
+
+    padding: 9px 18px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(212,175,55,0.55);
+
+    border-radius: 30px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   PEARSON EDEXCEL
+========================= */
+
+.academic-edexcel {
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin: 5px 0 18px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.edexcel-logo {
+    width: 190px;
+    max-width: 80%;
+    height: 70px;
+
+    object-fit: contain;
+
+    background: #ffffff;
+
+    padding: 8px 15px;
+
+    border-radius: 8px;
+
+    border: 2px solid #d4af37;
+
+    display: block;
+
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 2;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.20);
+}
+
+
+/* =========================
+   ACADEMICS MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+    .academic-programmes {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        margin-top: 35px;
+    }
+
+    .academic-programme-card {
+        padding: 35px 25px;
+    }
+
+    .academic-programme-card h3 {
+        font-size: 24px;
+    }
+
+    .academic-curriculum {
+        font-size: 16px;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .academic-programme-card {
+        padding: 32px 20px;
+    }
+
+    .academic-icon {
+        width: 68px;
+        height: 68px;
+        font-size: 30px;
+    }
+
+    .academic-programme-card h3 {
+        font-size: 22px;
+    }
+
+    .academic-years span {
+        min-width: 65px;
+        padding: 8px 15px;
+    }
+
+    .edexcel-logo {
+        width: 170px;
+        height: 65px;
+    }
+
 }
 
 
@@ -1608,14 +1888,6 @@ footer p {
 
     .education-content h3 {
         font-size: 25px;
-    }
-
-
-    /* CARDS */
-
-    .card {
-        width: 100%;
-        max-width: 400px;
     }
 
 
@@ -2674,7 +2946,7 @@ footer p {
 
 
 <!-- =========================
-     ACADEMICS
+     OUR ACADEMICS
 ========================= -->
 
 <section id="academics">
@@ -2684,38 +2956,77 @@ footer p {
     </h2>
 
     <p class="section-text">
-        Our learning programmes support students at every stage
-        of their educational journey.
+        Our academic programmes provide a strong foundation for
+        learning, development and future success.
     </p>
 
-    <div class="cards">
+    <div class="academic-programmes">
 
-        <div class="card">
+
+        <!-- =========================
+             EARLY YEARS
+        ========================= -->
+
+        <div class="academic-programme-card">
+
+            <div class="academic-icon">
+                🌱
+            </div>
 
             <h3>
-                🌱 Early Years
+                Early Years
             </h3>
 
-            <p>
-                A caring and engaging environment where young
-                learners develop confidence, communication
-                and essential skills.
+            <div class="academic-divider"></div>
+
+            <p class="academic-curriculum">
+                EYFS / British Curriculum
             </p>
+
+            <div class="academic-years">
+
+                <span>
+                    FS1
+                </span>
+
+                <span>
+                    FS2
+                </span>
+
+            </div>
 
         </div>
 
 
-        <div class="card">
+        <!-- =========================
+             PRIMARY SCHOOL
+        ========================= -->
+
+        <div class="academic-programme-card primary-card">
+
+            <div class="academic-icon">
+                📚
+            </div>
 
             <h3>
-                📚 Primary School
+                Primary School
             </h3>
 
-            <p>
-                Building strong academic foundations through
-                creative, engaging and meaningful learning
-                experiences.
+            <div class="academic-divider"></div>
+
+            <p class="academic-curriculum">
+                British Curriculum
             </p>
+
+            <p class="academic-edexcel">
+                Pearson Edexcel
+            </p>
+
+            <img
+                src="pearson-edexcel-logo.png"
+                alt="Pearson Edexcel"
+                class="edexcel-logo"
+            >
 
         </div>
 
