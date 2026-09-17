@@ -323,126 +323,73 @@ section {
 }
 
 
-<!-- =========================
-     SCHOOL AT A GLANCE
-========================= -->
+/* =========================
+   SCHOOL AT A GLANCE
+========================= */
 
-<section id="school-glance">
+#school-glance {
+    background: #f7f5fa;
+}
 
-    <h2 class="section-title">
-        School at a Glance
-    </h2>
+.glance-intro {
+    max-width: 760px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+}
 
-    <p class="glance-intro">
-        Richmond International School provides a supportive and inspiring
-        learning environment where students are encouraged to achieve,
-        grow and develop with confidence.
-    </p>
+.glance-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
 
-    <div class="glance-grid">
+.glance-card {
+    background: #ffffff;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid #eee7f5;
+    border-bottom: 4px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .3s ease;
+}
 
-        <div class="glance-card">
+.glance-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(50,20,95,.15);
+    border-bottom-color: #32145f;
+}
 
-            <div class="glance-icon">
-                🎓
-            </div>
+.glance-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 16px;
+    background: #32145f;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
 
-            <h3>
-                British Curriculum
-            </h3>
+.glance-card h3 {
+    color: #32145f;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
 
-            <p>
-                Broad, balanced and rigorous British education.
-            </p>
-
-        </div>
-
-
-        <div class="glance-card">
-
-            <div class="glance-icon">
-                👨‍🎓
-            </div>
-
-            <h3>
-                500+ Students
-            </h3>
-
-            <p>
-                A growing and diverse school community.
-            </p>
-
-        </div>
-
-
-        <div class="glance-card">
-
-            <div class="glance-icon">
-                📅
-            </div>
-
-            <h3>
-                Established 2019
-            </h3>
-
-            <p>
-                Serving students and families in Doha since 2019.
-            </p>
-
-        </div>
-
-
-        <div class="glance-card">
-
-            <div class="glance-icon">
-                🌍
-            </div>
-
-            <h3>
-                International School
-            </h3>
-
-            <p>
-                A welcoming community with an international outlook.
-            </p>
-
-        </div>
-
-
-        <div class="glance-card">
-
-            <div class="glance-icon">
-                👩‍🏫
-            </div>
-
-            <h3>
-                Experienced Teachers
-            </h3>
-
-            <p>
-                Dedicated educators supporting every student's development.
-            </p>
-
-        </div>
-
-
-        <div class="glance-card">
-
-            <div class="glance-icon">
-                💻
-            </div>
-
-            <h3>
-                Modern Learning
-            </h3>
-
-            <p>
-                Technology-supported learning for future-ready students.
-            </p>
-
-        </div>
-
-    </div>
+.glance-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
 
 </section>
 /* =========================
