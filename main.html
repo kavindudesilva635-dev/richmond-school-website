@@ -951,27 +951,160 @@ section {
 
 
 /* =========================
-   GALLERY
+   PROFESSIONAL GALLERY
 ========================= */
 
 #gallery {
-    background: #f7f7f7;
+    background: #f7f5fa;
 }
 
-.gallery-image {
+.gallery-intro {
+    max-width: 800px;
+    margin: 0 auto 42px;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.gallery-grid {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.gallery-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #eee7f5;
+    border-top: 4px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(50,20,95,0.16);
+    border-top-color: #32145f;
+}
+
+.gallery-photo {
+    width: 100%;
+    height: 250px;
+    background: #f1edf7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
-    width: 90%;
-    max-width: 950px;
-    margin: 35px auto 0;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
-.gallery-image:hover {
-    transform: scale(1.01);
+.gallery-card:hover .gallery-photo img {
+    transform: scale(1.03);
 }
 
+.gallery-caption {
+    padding: 17px 18px 19px;
+    text-align: center;
+    border-top: 1px solid #eee7f5;
+}
+
+.gallery-caption h3 {
+    color: #32145f;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.gallery-caption p {
+    color: #777;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* FEATURED GALLERY IMAGE */
+
+.gallery-card.featured {
+    grid-column: span 2;
+}
+
+.gallery-card.featured .gallery-photo {
+    height: 360px;
+}
+
+
+/* GALLERY RESPONSIVE */
+
+@media(max-width:900px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 18px;
+    }
+
+    .gallery-card.featured {
+        grid-column: span 2;
+    }
+
+    .gallery-card.featured .gallery-photo {
+        height: 320px;
+    }
+
+    .gallery-photo {
+        height: 230px;
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .gallery-card.featured {
+        grid-column: span 1;
+    }
+
+    .gallery-card.featured .gallery-photo {
+        height: auto;
+        min-height: 260px;
+    }
+
+    .gallery-photo {
+        height: auto;
+        min-height: 240px;
+    }
+
+    .gallery-photo img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+    }
+
+    .gallery-caption {
+        padding: 15px;
+    }
+
+    .gallery-caption h3 {
+        font-size: 17px;
+    }
+
+}
 
 /* =========================
    CONTACT
@@ -2866,25 +2999,222 @@ footer p {
      GALLERY
 ========================= -->
 
+<!-- =========================
+     PROFESSIONAL GALLERY
+========================= -->
+
 <section id="gallery">
 
     <h2 class="section-title">
         School Gallery
     </h2>
 
-    <p class="section-text">
-
+    <p class="gallery-intro">
         Explore moments from life at Richmond International School
         – Al Markhiya Main Branch.
-
     </p>
 
 
-    <img
-        src="school.jpg"
-        alt="Richmond International School – Al Markhiya Main Branch"
-        class="gallery-image"
-    >
+    <div class="gallery-grid">
+
+
+        <!-- FEATURED -->
+
+        <div class="gallery-card featured">
+
+            <div class="gallery-photo">
+
+                <img
+                    src="school.jpg"
+                    alt="Richmond International School – Al Markhiya Main Branch"
+                >
+
+            </div>
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Our School
+                </h3>
+
+                <p>
+                    Richmond International School
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- STUDENT LIFE -->
+
+        <div class="gallery-card">
+
+            <div class="gallery-photo">
+
+                <img
+                    src="student-life.jpg"
+                    alt="Student Life at Richmond International School"
+                >
+
+            </div>
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Student Life
+                </h3>
+
+                <p>
+                    Learning, friendship and school life
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SPORTS DAY -->
+
+        <div class="gallery-card">
+
+            <div class="gallery-photo">
+
+                <img
+                    src="sports-day.jpg"
+                    alt="Sports Day at Richmond International School"
+                >
+
+            </div>
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Sports Day
+                </h3>
+
+                <p>
+                    Teamwork, energy and participation
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SCHOOL EVENT -->
+
+        <div class="gallery-card">
+
+            <div class="gallery-photo">
+
+                <img
+                    src="school-event.jpg"
+                    alt="School Event at Richmond International School"
+                >
+
+            </div>
+
+            <div class="gallery-caption">
+
+                <h3>
+                    School Events
+                </h3>
+
+                <p>
+                    Celebrating special school moments
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- GRADUATION -->
+
+        <div class="gallery-card">
+
+            <div class="gallery-photo">
+
+                <img
+                    src="graduation.jpg"
+                    alt="Graduation at Richmond International School"
+                >
+
+            </div>
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Graduation
+                </h3>
+
+                <p>
+                    Celebrating student achievements
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CLASSROOM -->
+
+        <div class="gallery-card">
+
+            <div class="gallery-photo">
+
+                <img
+                    src="classroom.jpg"
+                    alt="Classroom learning at Richmond International School"
+                >
+
+            </div>
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Classroom Learning
+                </h3>
+
+                <p>
+                    Engaging learning experiences
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CLASS ACTIVITY -->
+
+        <div class="gallery-card">
+
+            <div class="gallery-photo">
+
+                <img
+                    src="class-activity.jpg"
+                    alt="Class activity at Richmond International School"
+                >
+
+            </div>
+
+            <div class="gallery-caption">
+
+                <h3>
+                    Class Activities
+                </h3>
+
+                <p>
+                    Learning through participation and creativity
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
 
