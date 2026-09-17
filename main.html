@@ -1158,6 +1158,327 @@ section {
 
 
 /* =========================
+   PREMIUM ADMISSIONS
+========================= */
+
+#admissions {
+    background:
+        linear-gradient(
+            135deg,
+            #f8f6fb,
+            #ffffff
+        );
+    position: relative;
+    overflow: hidden;
+}
+
+#admissions::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(212,175,55,0.08);
+    top: -140px;
+    left: -120px;
+    pointer-events: none;
+}
+
+#admissions::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(50,20,95,0.06);
+    bottom: -120px;
+    right: -100px;
+    pointer-events: none;
+}
+
+.admissions-intro {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
+}
+
+.admission-steps {
+    max-width: 1050px;
+    margin: 0 auto 45px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.admission-step {
+    background: #ffffff;
+    padding: 28px 22px;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid #eee7f5;
+    border-top: 4px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.admission-step:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(50,20,95,0.14);
+    border-top-color: #32145f;
+}
+
+.admission-step-number {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #32145f;
+    color: #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.admission-step h3 {
+    color: #32145f;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.admission-step p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.admission-contact-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto 45px;
+    position: relative;
+    z-index: 2;
+}
+
+.admission-action {
+    min-width: 190px;
+    text-align: center;
+    margin: 0;
+}
+
+.admission-action.email-action {
+    background: #32145f;
+    color: #ffffff;
+}
+
+.admission-action.email-action:hover {
+    background: #24103f;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.admission-action.whatsapp-action {
+    background: #d4af37;
+    color: #32145f;
+}
+
+.admission-action.whatsapp-action:hover {
+    background: #f1d77a;
+    color: #32145f;
+    transform: translateY(-3px);
+}
+
+.admission-enquiry-card {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 22px;
+    border: 1px solid #eee7f5;
+    border-top: 5px solid #d4af37;
+    box-shadow:
+        0 15px 45px rgba(50,20,95,0.12),
+        0 0 25px rgba(212,175,55,0.06);
+    position: relative;
+    z-index: 2;
+}
+
+.admission-enquiry-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.admission-enquiry-header span {
+    display: inline-block;
+    color: #d4af37;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.admission-enquiry-header h3 {
+    color: #32145f;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.admission-enquiry-header p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.admission-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
+}
+
+.admission-form-group {
+    margin-bottom: 18px;
+}
+
+.admission-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.admission-form-group label {
+    display: block;
+    color: #32145f;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.admission-form-group input,
+.admission-form-group select,
+.admission-form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.admission-form-group input:focus,
+.admission-form-group select:focus,
+.admission-form-group textarea:focus {
+    border-color: #32145f;
+    box-shadow: 0 0 0 3px rgba(50,20,95,0.08);
+}
+
+.admission-form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.admission-form-submit {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.admission-submit-btn {
+    background: #d4af37;
+    color: #32145f;
+    min-width: 190px;
+    border: 2px solid #d4af37;
+    font-weight: 800;
+}
+
+.admission-submit-btn:hover {
+    background: #32145f;
+    color: #ffffff;
+    border-color: #32145f;
+    transform: translateY(-2px);
+}
+
+@media(max-width:900px) {
+
+    .admission-steps {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .admission-enquiry-card {
+        padding: 35px 25px;
+    }
+
+    .admission-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .admission-form-group.full-width {
+        grid-column: auto;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .admissions-intro {
+        font-size: 15px;
+    }
+
+    .admission-contact-actions {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 35px;
+    }
+
+    .admission-action {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .admission-enquiry-card {
+        padding: 30px 18px;
+        border-radius: 17px;
+    }
+
+    .admission-enquiry-header h3 {
+        font-size: 23px;
+    }
+
+    .admission-enquiry-header p {
+        font-size: 14px;
+    }
+
+    .admission-form-group input,
+    .admission-form-group select,
+    .admission-form-group textarea {
+        font-size: 15px;
+        padding: 13px;
+    }
+
+    .admission-submit-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+}
+
+
+/* =========================
    STUDENT LIFE
 ========================= */
 
@@ -1203,30 +1524,6 @@ section {
     color: #555;
     line-height: 1.7;
     font-size: 15px;
-}
-
-
-/* =========================
-   ADMISSIONS
-========================= */
-
-#admissions {
-    background: white;
-}
-
-#admissions input,
-#admissions textarea {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-family: Arial,sans-serif;
-    font-size: 15px;
-    outline: none;
-    transition: border 0.3s ease;
-}
-
-#admissions input:focus,
-#admissions textarea:focus {
-    border-color: #32145f;
 }
 
 
@@ -2169,150 +2466,6 @@ footer p {
     }
 }
 
-
-/* =========================================================
-   ADMISSION ENQUIRY - MOBILE MATCHES DESKTOP DESIGN
-========================================================= */
-
-@media (max-width: 900px) {
-
-    #admissions > div[style*="max-width:600px"] {
-        width: 100% !important;
-        max-width: 600px !important;
-        margin: 40px auto 0 !important;
-        box-sizing: border-box !important;
-    }
-
-    #admissions > div[style*="max-width:600px"] h3 {
-        font-size: 24px !important;
-        line-height: 1.3 !important;
-        margin-bottom: 20px !important;
-    }
-
-    #admissions > div[style*="max-width:600px"] form {
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    #admissions > div[style*="max-width:600px"] input,
-    #admissions > div[style*="max-width:600px"] textarea {
-        width: 100% !important;
-        display: block !important;
-        font-size: 16px !important;
-        border: 1px solid #d8d8d8 !important;
-        border-radius: 5px !important;
-        background: #fff !important;
-    }
-
-    #admissions > div[style*="max-width:600px"] textarea {
-        min-height: 130px !important;
-    }
-
-    #admissions > div[style*="max-width:600px"] .button {
-        display: inline-block !important;
-        width: auto !important;
-        max-width: none !important;
-        margin: 5px !important;
-    }
-}
-
-@media (max-width: 480px) {
-
-    #admissions > div[style*="max-width:600px"] {
-        padding: 0 2px !important;
-    }
-
-    #admissions > div[style*="max-width:600px"] h3 {
-        font-size: 22px !important;
-    }
-
-    #admissions > div[style*="max-width:600px"] input,
-    #admissions > div[style*="max-width:600px"] textarea {
-        font-size: 15px !important;
-        padding: 14px !important;
-    }
-
-    #admissions > div[style*="max-width:600px"] .button {
-        width: calc(100% - 10px) !important;
-        box-sizing: border-box !important;
-        margin: 5px !important;
-    }
-}
-
-
-/* Admission enquiry form - desktop + mobile */
-
-.admission-enquiry-form {
-    width:100%;
-    max-width:600px;
-    margin:40px auto 0;
-}
-
-.admission-enquiry-form form {
-    width:100%;
-}
-
-.admission-enquiry-form label {
-    display:block;
-    margin-top:6px;
-    color:#32145f;
-    font-size:14px;
-}
-
-.admission-enquiry-form input,
-.admission-enquiry-form select,
-.admission-enquiry-form textarea {
-    font-family:Arial,sans-serif;
-    font-size:15px;
-    border:1px solid #d5d5d5;
-    border-radius:6px;
-}
-
-@media (max-width:600px) {
-
-    .admission-enquiry-form {
-        width:100% !important;
-        max-width:600px !important;
-        margin:32px auto 0 !important;
-        padding:0 4px !important;
-        box-sizing:border-box !important;
-    }
-
-    .admission-enquiry-form h3 {
-        font-size:22px !important;
-        line-height:1.3 !important;
-    }
-
-    .admission-enquiry-form p {
-        font-size:14px !important;
-        line-height:1.5 !important;
-    }
-
-    .admission-enquiry-form label {
-        font-size:14px !important;
-    }
-
-    .admission-enquiry-form input,
-    .admission-enquiry-form select,
-    .admission-enquiry-form textarea {
-        width:100% !important;
-        min-height:46px;
-        font-size:15px !important;
-        padding:13px !important;
-        margin:7px 0 14px !important;
-    }
-
-    .admission-enquiry-form textarea {
-        min-height:120px;
-    }
-
-    .admission-enquiry-form button {
-        width:100% !important;
-        max-width:280px;
-    }
-
-}
-
 </style>
 
 </head>
@@ -3182,170 +3335,270 @@ footer p {
         Admissions
     </h2>
 
-    <p class="section-text">
-
-        We welcome families who are looking for a caring,
-        inspiring and supportive learning environment
-        for their children.
-
-        Contact our admissions team to learn more about
-        enrolment and available places.
-
+    <p class="admissions-intro">
+        We welcome families who are looking for a caring, inspiring and
+        supportive learning environment for their children. Our admissions
+        team is here to guide you through the process and answer your questions.
     </p>
 
 
-    <div style="text-align:center;margin-top:30px;">
+    <!-- ADMISSION PROCESS -->
+
+    <div class="admission-steps">
+
+        <div class="admission-step">
+
+            <div class="admission-step-number">
+                01
+            </div>
+
+            <h3>
+                Enquire
+            </h3>
+
+            <p>
+                Contact our admissions team to learn more about
+                the school, curriculum and available places.
+            </p>
+
+        </div>
+
+
+        <div class="admission-step">
+
+            <div class="admission-step-number">
+                02
+            </div>
+
+            <h3>
+                Visit
+            </h3>
+
+            <p>
+                Arrange a school visit and discover our learning
+                environment, facilities and community.
+            </p>
+
+        </div>
+
+
+        <div class="admission-step">
+
+            <div class="admission-step-number">
+                03
+            </div>
+
+            <h3>
+                Apply
+            </h3>
+
+            <p>
+                Complete your admission enquiry and our team
+                will guide you through the next steps.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT ACTIONS -->
+
+    <div class="admission-contact-actions">
 
         <a
             href="mailto:admissions@richmonddoha.com"
-            class="button"
-            style="background:#32145f;color:white;"
+            class="button admission-action email-action"
         >
-            Email Admissions
+            ✉ Email Admissions
         </a>
-
 
         <a
             href="https://wa.me/97433413214"
             target="_blank"
-            class="button"
-            style="background:#d4af37;color:#32145f;"
+            rel="noopener"
+            class="button admission-action whatsapp-action"
         >
-            💬 WhatsApp Us
+            💬 WhatsApp Admissions
         </a>
 
     </div>
 
 
-    <div class="admission-enquiry-form" style="max-width:600px;margin:40px auto 0;">
+    <!-- ENQUIRY FORM -->
 
-        <h3 style="text-align:center;color:#32145f;margin-bottom:10px;">
-            Enquire About Admission
-        </h3>
+    <div class="admission-enquiry-card">
 
-        <p style="text-align:center;color:#555;margin-bottom:20px;">
-            Complete the form below and our admissions team will contact you.
-        </p>
+        <div class="admission-enquiry-header">
 
-        <form action="https://formspree.io/f/mbgjnepv" method="POST">
+            <span>
+                ADMISSION ENQUIRY
+            </span>
 
-            <label for="parentName">
-                <strong>Parent / Guardian Name</strong>
-            </label>
+            <h3>
+                Start Your Enquiry
+            </h3>
 
-            <input
-                id="parentName"
-                type="text"
-                name="parent_guardian_name"
-                placeholder="Parent / Guardian Name"
-                required
-                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;"
-            >
+            <p>
+                Complete the form below and our admissions team
+                will contact you with further information.
+            </p>
+
+        </div>
 
 
-            <label for="email">
-                <strong>Email Address</strong>
-            </label>
+        <form
+            action="https://formspree.io/f/mbgjnepv"
+            method="POST"
+        >
 
             <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                required
-                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;"
+                type="hidden"
+                name="_subject"
+                value="New Admission Enquiry - Richmond International School"
             >
 
+            <div class="admission-form-grid">
 
-            <label for="phone">
-                <strong>Phone Number</strong>
-            </label>
+                <div class="admission-form-group">
 
-            <input
-                id="phone"
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                required
-                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;"
-            >
+                    <label for="parentName">
+                        Parent / Guardian Name
+                    </label>
 
+                    <input
+                        id="parentName"
+                        type="text"
+                        name="parent_guardian_name"
+                        placeholder="Enter parent / guardian name"
+                        required
+                    >
 
-            <label for="studentName">
-                <strong>Student Name</strong>
-            </label>
-
-            <input
-                id="studentName"
-                type="text"
-                name="student_name"
-                placeholder="Student Name"
-                required
-                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;"
-            >
+                </div>
 
 
-            <label for="yearGroup">
-                <strong>Year Group</strong>
-            </label>
+                <div class="admission-form-group">
 
-            <select
-                id="yearGroup"
-                name="year_group"
-                required
-                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;background:white;"
-            >
+                    <label for="email">
+                        Email Address
+                    </label>
 
-                <option value="" disabled selected>
-                    Select Year Group
-                </option>
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="Enter email address"
+                        required
+                    >
 
-                <option value="FS1">FS1</option>
-                <option value="FS2">FS2</option>
-                <option value="Year 1">Year 1</option>
-                <option value="Year 2">Year 2</option>
-                <option value="Year 3">Year 3</option>
-                <option value="Year 4">Year 4</option>
-                <option value="Year 5">Year 5</option>
-                <option value="Year 6">Year 6</option>
-
-            </select>
+                </div>
 
 
-            <label for="visitDate">
-                <strong>Preferred Visit Date</strong>
-            </label>
+                <div class="admission-form-group">
 
-            <input
-                id="visitDate"
-                type="date"
-                name="preferred_visit_date"
-                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;"
-            >
+                    <label for="phone">
+                        Phone Number
+                    </label>
 
+                    <input
+                        id="phone"
+                        type="tel"
+                        name="phone"
+                        placeholder="Enter phone number"
+                        required
+                    >
 
-            <label for="message">
-                <strong>Message</strong>
-            </label>
-
-            <textarea
-                id="message"
-                name="message"
-                placeholder="Message"
-                required
-                rows="5"
-                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;resize:vertical;"
-            ></textarea>
+                </div>
 
 
-            <div style="text-align:center;margin-top:15px;">
+                <div class="admission-form-group">
+
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input
+                        id="studentName"
+                        type="text"
+                        name="student_name"
+                        placeholder="Enter student name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admission-form-group">
+
+                    <label for="yearGroup">
+                        Year Group
+                    </label>
+
+                    <select
+                        id="yearGroup"
+                        name="year_group"
+                        required
+                    >
+
+                        <option value="" disabled selected>
+                            Select Year Group
+                        </option>
+
+                        <option value="FS1">FS1</option>
+                        <option value="FS2">FS2</option>
+                        <option value="Year 1">Year 1</option>
+                        <option value="Year 2">Year 2</option>
+                        <option value="Year 3">Year 3</option>
+                        <option value="Year 4">Year 4</option>
+                        <option value="Year 5">Year 5</option>
+                        <option value="Year 6">Year 6</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="admission-form-group">
+
+                    <label for="visitDate">
+                        Preferred Visit Date
+                    </label>
+
+                    <input
+                        id="visitDate"
+                        type="date"
+                        name="preferred_visit_date"
+                    >
+
+                </div>
+
+
+                <div class="admission-form-group full-width">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us how we can help you..."
+                        rows="5"
+                        required
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="admission-form-submit">
 
                 <button
                     type="submit"
-                    class="button"
-                    style="background:#d4af37;color:#32145f;"
+                    class="button admission-submit-btn"
                 >
-                    Send Enquiry
+                    Send Admission Enquiry
                 </button>
 
             </div>
