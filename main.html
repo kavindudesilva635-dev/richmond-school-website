@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,13 +12,13 @@
 <style>
 
 /* =========================
-   GENERAL
+   GLOBAL
 ========================= */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -23,825 +26,1025 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fb;
+    font-family: Arial, sans-serif;
     color: #222;
+    background: #f7f7f7;
     line-height: 1.6;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* =========================
-   COLOURS
-========================= */
-
-:root {
-    --purple: #32145f;
-    --purple-dark: #241044;
-    --gold: #d4af37;
-    --light: #f5f7fb;
-    --white: #ffffff;
-    --text: #222222;
-    --muted: #666666;
-}
 
 /* =========================
    HEADER
 ========================= */
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    background: #ffffff;
-
+    background: #32145f;
+    color: white;
+    padding: 12px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 12px 5%;
-
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 22px rgba(0,0,0,0.20);
+    border-bottom: 3px solid #d4af37;
 }
+
+
+/* =========================
+   LOGO AREA
+========================= */
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .logo-area img {
-    width: 190px;
-    height: auto;
+    width: 230px;
+    height: 95px;
+    object-fit: contain;
+    background: white;
+    padding: 9px 15px;
+    border-radius: 13px;
+    border: 2px solid #d4af37;
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.30),
+        0 0 0 3px rgba(212,175,55,0.12);
+    transition: all 0.3s ease;
+}
+
+.logo-area img:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        0 0 18px rgba(212,175,55,0.35);
+}
+
+
+/* =========================
+   SCHOOL NAME
+========================= */
+
+.school-name {
+    border-left: 2px solid #d4af37;
+    padding-left: 17px;
 }
 
 .school-name h1 {
-    color: var(--purple);
-    font-size: 22px;
-    margin-bottom: 2px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .school-name p {
-    color: #777;
-    font-size: 13px;
+    color: #e6c96a;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 600;
 }
 
+
 /* =========================
-   NAVIGATION
+   NAVBAR
 ========================= */
 
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 3px;
 }
 
 .main-nav a {
-    color: var(--purple);
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 11px 13px;
+    border-radius: 6px;
     font-size: 14px;
     font-weight: 600;
-
-    padding: 8px 0;
-
-    position: relative;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.main-nav a::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--gold);
-
-    transition: 0.3s;
+.main-nav a:hover {
+    color: #d4af37;
+    background: rgba(255,255,255,0.07);
 }
 
-.main-nav a:hover::after,
+.main-nav a.active {
+    color: #d4af37;
+}
+
 .main-nav a.active::after {
-    width: 100%;
+    content: "";
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 3px;
+    height: 2px;
+    background: #d4af37;
+    border-radius: 5px;
 }
 
-.apply-btn {
-    background: var(--gold);
-    color: var(--purple) !important;
-
-    padding: 10px 18px !important;
-    border-radius: 6px;
-}
-
-.apply-btn::after {
-    display: none;
-}
 
 /* =========================
-   MENU BUTTON
+   APPLY BUTTON
 ========================= */
 
-.menu-toggle {
-    display: none;
-
-    background: var(--purple);
-    color: #ffffff;
-
-    border: none;
+.main-nav .apply-btn {
+    margin-left: 10px;
+    padding: 11px 20px;
+    background: #d4af37;
+    color: #32145f;
+    border: 2px solid #d4af37;
     border-radius: 6px;
-
-    padding: 9px 12px;
-
-    font-size: 22px;
-    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 4px 13px rgba(212,175,55,0.25);
 }
 
+.main-nav .apply-btn:hover {
+    background: transparent;
+    color: #d4af37;
+    border-color: #d4af37;
+    transform: translateY(-2px);
+}
+
+.main-nav .apply-btn::after {
+    display: none;
+}
+
+
 /* =========================
-   HERO
+   PREMIUM HERO
 ========================= */
 
 .hero {
-    min-height: 620px;
-
-    background:
-        linear-gradient(
-            rgba(50,20,95,0.72),
-            rgba(50,20,95,0.72)
-        ),
-        url("school.jpg") center/cover no-repeat;
-
+    min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
 
-    padding: 80px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(50,20,95,0.94),
+            rgba(7,27,58,0.78)
+        ),
+        url("school.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(212,175,55,0.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,0.08),
+            transparent 30%
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #d4af37,
+        #f1d77a,
+        #d4af37
+    );
 }
 
 .hero-content {
-    max-width: 900px;
-    color: #ffffff;
+    position: relative;
+    z-index: 2;
+    max-width: 950px;
+    padding: 40px 25px;
 }
 
-.hero-content h2 {
-    font-size: 52px;
-    line-height: 1.15;
-
-    margin-bottom: 22px;
+.hero-content::before {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background: #d4af37;
+    margin: 0 auto 25px;
+    border-radius: 10px;
 }
 
-.hero-content p {
-    max-width: 760px;
+.hero h2 {
+    font-size: 58px;
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
 
-    margin: 0 auto 30px;
-
-    font-size: 18px;
-    color: #f4f4f4;
+    text-shadow:
+        0 4px 18px rgba(0,0,0,0.35);
 }
+
+.hero p {
+    max-width: 780px;
+    margin: 0 auto 38px;
+    font-size: 19px;
+    line-height: 1.8;
+    color: #f5f5f5;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .button {
     display: inline-block;
-
-    padding: 13px 24px;
-
+    padding: 15px 30px;
     margin: 5px;
-
-    border-radius: 6px;
-
-    background: var(--gold);
-    color: var(--purple);
-
-    font-weight: bold;
-
-    transition: 0.3s;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
 }
 
-.button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.hero .button:first-of-type {
+    background: #d4af37;
+    color: #32145f;
+    border: 2px solid #d4af37;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.20);
 }
+
+.hero .button:first-of-type:hover {
+    background: white;
+    color: #32145f;
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+.hero .button:last-of-type {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.8);
+}
+
+.hero .button:last-of-type:hover {
+    background: white;
+    color: #32145f;
+    border-color: white;
+    transform: translateY(-3px);
+}
+
 
 /* =========================
    SECTIONS
 ========================= */
 
 section {
-    padding: 80px 6%;
+    padding: 75px 8%;
 }
 
 .section-title {
     text-align: center;
-
-    color: var(--purple);
-
+    color: #32145f;
     font-size: 34px;
-
-    margin-bottom: 45px;
-
-    position: relative;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .section-title::after {
     content: "";
-
     display: block;
-
-    width: 70px;
-    height: 4px;
-
-    background: var(--gold);
-
+    width: 55px;
+    height: 3px;
+    background: #d4af37;
     margin: 12px auto 0;
-
     border-radius: 5px;
 }
 
+.section-text {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 17px;
+    color: #555;
+}
+
+
 /* =========================
-   PRINCIPAL
+   PRINCIPAL WELCOME
 ========================= */
 
-.principal-section {
-    background: #ffffff;
+#principal {
+    background: #f7f5fa;
 }
 
-.principal-container {
+.principal-wrap {
     max-width: 1100px;
-
-    margin: auto;
-
+    margin: 40px auto 0;
     display: grid;
-
-    grid-template-columns: 330px 1fr;
-
+    grid-template-columns: 300px 1fr;
     gap: 50px;
-
     align-items: center;
+    background: white;
+    padding: 45px;
+    border-radius: 18px;
+    border-left: 5px solid #d4af37;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
 }
 
-.principal-image img {
+.principal-photo {
+    width: 240px;
+    height: 290px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 3px solid #d4af37;
+    background: #32145f;
+    box-shadow: 0 10px 28px rgba(50,20,95,0.20);
+}
+
+.principal-photo img {
     width: 100%;
-
-    border-radius: 15px;
-
-    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .principal-content h3 {
-    color: var(--purple);
-
-    font-size: 30px;
-
-    margin-bottom: 5px;
+    color: #32145f;
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
 .principal-role {
-    color: var(--gold);
-
-    font-weight: bold;
-
+    color: #d4af37;
+    font-size: 16px;
+    font-weight: 700;
     margin-bottom: 18px;
 }
 
 .principal-content p {
     color: #555;
-
+    line-height: 1.85;
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
-.qualifications {
+.principal-details {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 10px;
-
-    margin-top: 20px;
+    margin: 22px 0;
 }
 
-.qualifications span {
-    background: #f2edf8;
-
-    color: var(--purple);
-
-    padding: 8px 13px;
-
-    border-radius: 20px;
-
+.principal-detail {
+    background: #f4f1f8;
+    color: #32145f;
+    padding: 9px 14px;
+    border-radius: 6px;
     font-size: 13px;
-
-    font-weight: bold;
+    font-weight: 600;
+    border-left: 3px solid #d4af37;
 }
 
-.signature {
+.uk-flag {
+    width: 22px;
+    height: 15px;
+    object-fit: cover;
+    vertical-align: middle;
+    margin-right: 6px;
+    border-radius: 2px;
+}
+
+.principal-signature {
     margin-top: 25px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
 
-    color: var(--purple);
-
-    font-weight: bold;
-
+.principal-signature strong {
+    color: #32145f;
     font-size: 18px;
 }
 
+.principal-signature span {
+    color: #d4af37;
+    font-weight: 700;
+}
+
+
 /* =========================
-   CARDS
+   WHY CHOOSE RICHMOND
 ========================= */
 
-.cards {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.card {
+#why-choose {
     background: #ffffff;
+}
 
-    padding: 30px;
-
-    border-radius: 14px;
-
+.why-intro {
+    max-width: 760px;
+    margin: 0 auto 40px;
     text-align: center;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-
-    transition: 0.3s;
-
-    border-top: 4px solid transparent;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-
-    border-top-color: var(--gold);
-
-    box-shadow: 0 15px 35px rgba(50,20,95,0.12);
-}
-
-.card h3 {
-    color: var(--purple);
-
-    margin-bottom: 12px;
-}
-
-.card p {
     color: #666;
-
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
-/* =========================
-   WHY CHOOSE
-========================= */
-
-#why {
-    background: #f5f7fb;
-}
-
-/* =========================
-   STATS
-========================= */
-
-.stats {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.stat {
-    background: var(--purple);
-
-    color: white;
-
-    padding: 30px;
-
-    border-radius: 12px;
-
-    text-align: center;
-}
-
-.stat h3 {
-    color: var(--gold);
-
-    font-size: 30px;
-
-    margin-bottom: 5px;
-}
-
-.stat p {
-    font-size: 14px;
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-content {
+.why-grid {
     max-width: 1100px;
-
-    margin: auto;
-}
-
-.about-content > p {
-    margin-bottom: 18px;
-
-    color: #555;
-}
-
-.about-grid {
+    margin: 0 auto;
     display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
-
-    margin-top: 35px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
 }
 
-.about-box {
-    background: #ffffff;
-
-    padding: 30px;
-
-    border-radius: 14px;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+.why-card {
+    background: #f7f5fa;
+    padding: 32px 25px;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid #eee7f5;
+    border-top: 4px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .3s ease;
 }
 
-.about-box h3 {
-    color: var(--purple);
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(50,20,95,.15);
+    border-top-color: #32145f;
+}
 
+.why-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    background: #32145f;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 6px 18px rgba(50,20,95,.2);
+}
+
+.why-card h3 {
+    color: #32145f;
+    font-size: 20px;
     margin-bottom: 12px;
 }
 
-/* =========================
-   VALUES
-========================= */
-
-.values {
-    display: grid;
-
-    grid-template-columns: repeat(5, 1fr);
-
-    gap: 15px;
-
-    margin-top: 35px;
+.why-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
 }
 
-.value {
-    background: var(--purple);
 
-    color: #ffffff;
+/* =========================
+   SCHOOL AT A GLANCE
+========================= */
 
-    padding: 20px 10px;
+#school-glance {
+    background: #f7f5fa;
+}
 
+.glance-intro {
+    max-width: 760px;
+    margin: 0 auto 40px;
     text-align: center;
-
-    border-radius: 10px;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
-.value strong {
-    color: var(--gold);
-
-    display: block;
-
-    margin-bottom: 5px;
+.glance-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
 }
+
+.glance-card {
+    background: #ffffff;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid #eee7f5;
+    border-bottom: 4px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .3s ease;
+}
+
+.glance-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(50,20,95,.15);
+    border-bottom-color: #32145f;
+}
+
+.glance-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 16px;
+    background: #32145f;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.glance-card h3 {
+    color: #32145f;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.glance-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
 
 /* =========================
-   ACADEMICS
+   ABOUT US
 ========================= */
 
-.academics-section {
+#about {
     background: #ffffff;
 }
 
-.academic-card {
-    background: #f7f4fb;
-
-    padding: 35px;
-
-    border-radius: 15px;
-
-    border-left: 5px solid var(--gold);
+.about-intro {
+    max-width: 1000px;
+    margin: 0 auto 45px;
+    text-align: center;
 }
 
-.academic-card h3 {
-    color: var(--purple);
+.about-intro h3 {
+    color: #32145f;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
 
-    font-size: 24px;
+.about-intro p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
 
+.about-values {
+    max-width: 1100px;
+    margin: 0 auto 45px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 28px;
+}
+
+.about-card {
+    background: #f7f5fa;
+    padding: 35px;
+    border-radius: 18px;
+    border-top: 5px solid #d4af37;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+    transition: .3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 35px rgba(50,20,95,.14);
+}
+
+.about-card-icon {
+    width: 60px;
+    height: 60px;
+    background: #32145f;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.about-card h3 {
+    color: #32145f;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.core-values {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.core-values h3 {
+    color: #32145f;
+    font-size: 28px;
+    margin-bottom: 28px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+}
+
+.value-item {
+    background: #32145f;
+    color: #ffffff;
+    padding: 25px 15px;
+    border-radius: 12px;
+    border-bottom: 4px solid #d4af37;
+    transition: .3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-6px);
+    background: #3d1a70;
+}
+
+.value-item span {
+    display: block;
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 700;
     margin-bottom: 8px;
 }
 
-.curriculum {
-    color: var(--gold);
-
-    font-weight: bold;
-
-    margin-bottom: 12px;
-}
-
-/* =========================
-   ADMISSIONS
-========================= */
-
-.admissions-section {
-    background:
-        linear-gradient(
-            rgba(50,20,95,0.96),
-            rgba(50,20,95,0.96)
-        );
-    
-    color: white;
-}
-
-.admissions-section .section-title {
-    color: white;
-}
-
-.admission-intro {
-    max-width: 750px;
-
-    margin: 0 auto 35px;
-
-    text-align: center;
-
-    color: #eeeeee;
-}
-
-.admission-contact {
-    text-align: center;
-
-    margin-bottom: 35px;
-}
-
-.admission-contact a {
-    color: var(--gold);
-
-    font-weight: bold;
-}
-
-.form-container {
-    max-width: 850px;
-
-    margin: auto;
-
-    background: #ffffff;
-
-    padding: 35px;
-
-    border-radius: 15px;
-}
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-.form-group label {
-    display: block;
-
-    color: var(--purple);
-
-    font-weight: bold;
-
-    margin-bottom: 7px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-
-    padding: 12px;
-
-    border: 1px solid #ddd;
-
-    border-radius: 6px;
-
-    font-family: inherit;
-
-    font-size: 14px;
-}
-
-.form-group textarea {
-    min-height: 120px;
-
-    resize: vertical;
-}
-
-.form-submit {
-    border: none;
-
-    cursor: pointer;
-
-    background: var(--gold);
-
-    color: var(--purple);
-
-    font-weight: bold;
-
-    padding: 13px 25px;
-
-    border-radius: 6px;
-
+.value-item strong {
     font-size: 15px;
 }
+
+.education-approach {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: linear-gradient(135deg,#32145f,#17233c);
+    padding: 50px;
+    border-radius: 20px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.education-approach::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(212,175,55,.12);
+    right: -70px;
+    top: -70px;
+}
+
+.education-content {
+    max-width: 850px;
+    position: relative;
+    z-index: 1;
+}
+
+.small-heading {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.education-content h3 {
+    font-size: 30px;
+    margin: 10px 0 20px;
+}
+
+.education-content p {
+    color: #eeeeee;
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   ACADEMIC CARDS
+========================= */
+
+.cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 290px;
+    padding: 32px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-top: 4px solid #d4af37;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(50,20,95,0.15);
+}
+
+.card h3 {
+    color: #32145f;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.card p {
+    line-height: 1.7;
+    color: #555;
+}
+
 
 /* =========================
    STUDENT LIFE
 ========================= */
 
-.student-life {
-    background: #f5f7fb;
+#student-life {
+    background: #f1edf7;
 }
+
+.student-life-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    max-width: 1050px;
+    margin: 40px auto 0;
+}
+
+.student-life-card {
+    background: white;
+    padding: 30px 25px;
+    text-align: center;
+    border-radius: 12px;
+    border-bottom: 4px solid #d4af37;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+}
+
+.student-life-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(50,20,95,0.14);
+}
+
+.student-life-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.student-life-card h3 {
+    color: #32145f;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.student-life-card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+
+/* =========================
+   ADMISSIONS
+========================= */
+
+#admissions {
+    background: white;
+}
+
+#admissions input,
+#admissions textarea {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: Arial,sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+#admissions input:focus,
+#admissions textarea:focus {
+    border-color: #32145f;
+}
+
 
 /* =========================
    GALLERY
 ========================= */
 
-.gallery {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
+#gallery {
+    background: #f7f7f7;
 }
 
-.gallery img {
-    width: 100%;
-
-    height: 240px;
-
-    object-fit: cover;
-
-    border-radius: 12px;
-
-    transition: 0.3s;
+.gallery-image {
+    display: block;
+    width: 90%;
+    max-width: 950px;
+    margin: 35px auto 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
 }
 
-.gallery img:hover {
-    transform: scale(1.02);
+.gallery-image:hover {
+    transform: scale(1.01);
 }
+
 
 /* =========================
    CONTACT
 ========================= */
 
 #contact {
-    background: #ffffff;
+    background: white;
 }
 
 .contact-box {
-    max-width: 800px;
-
-    margin: auto;
-
+    max-width: 700px;
+    margin: 35px auto 0;
+    background: #f7f7f7;
+    padding: 35px;
+    border-radius: 12px;
     text-align: center;
-
-    background: #f7f4fb;
-
-    padding: 40px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-
-    color: #555;
-
-    font-size: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    line-height: 2;
 }
 
 .contact-box strong {
-    display: block;
-
-    color: var(--purple);
-
-    font-size: 22px;
-
-    margin-bottom: 10px;
+    color: #32145f;
+    font-size: 18px;
 }
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    background: var(--purple);
-
-    color: #ffffff;
-
+    background: #32145f;
+    color: white;
     text-align: center;
-
-    padding: 30px 20px;
+    padding: 35px 20px;
+    border-top: 4px solid #d4af37;
 }
 
 footer p {
-    margin-bottom: 6px;
+    margin: 8px;
 }
 
-footer .gold {
-    color: var(--gold);
-
-    font-weight: bold;
+.gold {
+    color: #d4af37;
+    font-weight: 600;
 }
+
 
 /* =========================
-   MOBILE
+   TABLET
 ========================= */
 
-@media (max-width: 1000px) {
+@media(max-width:1100px) {
 
-    .main-nav {
-        gap: 15px;
+    header {
+        padding: 12px 3%;
+    }
+
+    .logo-area img {
+        width: 200px;
+        height: 85px;
     }
 
     .school-name h1 {
         font-size: 18px;
     }
 
-    .hero-content h2 {
-        font-size: 42px;
+    .school-name p {
+        font-size: 11px;
     }
 
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
+    .main-nav a {
+        padding: 10px 9px;
+        font-size: 13px;
     }
 
-    .values {
-        grid-template-columns: repeat(3, 1fr);
+    .main-nav .apply-btn {
+        padding: 10px 14px;
+        margin-left: 5px;
     }
 
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
+    .principal-wrap {
+        grid-template-columns: 250px 1fr;
+        gap: 35px;
+        padding: 35px;
     }
 }
 
-@media (max-width: 800px) {
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: white;
+    border: 2px solid #d4af37;
+    border-radius: 7px;
+    width: 46px;
+    height: 42px;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media(max-width:900px) {
 
     header {
-        padding: 10px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        padding: 12px 20px;
+        text-align: left;
     }
 
-    .logo-area img {
-        width: 145px;
-    }
-
-    .school-name {
-        display: none;
+    .logo-area {
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
     }
 
     .menu-toggle {
         display: block;
+        margin-left: auto;
     }
 
     .main-nav {
-        position: absolute;
-
-        top: 100%;
-
-        left: 0;
-
-        right: 0;
-
-        background: #ffffff;
-
+        width: 100%;
         display: none;
-
         flex-direction: column;
-
         align-items: stretch;
-
-        gap: 0;
-
-        padding: 10px 20px 20px;
-
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 5px;
+        padding-top: 12px;
+        margin-top: 12px;
+        border-top: 1px solid rgba(255,255,255,0.15);
     }
 
     .main-nav.open {
@@ -849,122 +1052,569 @@ footer .gold {
     }
 
     .main-nav a {
-        padding: 13px 10px;
+        width: 100%;
+        text-align: center;
+        padding: 11px;
+        font-size: 14px;
+    }
 
-        border-bottom: 1px solid #eeeeee;
+    .main-nav a.active::after {
+        display: none;
     }
 
     .main-nav .apply-btn {
-        text-align: center;
-
-        margin-top: 10px;
+        margin-left: 0;
+        margin-top: 3px;
     }
 
-    .hero {
-        min-height: 540px;
+    .student-life-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .hero-content h2 {
-        font-size: 36px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .principal-container {
+    .principal-wrap {
         grid-template-columns: 1fr;
-
         text-align: center;
+        max-width: 700px;
     }
 
-    .principal-image {
-        max-width: 330px;
-
-        margin: auto;
-    }
-
-    .qualifications {
+    .principal-details {
         justify-content: center;
     }
 
-    .cards {
+    .why-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .glance-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .about-values {
         grid-template-columns: 1fr;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .values {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
+    .values-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media (max-width: 500px) {
 
-    section {
-        padding: 60px 20px;
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+    header {
+        padding: 14px 20px;
+        flex-direction: column;
+        gap: 14px;
     }
+
+    .logo-area {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo-area img {
+        width: 210px;
+        height: 85px;
+        padding: 8px 12px;
+    }
+
+    .school-name {
+        border-left: none;
+        border-top: 2px solid #d4af37;
+        padding-left: 0;
+        padding-top: 9px;
+    }
+
+    .school-name h1 {
+        font-size: 18px;
+        white-space: normal;
+    }
+
+    .school-name p {
+        font-size: 12px;
+    }
+
+    .main-nav {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .main-nav .apply-btn {
+        margin-left: 5px;
+        padding: 9px 15px;
+    }
+
+
+    /* HERO */
 
     .hero {
-        padding: 60px 20px;
+        min-height: 580px;
+        padding: 40px 15px;
     }
 
-    .hero-content h2 {
-        font-size: 30px;
+    .hero-content {
+        padding: 30px 15px;
     }
 
-    .hero-content p {
-        font-size: 15px;
+    .hero h2 {
+        font-size: 38px;
+        line-height: 1.2;
     }
 
-    .button {
+    .hero p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .hero .button {
         display: block;
+        max-width: 260px;
+        margin: 10px auto;
+    }
 
-        width: 100%;
 
-        max-width: 300px;
+    /* SECTIONS */
 
-        margin: 8px auto;
+    section {
+        padding: 55px 6%;
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 29px;
     }
 
-    .form-container {
-        padding: 22px;
+    .section-text {
+        font-size: 16px;
     }
+
+
+    /* PRINCIPAL */
+
+    .principal-wrap {
+        padding: 28px 22px;
+        border-left: none;
+        border-top: 5px solid #d4af37;
+    }
+
+    .principal-photo {
+        width: 200px;
+        height: 245px;
+    }
+
+    .principal-content h3 {
+        font-size: 23px;
+    }
+
+    .principal-content p {
+        font-size: 15px;
+    }
+
+    .principal-details {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    /* WHY CHOOSE */
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .why-card {
+        padding: 28px 22px;
+    }
+
+
+    /* SCHOOL AT A GLANCE */
+
+    .glance-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .glance-intro {
+        font-size: 15px;
+    }
+
+    .glance-card {
+        padding: 28px 22px;
+    }
+
+
+    /* ABOUT */
+
+    .about-intro h3 {
+        font-size: 25px;
+    }
+
+    .about-intro p {
+        font-size: 15px;
+    }
+
+    .about-card {
+        padding: 28px 22px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-approach {
+        padding: 35px 22px;
+    }
+
+    .education-content h3 {
+        font-size: 25px;
+    }
+
+
+    /* CARDS */
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+
+    /* STUDENT LIFE */
+
+    .student-life-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-image {
+        width: 100%;
+    }
+
+
+    /* CONTACT */
 
     .contact-box {
-        padding: 25px 15px;
+        padding: 25px 18px;
     }
 
-    .contact-box strong {
-        font-size: 19px;
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px) {
+
+    .logo-area img {
+        width: 190px;
+        height: 75px;
+        padding: 7px 10px;
     }
 
-    .values {
-        grid-template-columns: 1fr;
+    .school-name h1 {
+        font-size: 17px;
+    }
+
+    .school-name p {
+        font-size: 11px;
+    }
+
+    .main-nav {
+        gap: 3px;
+    }
+
+    .main-nav a {
+        padding: 7px 8px;
+        font-size: 12px;
+    }
+
+    .main-nav .apply-btn {
+        padding: 8px 12px;
+        margin-left: 2px;
+    }
+
+    .hero {
+        min-height: 560px;
+    }
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero .button {
+        max-width: 240px;
+        width: 100%;
+    }
+
+    .principal-photo {
+        width: 185px;
+        height: 225px;
+    }
+
+}
+
+
+
+/* =========================================================
+   FINAL MOBILE NAVIGATION FIX
+   Keeps desktop layout unchanged.
+========================================================= */
+@media (max-width: 900px) {
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 0 !important;
+        padding: 12px 15px !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 9999 !important;
+    }
+
+    .logo-area {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        gap: 10px !important;
+    }
+
+    .logo-area img {
+        width: 145px !important;
+        height: auto !important;
+        max-width: 45vw !important;
+        padding: 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    .school-name {
+        min-width: 0 !important;
+        border-left: 2px solid #d4af37 !important;
+        border-top: none !important;
+        padding: 0 0 0 10px !important;
+    }
+
+    .school-name h1 {
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+    }
+
+    .school-name p {
+        font-size: 9px !important;
+        line-height: 1.3 !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 44px !important;
+        height: 42px !important;
+        margin: 0 0 0 10px !important;
+        padding: 0 !important;
+        flex: 0 0 44px !important;
+        position: relative !important;
+        z-index: 10001 !important;
+    }
+
+    .main-nav,
+    .main-nav.open {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 4px !important;
+        margin: 10px 0 0 0 !important;
+        padding: 10px 0 0 0 !important;
+        border-top: 1px solid rgba(255,255,255,0.18) !important;
+        box-sizing: border-box !important;
+    }
+
+    .main-nav.open {
+        display: flex !important;
+    }
+
+    .main-nav a,
+    .main-nav .apply-btn {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        padding: 11px 12px !important;
+        margin: 0 !important;
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+    }
+
+    .main-nav a.active::after {
+        display: none !important;
     }
 }
 
+@media (max-width: 480px) {
+    header {
+        padding: 10px 12px !important;
+    }
+
+    .logo-area img {
+        width: 125px !important;
+        max-width: 38vw !important;
+    }
+
+    .school-name h1 {
+        font-size: 12px !important;
+    }
+
+    .school-name p {
+        font-size: 8px !important;
+    }
+
+    .menu-toggle {
+        width: 42px !important;
+        height: 40px !important;
+        flex-basis: 42px !important;
+        font-size: 23px !important;
+    }
+
+    .main-nav a,
+    .main-nav .apply-btn {
+        padding: 10px 8px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* =========================================================
+   ADMISSION ENQUIRY - MOBILE MATCHES DESKTOP DESIGN
+========================================================= */
+@media (max-width: 900px) {
+    #admissions > div[style*="max-width:600px"] {
+        width: 100% !important;
+        max-width: 600px !important;
+        margin: 40px auto 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] h3 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 20px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] form {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] input,
+    #admissions > div[style*="max-width:600px"] textarea {
+        width: 100% !important;
+        display: block !important;
+        font-size: 16px !important;
+        border: 1px solid #d8d8d8 !important;
+        border-radius: 5px !important;
+        background: #fff !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] textarea {
+        min-height: 130px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] .button {
+        display: inline-block !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 5px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #admissions > div[style*="max-width:600px"] {
+        padding: 0 2px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] h3 {
+        font-size: 22px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] input,
+    #admissions > div[style*="max-width:600px"] textarea {
+        font-size: 15px !important;
+        padding: 14px !important;
+    }
+
+    #admissions > div[style*="max-width:600px"] .button {
+        width: calc(100% - 10px) !important;
+        box-sizing: border-box !important;
+        margin: 5px !important;
+    }
+}
+
+
+/* Admission enquiry form - desktop + mobile */
+.admission-enquiry-form { width:100%; max-width:600px; margin:40px auto 0; }
+.admission-enquiry-form form { width:100%; }
+.admission-enquiry-form label { display:block; margin-top:6px; color:#32145f; font-size:14px; }
+.admission-enquiry-form input, .admission-enquiry-form select, .admission-enquiry-form textarea { font-family:Arial,sans-serif; font-size:15px; border:1px solid #d5d5d5; border-radius:6px; }
+@media (max-width:600px) {
+  .admission-enquiry-form { width:100% !important; max-width:600px !important; margin:32px auto 0 !important; padding:0 4px !important; box-sizing:border-box !important; }
+  .admission-enquiry-form h3 { font-size:22px !important; line-height:1.3 !important; }
+  .admission-enquiry-form p { font-size:14px !important; line-height:1.5 !important; }
+  .admission-enquiry-form label { font-size:14px !important; }
+  .admission-enquiry-form input, .admission-enquiry-form select, .admission-enquiry-form textarea { width:100% !important; min-height:46px; font-size:15px !important; padding:13px !important; margin:7px 0 14px !important; }
+  .admission-enquiry-form textarea { min-height:120px; }
+  .admission-enquiry-form button { width:100% !important; max-width:280px; }
+}
 </style>
+
 </head>
+
 
 <body>
 
+
 <!-- =========================
-     HEADER
+     HEADER / NAVBAR
 ========================= -->
 
 <header>
@@ -978,16 +1628,18 @@ footer .gold {
 
         <div class="school-name">
 
-            <h1>Richmond International School</h1>
+            <h1>
+                Richmond International School
+            </h1>
 
             <p>
-                Al Markhiya Main Branch •
-                Nurturing tomorrow’s leaders
+                Al Markhiya Main Branch • Nurturing tomorrow’s leaders
             </p>
 
         </div>
 
     </div>
+
 
     <button
         class="menu-toggle"
@@ -1000,32 +1652,21 @@ footer .gold {
     </button>
 
     <nav class="main-nav" id="mainNav">
-
         <a href="#home" class="active">Home</a>
-
         <a href="#about">About</a>
-
         <a href="#academics">Academics</a>
-
         <a href="#admissions">Admissions</a>
-
         <a href="#student-life">Student Life</a>
-
         <a href="#gallery">Gallery</a>
-
         <a href="#contact">Contact</a>
-
-        <a href="#admissions" class="apply-btn">
-            Apply Now
-        </a>
-
+        <a href="#admissions" class="apply-btn">Apply Now</a>
     </nav>
 
 </header>
 
 
 <!-- =========================
-     HERO
+     HOME / HERO
 ========================= -->
 
 <section class="hero" id="home">
@@ -1039,9 +1680,11 @@ footer .gold {
 
         <p>
             Welcome to Richmond International School –
-            Al Markhiya Main Branch. We provide a safe,
-            supportive and inspiring environment where
-            every child can learn, grow and succeed.
+            Al Markhiya Main Branch.
+
+            We provide a safe, supportive and inspiring
+            environment where every child can learn,
+            grow and succeed.
         </p>
 
         <a href="#admissions" class="button">
@@ -1058,74 +1701,113 @@ footer .gold {
 
 
 <!-- =========================
-     PRINCIPAL
+     PRINCIPAL WELCOME
 ========================= -->
 
-<section class="principal-section">
+<section id="principal">
 
     <h2 class="section-title">
         Welcome from the Principal
     </h2>
 
-    <div class="principal-container">
+    <div class="principal-wrap">
 
-        <div class="principal-image">
+        <div class="principal-photo">
 
             <img
                 src="principal.jpg"
-                alt="Kerryn Turner - Principal"
+                alt="Kerryn Turner - Principal of Richmond International School"
             >
 
         </div>
 
         <div class="principal-content">
 
-            <h3>
-                Kerry Turner
-            </h3>
+           <h3>Kerry Turner</h3>
 
             <div class="principal-role">
                 Principal – Al Markhiya Main Branch
             </div>
 
             <p>
-                Welcome to Richmond International School –
-                Al Markhiya Main Branch.
+                It is my pleasure to welcome you to
+                Richmond International School.
+
+                We are committed to creating a safe,
+                caring and inspiring environment where
+                every student is encouraged to learn,
+                grow and achieve their full potential.
             </p>
 
             <p>
-                We are committed to providing a caring,
-                inclusive and inspiring environment where
-                every student is encouraged to achieve their
-                full potential.
+                At Richmond, we believe that education
+                is more than academic success.
+
+                We aim to develop confident, responsible
+                and respectful young people who are
+                prepared to make a positive contribution
+                to the world around them.
             </p>
 
             <p>
-                Through high-quality teaching, strong
-                relationships and a broad British curriculum,
-                we aim to develop confident, responsible and
-                successful young people.
+                With a strong commitment to education
+                and student development, we look forward
+                to working together with our students,
+                parents and the wider school community
+                to create a successful and memorable
+                educational journey.
             </p>
 
-            <div class="qualifications">
+            <div class="principal-details">
 
-                <span>🎓 BA (Hons) Education</span>
+                <div class="principal-detail">
+                    🎓 BA (Hons) Education
+                </div>
 
-                <span>📘 PGCE</span>
+                <div class="principal-detail">
+                    📘 PGCE
+                </div>
 
-                <span>🎓 MA</span>
+                <div class="principal-detail">
+                    🎓 MA
+                </div>
 
-                <span>🏫 NPQH</span>
+                <div class="principal-detail">
+                    🏫 NPQH
+                </div>
 
-                <span>⭐ 18 Years of Experience</span>
+                <div class="principal-detail">
+                    ⭐ 18 Years of Experience
+                </div>
 
-                <span>🇬🇧 British</span>
+                <div class="principal-detail">
+                    <img
+                        src="uk-flag.png"
+                        alt="UK Flag"
+                        class="uk-flag"
+                    >
+                    British
+                </div>
 
             </div>
 
-            <div class="signature">
-                Kerry Turner<br>
-                Principal
+            <div class="principal-signature">
+
+                Warm regards,
+                <br>
+
+               <strong>Kerry Turner</strong>
+
+                <br>
+
+                <span>
+                    Principal
+                </span>
+
+                <br>
+
+                Richmond International School
+
             </div>
 
         </div>
@@ -1136,94 +1818,76 @@ footer .gold {
 
 
 <!-- =========================
-     WHY CHOOSE
+     WHY CHOOSE RICHMOND
 ========================= -->
 
-<section id="why">
+<section id="why-choose">
 
     <h2 class="section-title">
         Why Choose Richmond?
     </h2>
 
-    <div class="cards">
+    <p class="why-intro">
+        At Richmond International School, we believe that every student
+        has the potential to learn, grow and succeed. We provide a
+        supportive, inspiring and inclusive environment where students
+        are encouraged to develop academically, socially and personally.
+    </p>
 
-        <div class="card">
+    <div class="why-grid">
 
-            <h3>
-                🎓 Quality Education
-            </h3>
-
+        <div class="why-card">
+            <div class="why-icon">🎓</div>
+            <h3>Quality Education</h3>
             <p>
-                A broad and balanced British curriculum
-                designed to develop confident and capable
-                learners.
+                We provide a strong educational foundation that supports
+                academic growth and lifelong learning.
             </p>
-
         </div>
 
-        <div class="card">
-
-            <h3>
-                👩‍🏫 Experienced Leadership
-            </h3>
-
+        <div class="why-card">
+            <div class="why-icon">🌟</div>
+            <h3>Experienced Leadership</h3>
             <p>
-                Experienced educational leadership and
-                dedicated teachers who care about every child.
+                Our experienced leadership team works closely with staff,
+                students and parents to support school development.
             </p>
-
         </div>
 
-        <div class="card">
-
-            <h3>
-                ❤️ Safe & Caring Environment
-            </h3>
-
+        <div class="why-card">
+            <div class="why-icon">❤️</div>
+            <h3>Safe & Caring Environment</h3>
             <p>
-                A welcoming school community where students
-                feel valued, respected and supported.
+                We create a welcoming and caring environment where students
+                feel safe, valued and supported.
             </p>
-
         </div>
 
-        <div class="card">
-
-            <h3>
-                💻 Modern Learning
-            </h3>
-
+        <div class="why-card">
+            <div class="why-icon">💡</div>
+            <h3>Modern Learning</h3>
             <p>
-                Learning experiences that encourage
-                creativity, technology and independent thinking.
+                We encourage students to develop creativity, confidence,
+                communication and digital skills.
             </p>
-
         </div>
 
-        <div class="card">
-
-            <h3>
-                🌱 Student Development
-            </h3>
-
+        <div class="why-card">
+            <div class="why-icon">🏆</div>
+            <h3>Student Development</h3>
             <p>
-                Supporting academic, personal, social and
-                emotional development.
+                We support students in developing their talents, interests,
+                confidence and personal responsibility.
             </p>
-
         </div>
 
-        <div class="card">
-
-            <h3>
-                🤝 Strong Community
-            </h3>
-
+        <div class="why-card">
+            <div class="why-icon">🤝</div>
+            <h3>Strong Community</h3>
             <p>
-                Strong partnerships between students,
-                parents, teachers and the wider school community.
+                We value strong partnerships between students, parents,
+                teachers and the wider school community.
             </p>
-
         </div>
 
     </div>
@@ -1235,82 +1899,117 @@ footer .gold {
      SCHOOL AT A GLANCE
 ========================= -->
 
-<section>
+<section id="school-glance">
 
     <h2 class="section-title">
         School at a Glance
     </h2>
 
-    <div class="stats">
+    <p class="glance-intro">
+        Richmond International School provides a supportive and inspiring
+        learning environment where students are encouraged to achieve,
+        grow and develop with confidence.
+    </p>
 
-        <div class="stat">
+    <div class="glance-grid">
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                🎓
+            </div>
 
             <h3>
-                British
+                British Curriculum
             </h3>
 
             <p>
-                Curriculum
+                Broad, balanced and rigorous British education.
             </p>
 
         </div>
 
-        <div class="stat">
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                👨‍🎓
+            </div>
 
             <h3>
-                500+
+                500+ Students
             </h3>
 
             <p>
-                Students
+                A growing and diverse school community.
             </p>
 
         </div>
 
-        <div class="stat">
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                📅
+            </div>
 
             <h3>
-                2019
+                Established 2019
             </h3>
 
             <p>
-                Established
+                Serving students and families in Doha since 2019.
             </p>
 
         </div>
 
-        <div class="stat">
 
-            <h3>
+        <div class="glance-card">
+
+            <div class="glance-icon">
                 🌍
-            </h3>
+            </div>
 
-            <p>
+            <h3>
                 International School
+            </h3>
+
+            <p>
+                A welcoming community with an international outlook.
             </p>
 
         </div>
 
-        <div class="stat">
 
-            <h3>
+        <div class="glance-card">
+
+            <div class="glance-icon">
                 👩‍🏫
+            </div>
+
+            <h3>
+                Experienced Teachers
             </h3>
 
             <p>
-                Experienced Teachers
+                Dedicated educators supporting every student's development.
             </p>
 
         </div>
 
-        <div class="stat">
+
+        <div class="glance-card">
+
+            <div class="glance-icon">
+                💻
+            </div>
 
             <h3>
-                💻
+                Modern Learning
             </h3>
 
             <p>
-                Modern Learning
+                Technology-supported learning for future-ready students.
             </p>
 
         </div>
@@ -1321,7 +2020,7 @@ footer .gold {
 
 
 <!-- =========================
-     ABOUT
+     ABOUT US
 ========================= -->
 
 <section id="about">
@@ -1330,131 +2029,161 @@ footer .gold {
         About Richmond International School
     </h2>
 
-    <div class="about-content">
+
+    <div class="about-intro">
+
+        <h3>
+            Welcome to Richmond International School
+        </h3>
 
         <p>
-            Richmond International School opened its doors
-            in 2019 as a dynamic, progressive and contemporary
-            international school.
+            Nestled in the heart of Doha, Qatar, Richmond International School
+            opened its doors in 2019. We are a dynamic, progressive and
+            contemporary international school offering a broad, balanced and
+            rigorous British curriculum across the sciences, arts and humanities.
         </p>
 
         <p>
-            We provide a broad, balanced and rigorous British
-            curriculum across the sciences, arts and humanities.
+            Our whole-person learning experience is led by a team of dedicated
+            educators who recognise the individual needs and potential of every
+            student. We encourage academic excellence while supporting personal,
+            social and emotional development.
         </p>
 
         <p>
-            Our approach focuses on whole-person learning.
-            Dedicated educators work closely with students to
-            understand their individual needs and potential.
+            We believe that education should prepare students for their future.
+            Through a culture of inclusiveness, exploration, inquiry, learning
+            and discipline, we aim to develop confident, responsible and
+            capable young people who can make a positive contribution to the world.
         </p>
 
         <p>
-            We believe academic excellence should be developed
-            alongside personal, social and emotional growth.
+            Richmond International School has grown since opening while
+            maintaining a strong family feel. We value the involvement of our
+            students, teachers, staff and parents in building a supportive
+            school community.
         </p>
 
-        <p>
-            Our aim is to prepare students for the future by
-            encouraging inclusiveness, exploration, inquiry,
-            learning and discipline.
-        </p>
-
-        <p>
-            Since opening, Richmond International School has
-            grown into a strong school community with a
-            welcoming family feel.
-        </p>
+    </div>
 
 
-        <div class="about-grid">
+    <div class="about-values">
 
-            <div class="about-box">
+        <div class="about-card">
 
-                <h3>
-                    Our Vision
-                </h3>
-
-                <p>
-                    To nurture confident, responsible and
-                    capable young people who are prepared to
-                    make a positive contribution to the world.
-                </p>
-
+            <div class="about-card-icon">
+                🌟
             </div>
 
-            <div class="about-box">
+            <h3>
+                Our Vision
+            </h3>
 
-                <h3>
-                    Our Mission
-                </h3>
+            <p>
+                Our vision is that every child leaves with a strong sense of
+                self-confidence, prepared for their next stage of education,
+                and possessing a genuine love for learning.
+            </p>
 
-                <p>
-                    To provide a safe, inclusive and inspiring
-                    learning environment where every student
-                    is supported to achieve their full potential.
-                </p>
-
-            </div>
+            <p>
+                Children will develop resilient character and high aspirations
+                for their future. We believe that children's achievement is
+                limitless, and our goal is to instil in them the confidence
+                and capability to make a positive impact on the world.
+            </p>
 
         </div>
 
 
-        <h2
-            style="
-            text-align:center;
-            color:#32145f;
-            margin-top:50px;
-            margin-bottom:25px;
-            "
-        >
-            Richmond 5 R’s
-        </h2>
+        <div class="about-card">
 
-        <div class="values">
+            <div class="about-card-icon">
+                🎯
+            </div>
 
-            <div class="value">
+            <h3>
+                Our Mission
+            </h3>
+
+            <p>
+                Richmond International School's mission is to provide a
+                holistic British International Education Programme, delivered
+                in a caring learning environment that empowers children to
+                reach their educational and personal potential whilst nurturing
+                their self-confidence and self-esteem.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="core-values">
+
+        <h3>
+            Core Values – Richmond 5 R's
+        </h3>
+
+        <div class="values-grid">
+
+            <div class="value-item">
+                <span>01</span>
                 <strong>Respect</strong>
-                Valuing ourselves and others
             </div>
 
-            <div class="value">
+            <div class="value-item">
+                <span>02</span>
                 <strong>Resilience</strong>
-                Never giving up
             </div>
 
-            <div class="value">
+            <div class="value-item">
+                <span>03</span>
                 <strong>Resourcefulness</strong>
-                Finding solutions
             </div>
 
-            <div class="value">
+            <div class="value-item">
+                <span>04</span>
                 <strong>Reflection</strong>
-                Learning from experience
             </div>
 
-            <div class="value">
+            <div class="value-item">
+                <span>05</span>
                 <strong>Responsibility</strong>
-                Making positive choices
             </div>
 
         </div>
 
+    </div>
 
-        <div
-            class="about-box"
-            style="margin-top:40px;"
-        >
+
+    <div class="education-approach">
+
+        <div class="education-content">
+
+            <span class="small-heading">
+                OUR APPROACH
+            </span>
 
             <h3>
                 Developing the Whole Person
             </h3>
 
             <p>
-                Our education approach supports academic
-                achievement while developing communication,
-                confidence, creativity, collaboration,
-                independence and strong personal values.
+                We are committed to equipping our students with the values,
+                knowledge and discipline needed to make a positive impact
+                on the world.
+            </p>
+
+            <p>
+                Our students benefit from a comprehensive support network
+                with committed staff, strong parent partnerships and a
+                collaborative learning environment supported by technology.
+            </p>
+
+            <p>
+                We aim to build a strong school community where students,
+                teachers, staff and parents work together to create meaningful
+                learning experiences and prepare students for future success.
             </p>
 
         </div>
@@ -1468,53 +2197,44 @@ footer .gold {
      ACADEMICS
 ========================= -->
 
-<section
-    class="academics-section"
-    id="academics"
->
+<section id="academics">
 
     <h2 class="section-title">
-        Academics
+        Our Academics
     </h2>
+
+    <p class="section-text">
+        Our learning programmes support students at every stage
+        of their educational journey.
+    </p>
 
     <div class="cards">
 
-        <div class="academic-card">
+        <div class="card">
 
             <h3>
-                Early Years
+                🌱 Early Years
             </h3>
 
-            <div class="curriculum">
-                British Curriculum – EYFS
-            </div>
-
             <p>
-                Our Early Years provision provides a caring,
-                engaging and stimulating environment where
-                young children develop confidence, communication
-                skills and essential foundations for lifelong
-                learning.
+                A caring and engaging environment where young
+                learners develop confidence, communication
+                and essential skills.
             </p>
 
         </div>
 
 
-        <div class="academic-card">
+        <div class="card">
 
             <h3>
-                Primary School
+                📚 Primary School
             </h3>
 
-            <div class="curriculum">
-                British Curriculum – Pearson Edexcel
-            </div>
-
             <p>
-                Our Primary School provides strong academic
-                foundations through creative, engaging and
-                meaningful learning experiences that encourage
-                curiosity, independence and achievement.
+                Building strong academic foundations through
+                creative, engaging and meaningful learning
+                experiences.
             </p>
 
         </div>
@@ -1528,39 +2248,40 @@ footer .gold {
      ADMISSIONS
 ========================= -->
 
-<section
-    class="admissions-section"
-    id="admissions"
->
+<section id="admissions">
 
     <h2 class="section-title">
         Admissions
     </h2>
 
-    <p class="admission-intro">
+    <p class="section-text">
+
         We welcome families who are looking for a caring,
-        inspiring and high-quality British education for
-        their children.
+        inspiring and supportive learning environment
+        for their children.
+
+        Contact our admissions team to learn more about
+        enrolment and available places.
+
     </p>
 
-    <div class="admission-contact">
 
-        📧
-        <a href="mailto:admissions@richmonddoha.com">
-            admissions@richmonddoha.com
+    <div style="text-align:center;margin-top:30px;">
+
+        <a
+            href="mailto:admissions@richmonddoha.com"
+            class="button"
+            style="background:#32145f;color:white;"
+        >
+            Email Admissions
         </a>
 
-        <br><br>
 
         <a
             href="https://wa.me/97433413214"
             target="_blank"
-            rel="noopener"
             class="button"
-            style="
-            background:#d4af37;
-            color:#32145f;
-            "
+            style="background:#d4af37;color:#32145f;"
         >
             💬 WhatsApp Us
         </a>
@@ -1568,159 +2289,62 @@ footer .gold {
     </div>
 
 
-    <div class="form-container">
+    <div class="admission-enquiry-form" style="max-width:600px;margin:40px auto 0;">
 
-        <form
-            action="https://formspree.io/f/mbgjnepv"
-            method="POST"
-        >
+        <h3 style="text-align:center;color:#32145f;margin-bottom:10px;">
+            Enquire About Admission
+        </h3>
 
-            <div class="form-group">
+        <p style="text-align:center;color:#555;margin-bottom:20px;">
+            Complete the form below and our admissions team will contact you.
+        </p>
 
-                <label>
-                    Parent / Guardian Name
-                </label>
+        <form action="https://formspree.io/f/mbgjnepv" method="POST">
 
-                <input
-                    type="text"
-                    name="parent_name"
-                    required
-                >
+            <label for="parentName"><strong>Parent / Guardian Name</strong></label>
+            <input id="parentName" type="text" name="parent_guardian_name" placeholder="Parent / Guardian Name" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
 
+            <label for="email"><strong>Email Address</strong></label>
+            <input id="email" type="email" name="email" placeholder="Email Address" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
+
+            <label for="phone"><strong>Phone Number</strong></label>
+            <input id="phone" type="tel" name="phone" placeholder="Phone Number" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
+
+            <label for="studentName"><strong>Student Name</strong></label>
+            <input id="studentName" type="text" name="student_name" placeholder="Student Name" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
+
+            <label for="yearGroup"><strong>Year Group</strong></label>
+            <select id="yearGroup" name="year_group" required
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;background:white;">
+                <option value="" disabled selected>Select Year Group</option>
+                <option value="FS1">FS1</option>
+                <option value="FS2">FS2</option>
+                <option value="Year 1">Year 1</option>
+                <option value="Year 2">Year 2</option>
+                <option value="Year 3">Year 3</option>
+                <option value="Year 4">Year 4</option>
+                <option value="Year 5">Year 5</option>
+                <option value="Year 6">Year 6</option>
+            </select>
+
+            <label for="visitDate"><strong>Preferred Visit Date</strong></label>
+            <input id="visitDate" type="date" name="preferred_visit_date"
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;">
+
+            <label for="message"><strong>Message</strong></label>
+            <textarea id="message" name="message" placeholder="Message" required rows="5"
+                style="width:100%;padding:14px;margin:8px 0 14px;box-sizing:border-box;resize:vertical;"></textarea>
+
+            <div style="text-align:center;margin-top:15px;">
+                <button type="submit" class="button"
+                    style="background:#d4af37;color:#32145f;">
+                    Send Enquiry
+                </button>
             </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Email Address
-                </label>
-
-                <input
-                    type="email"
-                    name="email"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Phone Number
-                </label>
-
-                <input
-                    type="tel"
-                    name="phone"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Student Name
-                </label>
-
-                <input
-                    type="text"
-                    name="student_name"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Year Group
-                </label>
-
-                <select
-                    name="year_group"
-                    required
-                >
-
-                    <option value="">
-                        Select Year Group
-                    </option>
-
-                    <option>
-                        FS1
-                    </option>
-
-                    <option>
-                        FS2
-                    </option>
-
-                    <option>
-                        Year 1
-                    </option>
-
-                    <option>
-                        Year 2
-                    </option>
-
-                    <option>
-                        Year 3
-                    </option>
-
-                    <option>
-                        Year 4
-                    </option>
-
-                    <option>
-                        Year 5
-                    </option>
-
-                    <option>
-                        Year 6
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Preferred Visit Date
-                </label>
-
-                <input
-                    type="date"
-                    name="visit_date"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Message
-                </label>
-
-                <textarea
-                    name="message"
-                    placeholder="Please enter your message..."
-                ></textarea>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="form-submit"
-            >
-                Send Enquiry
-            </button>
 
         </form>
 
@@ -1733,71 +2357,89 @@ footer .gold {
      STUDENT LIFE
 ========================= -->
 
-<section
-    class="student-life"
-    id="student-life"
->
+<section id="student-life">
 
     <h2 class="section-title">
         Student Life
     </h2>
 
-    <div class="cards">
+    <p class="section-text">
 
-        <div class="card">
+        At Richmond International School, learning extends
+        beyond the classroom. Students are encouraged to
+        participate, explore their interests and develop
+        confidence through a wide range of school experiences.
+
+    </p>
+
+
+    <div class="student-life-grid">
+
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                🎨
+            </div>
 
             <h3>
-                🎨 Activities & Clubs
+                Activities & Clubs
             </h3>
 
             <p>
-                Opportunities for students to explore
-                interests, discover talents and develop
-                new skills.
+                Opportunities for students to discover
+                interests, develop talents and build confidence.
             </p>
 
         </div>
 
 
-        <div class="card">
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                ⚽
+            </div>
 
             <h3>
-                ⚽ Sports & Wellbeing
+                Sports & Wellbeing
             </h3>
 
             <p>
-                Encouraging healthy lifestyles, teamwork,
-                confidence and positive wellbeing.
+                Encouraging teamwork, healthy lifestyles,
+                confidence and positive relationships.
             </p>
 
         </div>
 
 
-        <div class="card">
+        <div class="student-life-card">
+
+            <div class="student-life-icon">
+                🎉
+            </div>
 
             <h3>
-                🎉 Events & Experiences
+                Events & Experiences
             </h3>
 
             <p>
-                School events and experiences that create
-                memorable learning opportunities.
+                Celebrating school events, achievements
+                and memorable moments together.
             </p>
 
         </div>
 
     </div>
 
-    <div
-        style="
-        text-align:center;
-        margin-top:35px;
-        "
-    >
+
+    <div style="text-align:center;margin-top:35px;">
 
         <a
             href="#gallery"
             class="button"
+            style="
+            background:#32145f;
+            color:white;
+            "
         >
             View School Gallery
         </a>
@@ -1814,27 +2456,22 @@ footer .gold {
 <section id="gallery">
 
     <h2 class="section-title">
-        Gallery
+        School Gallery
     </h2>
 
-    <div class="gallery">
+    <p class="section-text">
 
-        <img
-            src="school.jpg"
-            alt="Richmond International School"
-        >
+        Explore moments from life at Richmond International School
+        – Al Markhiya Main Branch.
 
-        <img
-            src="school.jpg"
-            alt="Richmond International School"
-        >
+    </p>
 
-        <img
-            src="school.jpg"
-            alt="Richmond International School"
-        >
 
-    </div>
+    <img
+        src="school.jpg"
+        alt="Richmond International School – Al Markhiya Main Branch"
+        class="gallery-image"
+    >
 
 </section>
 
@@ -1849,6 +2486,7 @@ footer .gold {
         Contact Us
     </h2>
 
+
     <div class="contact-box">
 
         <strong>
@@ -1857,24 +2495,21 @@ footer .gold {
         </strong>
 
         <br>
+        <br>
 
-        📧
-        admissions@richmonddoha.com
+        📧 admissions@richmonddoha.com
 
         <br>
 
-        ☎
-        +974 4017 1991
+        ☎ +974 4017 1991
 
         <br>
 
-        ☎
-        +974 7476 7266
+        ☎ +974 7476 7266
 
         <br>
 
-        💬
-        +974 3341 3214
+        💬 +974 3341 3214
 
         <br>
         <br>
@@ -1915,119 +2550,43 @@ footer .gold {
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+    if (!menuToggle || !mainNav) return;
 
-        const menuToggle =
-            document.getElementById("menuToggle");
+    menuToggle.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
 
-        const mainNav =
-            document.getElementById("mainNav");
+    mainNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            menuToggle.textContent = "☰";
+        });
+    });
 
-
-        if (!menuToggle || !mainNav) {
-            return;
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            menuToggle.textContent = "☰";
         }
-
-
-        menuToggle.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    mainNav.classList.toggle("open");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen ? "true" : "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "Close navigation menu"
-                        : "Open navigation menu"
-                );
-
-                menuToggle.textContent =
-                    isOpen ? "✕" : "☰";
-
-            }
-        );
-
-
-        mainNav
-            .querySelectorAll("a")
-            .forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        function () {
-
-                            mainNav.classList.remove(
-                                "open"
-                            );
-
-                            menuToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-
-                            menuToggle.setAttribute(
-                                "aria-label",
-                                "Open navigation menu"
-                            );
-
-                            menuToggle.textContent =
-                                "☰";
-
-                        }
-                    );
-
-                }
-            );
-
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (event.key === "Escape") {
-
-                    mainNav.classList.remove(
-                        "open"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-
-                    menuToggle.textContent =
-                        "☰";
-
-                }
-
-            }
-        );
-
-    }
-);
-
+    });
+});
 </script>
 
 </body>
+
 </html>
