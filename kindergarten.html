@@ -60,29 +60,126 @@ a {
 
 
 /* =====================================================
-   HEADER
+   HEADER - PREMIUM PURPLE
 ===================================================== */
 
 header {
-    background: rgba(255, 255, 255, 0.97);
-    border-bottom: 1px solid #eee;
+    background: #32145f;
+    color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .header-container {
     width: 90%;
     max-width: 1250px;
     margin: auto;
-    min-height: 92px;
+
+    min-height: 105px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     gap: 30px;
+}
+
+
+/* LOGO AREA */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+/* WHITE LOGO BOX */
+
+.logo-area img {
+    width: 95px;
+    height: 95px;
+
+    object-fit: contain;
+
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.18);
+
+    border: 2px solid rgba(212,175,55,0.65);
+}
+
+
+/* SCHOOL NAME */
+
+.school-name h1 {
+    color: white;
+
+    font-size: 21px;
+
+    line-height: 1.25;
+}
+
+.school-name p {
+    color: #e6c96a;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-top: 6px;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    position: relative;
+
+    padding: 38px 0;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 27px;
+
+    width: 0;
+    height: 2px;
+
+    background: #d4af37;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e6c96a;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 
@@ -778,12 +875,21 @@ footer {
 
     .header-container {
         flex-direction: column;
-        padding: 18px 0;
+
+        padding: 15px 0 18px;
+
+        gap: 15px;
+    }
+
+    .logo-area {
+        width: 100%;
+        justify-content: center;
     }
 
     nav {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 15px;
     }
 
     nav a {
@@ -797,51 +903,14 @@ footer {
     .hero h2 {
         font-size: 45px;
     }
-
-    .welcome-container {
-        grid-template-columns: 1fr;
-    }
-
-    .programme-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .glance-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .facilities-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
 }
-
 
 @media (max-width: 650px) {
 
-    section {
-        padding: 60px 5%;
-    }
-
-    .header-container {
-        width: 94%;
-    }
-
-    .logo-area {
-        justify-content: center;
-        text-align: left;
-    }
-
     .logo-area img {
-        width: 62px;
-        height: 62px;
+        width: 78px;
+        height: 78px;
+        padding: 7px;
     }
 
     .school-name h1 {
@@ -859,53 +928,7 @@ footer {
     nav a {
         font-size: 12px;
     }
-
-    .hero {
-        min-height: 580px;
-    }
-
-    .hero h2 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .section-title {
-        font-size: 29px;
-    }
-
-    .programme-grid,
-    .glance-grid,
-    .why-grid,
-    .facilities-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .welcome-image {
-        height: 280px;
-    }
-
-    .gallery-main img {
-        height: 280px;
-    }
-
-    .admission-box {
-        padding: 40px 22px;
-    }
-
-    .admission-box h2 {
-        font-size: 28px;
-    }
-
-    .contact-card {
-        padding: 25px;
-    }
-
 }
-
-
 /* =====================================================
    SMALL PHONES
 ===================================================== */
