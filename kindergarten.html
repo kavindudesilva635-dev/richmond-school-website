@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,9 +59,9 @@ a {
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header {
     background: #32145f;
@@ -82,14 +82,18 @@ header {
     max-width: 1350px;
     margin: auto;
     min-height: 120px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 35px;
 }
 
 
-/* LOGO AREA */
+/* =====================================================
+   LOGO AREA
+===================================================== */
 
 .logo-area {
     display: flex;
@@ -98,44 +102,56 @@ header {
 }
 
 
-/* BIG WHITE LOGO BOX */
+/* PROFESSIONAL LOGO FRAME */
 
 .logo-area img {
     width: 185px;
     height: 105px;
+
     object-fit: contain;
 
     background: #ffffff;
     padding: 10px 14px;
 
     border-radius: 14px;
+
     border: 2px solid #d4af37;
 
-    box-shadow: 0 7px 22px rgba(0,0,0,0.25);
+    box-shadow:
+        0 7px 22px rgba(0,0,0,0.25),
+        0 0 0 4px rgba(212,175,55,0.08);
 
     display: block;
 }
 
 
-/* SCHOOL NAME */
+/* =====================================================
+   SCHOOL NAME
+===================================================== */
 
 .school-name h1 {
     color: #ffffff !important;
+
     font-size: 22px;
     line-height: 1.25;
     font-weight: 700;
+
     margin: 0;
 }
 
 .school-name p {
     color: #e6c96a !important;
+
     font-size: 13px;
     font-weight: 600;
+
     margin-top: 7px;
 }
 
 
-/* NAVIGATION */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 nav {
     display: flex;
@@ -145,7 +161,9 @@ nav {
 
 nav a {
     color: #ffffff !important;
+
     text-decoration: none;
+
     font-size: 14px;
     font-weight: 600;
 
@@ -184,15 +202,17 @@ nav a:hover::after {
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE HEADER
-========================= */
+===================================================== */
 
 @media (max-width: 1000px) {
 
     .header-container {
         flex-direction: column;
+
         padding: 15px 0 20px;
+
         gap: 15px;
     }
 
@@ -216,8 +236,11 @@ nav a:hover::after {
 
     nav {
         width: 100%;
+
         justify-content: center;
+
         flex-wrap: wrap;
+
         gap: 18px;
     }
 
@@ -231,7 +254,9 @@ nav a:hover::after {
 }
 
 
-/* SMALL MOBILE */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media (max-width: 600px) {
 
@@ -264,12 +289,18 @@ nav a:hover::after {
 
 .hero {
     min-height: 650px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     color: white;
+
     position: relative;
+
     overflow: hidden;
 
     background:
@@ -281,12 +312,15 @@ nav a:hover::after {
         url("kindergarten-bg.jpg");
 
     background-size: cover;
+
     background-position: center 50%;
 }
 
 .hero::before {
     content: "";
+
     position: absolute;
+
     inset: 0;
 
     background:
@@ -305,42 +339,58 @@ nav a:hover::after {
 
 .hero::after {
     content: "";
+
     position: absolute;
+
     left: 0;
     right: 0;
     bottom: 0;
+
     height: 6px;
 
-    background: linear-gradient(
-        90deg,
-        #d4af37,
-        #f1d77a,
-        #d4af37
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            #f1d77a,
+            #d4af37
+        );
 }
 
 .hero-content {
     position: relative;
+
     z-index: 2;
+
     max-width: 950px;
+
     padding: 40px 25px;
 }
 
 .hero-content::before {
     content: "";
+
     display: block;
+
     width: 75px;
     height: 4px;
+
     background: #d4af37;
+
     margin: 0 auto 25px;
+
     border-radius: 10px;
 }
 
 .hero h2 {
     font-size: 58px;
+
     line-height: 1.12;
+
     font-weight: 800;
+
     letter-spacing: -1px;
+
     margin-bottom: 25px;
 
     text-shadow:
@@ -353,9 +403,13 @@ nav a:hover::after {
 
 .hero p {
     max-width: 780px;
+
     margin: 0 auto 38px;
+
     font-size: 19px;
+
     line-height: 1.8;
+
     color: #f5f5f5;
 }
 
@@ -364,17 +418,21 @@ nav a:hover::after {
 }
 
 
-/* BUTTONS */
+/* =====================================================
+   BUTTONS
+===================================================== */
 
 .button {
     display: inline-block;
 
     padding: 14px 28px;
+
     margin: 5px;
 
     border-radius: 5px;
 
     font-size: 14px;
+
     font-weight: bold;
 
     transition: 0.3s;
@@ -382,21 +440,25 @@ nav a:hover::after {
 
 .button-primary {
     background: var(--gold);
+
     color: var(--dark-purple);
 }
 
 .button-primary:hover {
     background: white;
+
     transform: translateY(-2px);
 }
 
 .button-outline {
     border: 1px solid white;
+
     color: white;
 }
 
 .button-outline:hover {
     background: white;
+
     color: var(--purple);
 }
 
@@ -411,15 +473,21 @@ section {
 
 .section-header {
     text-align: center;
+
     max-width: 850px;
+
     margin: 0 auto 50px;
 }
 
 .section-label {
     color: var(--gold);
+
     font-size: 13px;
+
     font-weight: bold;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 
     margin-bottom: 10px;
@@ -427,14 +495,19 @@ section {
 
 .section-title {
     color: var(--purple);
+
     font-size: 36px;
+
     line-height: 1.2;
+
     margin-bottom: 18px;
 }
 
 .section-text {
     color: var(--gray);
+
     font-size: 16px;
+
     line-height: 1.8;
 }
 
@@ -449,26 +522,49 @@ section {
 
 .welcome-container {
     max-width: 1150px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     gap: 60px;
+
     align-items: center;
 }
 
+
+/* =====================================================
+   PROFESSIONAL GOLD PHOTO FRAME
+===================================================== */
+
 .welcome-image {
     height: 380px;
+
     overflow: hidden;
+
     border-radius: 14px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+
+    border: 3px solid var(--gold);
+
+    padding: 5px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.14),
+        0 0 0 4px rgba(212,175,55,0.12);
 }
 
 .welcome-image img {
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
+    border-radius: 8px;
 }
 
 .welcome-content .section-title {
@@ -481,23 +577,29 @@ section {
 
 .welcome-content p {
     color: var(--gray);
+
     margin-bottom: 18px;
+
     line-height: 1.8;
 }
 
 .welcome-list {
     list-style: none;
+
     margin-top: 25px;
 }
 
 .welcome-list li {
     margin-bottom: 12px;
+
     color: #444;
 }
 
 .welcome-list span {
     color: var(--gold);
+
     font-weight: bold;
+
     margin-right: 8px;
 }
 
@@ -512,9 +614,11 @@ section {
 
 .programme-grid {
     max-width: 1150px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
@@ -536,7 +640,9 @@ section {
 
 .programme-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(50,20,95,0.12);
+
+    box-shadow:
+        0 12px 30px rgba(50,20,95,0.12);
 }
 
 .programme-icon {
@@ -550,7 +656,9 @@ section {
     background: var(--light-purple);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 28px;
@@ -558,13 +666,17 @@ section {
 
 .programme-card h3 {
     color: var(--purple);
+
     font-size: 20px;
+
     margin-bottom: 12px;
 }
 
 .programme-card p {
     color: var(--gray);
+
     font-size: 14px;
+
     line-height: 1.8;
 }
 
@@ -579,9 +691,11 @@ section {
 
 .glance-grid {
     max-width: 1050px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
 
     gap: 20px;
@@ -601,12 +715,15 @@ section {
 
 .glance-card h3 {
     color: var(--purple);
+
     font-size: 18px;
+
     margin-bottom: 8px;
 }
 
 .glance-card p {
     color: var(--gray);
+
     font-size: 14px;
 }
 
@@ -617,6 +734,7 @@ section {
 
 .why-us {
     background: var(--purple);
+
     color: white;
 }
 
@@ -634,9 +752,11 @@ section {
 
 .why-grid {
     max-width: 1100px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
@@ -646,6 +766,7 @@ section {
     padding: 30px;
 
     border: 1px solid rgba(255,255,255,0.15);
+
     border-radius: 12px;
 
     background: rgba(255,255,255,0.05);
@@ -655,16 +776,19 @@ section {
 
 .why-card .icon {
     font-size: 30px;
+
     margin-bottom: 15px;
 }
 
 .why-card h3 {
     color: var(--light-gold);
+
     margin-bottom: 10px;
 }
 
 .why-card p {
     color: #eee;
+
     font-size: 14px;
 }
 
@@ -679,9 +803,11 @@ section {
 
 .facilities-grid {
     max-width: 1050px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
 
     gap: 20px;
@@ -696,7 +822,8 @@ section {
 
     text-align: center;
 
-    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    box-shadow:
+        0 4px 18px rgba(0,0,0,0.05);
 
     transition: 0.3s;
 }
@@ -707,11 +834,13 @@ section {
 
 .facility-icon {
     font-size: 30px;
+
     margin-bottom: 10px;
 }
 
 .facility h3 {
     color: var(--purple);
+
     font-size: 16px;
 }
 
@@ -726,6 +855,7 @@ section {
 
 .admission-box {
     max-width: 950px;
+
     margin: auto;
 
     padding: 55px 40px;
@@ -739,17 +869,25 @@ section {
 
     border-radius: 15px;
 
+    border: 2px solid rgba(212,175,55,0.55);
+
+    box-shadow:
+        0 15px 35px rgba(36,16,68,0.18);
+
     text-align: center;
+
     color: white;
 }
 
 .admission-box h2 {
     font-size: 34px;
+
     margin-bottom: 15px;
 }
 
 .admission-box p {
     max-width: 700px;
+
     margin: auto;
 
     color: #e7e1ef;
@@ -770,30 +908,59 @@ section {
 
 .gallery-container {
     max-width: 1050px;
+
     margin: auto;
 }
 
 .gallery-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+
+    gap: 22px;
 }
+
+
+/* =====================================================
+   PROFESSIONAL GOLD GALLERY FRAME
+===================================================== */
 
 .gallery-item {
     overflow: hidden;
+
     border-radius: 14px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    border: 3px solid var(--gold);
 
-    background: white;
+    padding: 5px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.10),
+        0 0 0 4px rgba(212,175,55,0.10);
+
+    transition: 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 16px 35px rgba(50,20,95,0.18),
+        0 0 0 5px rgba(212,175,55,0.16);
 }
 
 .gallery-item img {
     width: 100%;
+
     height: 250px;
+
     object-fit: cover;
 
-    transition: 0.4s;
+    border-radius: 8px;
+
+    transition: 0.4s ease;
 }
 
 .gallery-item:hover img {
@@ -802,8 +969,11 @@ section {
 
 .gallery-caption {
     text-align: center;
-    margin-top: 18px;
+
+    margin-top: 22px;
+
     color: var(--gray);
+
     font-size: 14px;
 }
 
@@ -818,9 +988,11 @@ section {
 
 .contact-grid {
     max-width: 1050px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     gap: 30px;
@@ -834,16 +1006,22 @@ section {
     border-radius: 12px;
 
     border-left: 4px solid var(--gold);
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.04);
 }
 
 .contact-card h3 {
     color: var(--purple);
+
     margin-bottom: 20px;
+
     font-size: 22px;
 }
 
 .contact-item {
     margin-bottom: 16px;
+
     color: #555;
 }
 
@@ -862,17 +1040,21 @@ section {
 
 .back-school {
     background: var(--light-purple);
+
     text-align: center;
+
     padding: 55px 20px;
 }
 
 .back-school h2 {
     color: var(--purple);
+
     margin-bottom: 12px;
 }
 
 .back-school p {
     color: var(--gray);
+
     margin-bottom: 20px;
 }
 
@@ -883,21 +1065,27 @@ section {
 
 footer {
     background: var(--dark-purple);
+
     color: white;
 
     text-align: center;
 
     padding: 40px 20px;
+
+    border-top: 3px solid var(--gold);
 }
 
 .footer-logo {
     font-size: 20px;
+
     font-weight: bold;
+
     margin-bottom: 8px;
 }
 
 .footer-tagline {
     color: var(--light-gold);
+
     margin-bottom: 18px;
 }
 
@@ -907,7 +1095,9 @@ footer {
 
 .footer-links a {
     color: #ddd;
+
     margin: 0 10px;
+
     font-size: 13px;
 }
 
@@ -917,6 +1107,7 @@ footer {
 
 .footer-copy {
     font-size: 12px;
+
     color: #aaa;
 }
 
@@ -937,12 +1128,15 @@ footer {
 
     .logo-area {
         width: 100%;
+
         justify-content: center;
     }
 
     nav {
         flex-wrap: wrap;
+
         justify-content: center;
+
         gap: 15px;
     }
 
@@ -963,11 +1157,18 @@ footer {
     }
 }
 
+
+/* =====================================================
+   MOBILE 650
+===================================================== */
+
 @media (max-width: 650px) {
 
     .logo-area img {
         width: 78px;
+
         height: 78px;
+
         padding: 7px;
     }
 
@@ -994,6 +1195,10 @@ footer {
     .gallery-item img {
         height: 250px;
     }
+
+    .welcome-image {
+        height: 320px;
+    }
 }
 
 
@@ -1013,8 +1218,11 @@ footer {
 
     .button {
         display: block;
+
         width: 100%;
+
         max-width: 280px;
+
         margin: 8px auto;
     }
 
@@ -1895,6 +2103,7 @@ footer {
 
         </div>
 
+
         <p class="gallery-caption">
             Richmond International Kindergarten – Abu Hamour Branch
         </p>
@@ -2108,4 +2317,4 @@ footer {
 </body>
 
 </html>
-
+```
