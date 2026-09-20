@@ -258,57 +258,92 @@ nav a:hover::after {
 
 
 /* =====================================================
-   HERO
+   PREMIUM HERO
 ===================================================== */
 
 .hero {
     min-height: 650px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     color: white;
+    position: relative;
+    overflow: hidden;
 
     background:
         linear-gradient(
-            rgba(50, 20, 95, 0.28),
-            rgba(50, 20, 95, 0.42)
+            135deg,
+            rgba(50,20,95,0.94),
+            rgba(7,27,58,0.78)
         ),
         url("kindergarten-bg.jpg");
 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(212,175,55,0.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,0.08),
+            transparent 30%
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #d4af37,
+        #f1d77a,
+        #d4af37
+    );
 }
 
 .hero-content {
-    width: 90%;
-    max-width: 900px;
-    padding: 40px 20px;
+    position: relative;
+    z-index: 2;
+    max-width: 950px;
+    padding: 40px 25px;
 }
 
-.hero-tag {
-    display: inline-block;
-
-    border: 1px solid var(--light-gold);
-    color: var(--light-gold);
-
-    padding: 8px 18px;
-    border-radius: 30px;
-
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
-
-    margin-bottom: 22px;
+.hero-content::before {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background: #d4af37;
+    margin: 0 auto 25px;
+    border-radius: 10px;
 }
 
 .hero h2 {
     font-size: 58px;
-    line-height: 1.1;
-    margin-bottom: 22px;
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 4px 18px rgba(0,0,0,0.35);
 }
 
 .hero h2 span {
@@ -316,13 +351,11 @@ nav a:hover::after {
 }
 
 .hero p {
-    max-width: 760px;
-    margin: auto;
-
+    max-width: 780px;
+    margin: 0 auto 38px;
     font-size: 19px;
     line-height: 1.8;
-
-    color: #f5f2fa;
+    color: #f5f5f5;
 }
 
 .hero-buttons {
