@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -772,17 +773,31 @@ section {
     margin: auto;
 }
 
-.gallery-main {
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
     overflow: hidden;
     border-radius: 14px;
 
     box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+
+    background: white;
 }
 
-.gallery-main img {
+.gallery-item img {
     width: 100%;
-    height: 500px;
+    height: 250px;
     object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
 }
 
 .gallery-caption {
@@ -942,6 +957,10 @@ footer {
     .hero h2 {
         font-size: 45px;
     }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 650px) {
@@ -966,6 +985,14 @@ footer {
 
     nav a {
         font-size: 12px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 250px;
     }
 }
 
@@ -1803,12 +1830,68 @@ footer {
 
     <div class="gallery-container">
 
-        <div class="gallery-main">
+        <div class="gallery-grid">
 
-            <img
-                src="school.jpg"
-                alt="Richmond International Kindergarten – Abu Hamour Branch"
-            >
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-01.jpg"
+                    alt="Richmond International Kindergarten Gallery 1"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-02.jpg"
+                    alt="Richmond International Kindergarten Gallery 2"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-03.jpg"
+                    alt="Richmond International Kindergarten Gallery 3"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-04.jpg"
+                    alt="Richmond International Kindergarten Gallery 4"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-05.jpg"
+                    alt="Richmond International Kindergarten Gallery 5"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-06.jpg"
+                    alt="Richmond International Kindergarten Gallery 6"
+                >
+
+            </div>
+
 
         </div>
 
@@ -2025,3 +2108,4 @@ footer {
 </body>
 
 </html>
+```
