@@ -1,376 +1,289 @@
 from pathlib import Path
+import re
 
-source_path = Path("/mnt/data/Pasted text(10).txt")
+source_path = Path("/mnt/data/Pasted text(20261103-082155).txt")
 html = source_path.read_text(encoding="utf-8")
 
-css_additions = r"""
+# Remove the conversational note that was accidentally pasted inside <head>, not website content.
+html = html.replace("me​​ka tawa add wenna thiynne monwda", "")
+html = html.replace("meka tawa add wenna thiynne monwda", "")
+
+css_addition = r"""
 
 /* =====================================================
-   ADDITIONAL WEBSITE FEATURES
-   Existing Richmond design and styles are preserved.
+   ADDITIONAL SECTIONS & FEATURES
+   Added without replacing the original website styles
 ===================================================== */
 
-/* New navigation links */
-nav a {
-    white-space: nowrap;
-}
-
-/* Principal's Welcome */
 .principal-welcome {
     background: #ffffff;
 }
-.principal-container {
-    max-width: 1150px;
+.principal-card {
+    max-width: 1050px;
     margin: auto;
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 55px;
-    align-items: center;
+    padding: 42px;
+    background: var(--light-bg);
+    border-left: 5px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
-.principal-photo {
-    min-height: 360px;
-    border: 3px solid var(--gold);
-    padding: 6px;
-    border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.14);
-}
-.principal-photo img {
-    width: 100%;
-    height: 348px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-.principal-message p {
-    color: var(--gray);
-    line-height: 1.9;
+.principal-card h3 {
+    color: var(--purple);
+    font-size: 23px;
     margin-bottom: 16px;
 }
+.principal-card p {
+    color: var(--gray);
+    line-height: 1.9;
+    margin-bottom: 14px;
+}
 .principal-signature {
-    color: var(--purple);
+    color: var(--purple) !important;
     font-weight: 700;
     margin-top: 22px;
 }
-
-/* Our Classes */
 .classes-section {
     background: var(--light-bg);
 }
-.classes-grid {
-    max-width: 1150px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-.class-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 30px 25px;
-    text-align: center;
-    border: 1px solid #eee;
-    border-bottom: 4px solid var(--gold);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-.class-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(50,20,95,0.12);
-}
-.class-icon {
-    font-size: 36px;
-    margin-bottom: 12px;
-}
-.class-card h3 {
-    color: var(--purple);
-    margin-bottom: 10px;
-}
-.class-card p {
-    color: var(--gray);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* School Activities & Events */
-.activities-section {
-    background: #fff;
-}
-.activities-grid {
-    max-width: 1150px;
+.classes-grid, .activities-grid {
+    max-width: 1100px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
 }
-.activity-card {
-    background: var(--light-bg);
-    border-radius: 12px;
+.class-card, .activity-card {
+    background: #ffffff;
     padding: 28px 24px;
-    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    border: 1px solid #eee;
+    border-bottom: 3px solid var(--gold);
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.045);
+    transition: 0.3s ease;
 }
-.activity-card .activity-icon {
-    font-size: 30px;
-    margin-bottom: 12px;
+.class-card:hover, .activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(50,20,95,0.10);
 }
-.activity-card h3 {
+.class-card .feature-icon, .activity-card .feature-icon {
+    font-size: 32px;
+    margin-bottom: 13px;
+}
+.class-card h3, .activity-card h3 {
     color: var(--purple);
-    margin-bottom: 9px;
+    margin-bottom: 10px;
+    font-size: 19px;
 }
-.activity-card p {
+.class-card p, .activity-card p {
     color: var(--gray);
     font-size: 14px;
     line-height: 1.8;
 }
-
-/* Admission enquiry form */
-.admission-form-wrap {
+.activities-section {
+    background: #ffffff;
+}
+.faq-section {
+    background: var(--light-bg);
+}
+.faq-list {
     max-width: 950px;
-    margin: 45px auto 0;
+    margin: auto;
+}
+.faq-list details {
+    background: #ffffff;
+    margin-bottom: 13px;
+    border-radius: 9px;
+    border: 1px solid #e9e3f0;
+    overflow: hidden;
+}
+.faq-list summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 19px 22px;
+    color: var(--purple);
+    font-weight: 700;
+    position: relative;
+    padding-right: 50px;
+}
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+.faq-list summary::after {
+    content: "+";
+    position: absolute;
+    right: 22px;
+    top: 12px;
+    color: var(--gold);
+    font-size: 25px;
+}
+.faq-list details[open] summary::after {
+    content: "−";
+}
+.faq-answer {
+    padding: 0 22px 20px;
+    color: var(--gray);
+    line-height: 1.8;
+}
+.admission-enquiry {
+    max-width: 950px;
+    margin: 35px auto 0;
     padding: 38px;
     background: var(--light-bg);
     border-radius: 14px;
     border: 1px solid #eee;
-    border-top: 4px solid var(--gold);
+    text-align: left;
 }
-.admission-form-wrap h3 {
+.admission-enquiry h3 {
+    text-align: center;
     color: var(--purple);
     font-size: 25px;
-    text-align: center;
     margin-bottom: 8px;
 }
-.admission-form-intro {
+.admission-enquiry > p {
     text-align: center;
     color: var(--gray);
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
-.admission-form {
+.enquiry-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 18px;
+    gap: 17px;
 }
-.form-field {
+.enquiry-field {
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
-.form-field.full-width {
+.enquiry-field.full-width {
     grid-column: 1 / -1;
 }
-.form-field label {
+.enquiry-field label {
     color: var(--purple);
-    font-weight: 700;
     font-size: 14px;
+    font-weight: 700;
 }
-.form-field input,
-.form-field select,
-.form-field textarea {
+.enquiry-field input, .enquiry-field select, .enquiry-field textarea {
     width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #d8d2e2;
-    border-radius: 7px;
-    background: #fff;
+    padding: 12px 13px;
+    border: 1px solid #d9d2e2;
+    border-radius: 6px;
+    background: #ffffff;
     color: #333;
     font: inherit;
-    outline: none;
 }
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
+.enquiry-field input:focus, .enquiry-field select:focus, .enquiry-field textarea:focus {
+    outline: 2px solid rgba(212,175,55,0.35);
     border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(212,175,55,0.14);
 }
-.form-field textarea {
+.enquiry-field textarea {
     min-height: 110px;
     resize: vertical;
 }
-.admission-form button {
-    grid-column: 1 / -1;
+.enquiry-submit {
+    display: block;
+    margin: 22px auto 0;
     border: 0;
     cursor: pointer;
 }
-.form-note {
-    color: var(--gray);
+.enquiry-note {
     font-size: 12px;
+    color: #777;
     text-align: center;
-    margin-top: 14px;
+    margin-top: 13px;
 }
-
-/* FAQ */
-.faq-section {
-    background: var(--light-bg);
-}
-.faq-container {
-    max-width: 900px;
-    margin: auto;
-}
-.faq-item {
-    background: #fff;
-    border: 1px solid #e9e4ef;
-    border-radius: 9px;
-    margin-bottom: 13px;
-    overflow: hidden;
-}
-.faq-question {
+.map-frame {
     width: 100%;
+    height: 280px;
     border: 0;
-    background: #fff;
-    color: var(--purple);
-    text-align: left;
-    padding: 19px 22px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1500;
+    width: 58px;
+    height: 58px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25D366;
+    color: #ffffff;
+    font-size: 29px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    transition: 0.25s ease;
 }
-.faq-question:hover {
-    background: #faf8fd;
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.04);
+    color: #ffffff;
 }
-.faq-answer {
-    display: none;
-    color: var(--gray);
-    padding: 0 22px 20px;
-    line-height: 1.8;
+.gallery-item img {
+    cursor: zoom-in;
 }
-.faq-item.active .faq-answer {
-    display: block;
-}
-.faq-symbol {
-    color: var(--gold);
-    font-size: 22px;
-    flex-shrink: 0;
-}
-
-/* Google Maps */
-.map-container {
-    margin-top: 25px;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 3px solid var(--gold);
-    background: #fff;
-}
-.map-container iframe {
-    width: 100%;
-    height: 300px;
-    border: 0;
-    display: block;
-}
-.map-link {
-    display: inline-block;
-    margin-top: 14px;
-    color: var(--purple);
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-/* Gallery lightbox */
 .lightbox {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 3000;
-    background: rgba(12, 7, 22, 0.94);
+    padding: 35px 18px;
+    background: rgba(0,0,0,0.92);
     align-items: center;
     justify-content: center;
-    padding: 35px 18px;
 }
-.lightbox.open {
+.lightbox.active {
     display: flex;
 }
 .lightbox img {
-    max-width: min(100%, 1100px);
-    max-height: 85vh;
-    width: auto;
-    height: auto;
+    max-width: 92vw;
+    max-height: 88vh;
     object-fit: contain;
     border: 3px solid var(--gold);
     border-radius: 8px;
 }
 .lightbox-close {
     position: absolute;
-    top: 15px;
+    top: 14px;
     right: 25px;
-    border: 0;
-    background: transparent;
-    color: #fff;
+    color: #ffffff;
     font-size: 42px;
-    cursor: pointer;
     line-height: 1;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
 }
-.gallery-item img {
-    cursor: zoom-in;
-}
-
-/* Floating WhatsApp button */
-.whatsapp-float {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 2000;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #25d366;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 29px;
-    font-weight: 700;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
-    transition: 0.25s;
-}
-.whatsapp-float:hover {
-    transform: translateY(-4px) scale(1.04);
-    background: #1ebe5d;
-    color: #fff;
-}
-.whatsapp-float span {
+.lightbox-caption {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
+    bottom: 12px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 13px;
 }
-
-/* Responsive additions */
-@media (max-width: 900px) {
-    .principal-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .principal-photo {
-        max-width: 360px;
-        width: 100%;
-        margin: auto;
-    }
-    .classes-grid,
-    .activities-grid {
+@media (max-width: 800px) {
+    .classes-grid, .activities-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (max-width: 650px) {
-    .classes-grid,
-    .activities-grid {
+    .principal-card {
+        padding: 27px 22px;
+    }
+    .classes-grid, .activities-grid {
         grid-template-columns: 1fr;
     }
-    .admission-form-wrap {
-        padding: 25px 18px;
+    .admission-enquiry {
+        padding: 27px 18px;
     }
-    .admission-form {
+    .enquiry-grid {
         grid-template-columns: 1fr;
     }
-    .form-field.full-width,
-    .admission-form button {
+    .enquiry-field.full-width {
         grid-column: auto;
     }
-    .principal-photo img {
-        height: 300px;
-    }
-    .map-container iframe {
-        height: 250px;
+    .map-frame {
+        height: 240px;
     }
     .whatsapp-float {
         width: 54px;
@@ -381,34 +294,23 @@ nav a {
 }
 """
 
-html = html.replace("</style>", css_additions + "\n</style>", 1)
+# Add the new CSS immediately before the original style closing tag.
+html = html.replace("</style>", css_addition + "\n</style>", 1)
 
-# Add navigation links without removing existing links.
-old_nav = """            <a href="#about">About</a>
+# Add links to new sections while preserving all existing navigation links.
+html = html.replace(
+    '<a href="#about">About</a>',
+    '<a href="#about">About</a>\n            <a href="#principal">Principal</a>\n            <a href="#classes">Classes</a>'
+)
+html = html.replace(
+    '<a href="#facilities">Facilities</a>',
+    '<a href="#facilities">Facilities</a>\n            <a href="#activities">Activities</a>'
+)
+html = html.replace(
+    '<a href="#gallery">Gallery</a>',
+    '<a href="#gallery">Gallery</a>\n            <a href="#faq">FAQs</a>'
+)
 
-            <a href="#programmes">Learning</a>"""
-new_nav = """            <a href="#about">About</a>
-
-            <a href="#principal">Principal</a>
-
-            <a href="#classes">Classes</a>
-
-            <a href="#programmes">Learning</a>
-
-            <a href="#activities">Events</a>"""
-html = html.replace(old_nav, new_nav, 1)
-
-old_nav2 = """            <a href="#gallery">Gallery</a>
-
-            <a href="#contact">Contact</a>"""
-new_nav2 = """            <a href="#gallery">Gallery</a>
-
-            <a href="#faq">FAQs</a>
-
-            <a href="#contact">Contact</a>"""
-html = html.replace(old_nav2, new_nav2, 1)
-
-# Principal section after the existing welcome/about section.
 principal_section = r"""
 
 <!-- =====================================================
@@ -416,112 +318,85 @@ principal_section = r"""
 ===================================================== -->
 
 <section class="principal-welcome" id="principal">
-
     <div class="section-header">
         <div class="section-label">A Message from Our Principal</div>
-        <h2 class="section-title">Welcome to Our Kindergarten</h2>
-        <p class="section-text">
-            A warm welcome to all our children and families.
+        <h2 class="section-title">A Warm Welcome to Our Kindergarten</h2>
+    </div>
+
+    <div class="principal-card">
+        <h3>Dear Parents and Families,</h3>
+        <p>
+            Welcome to Richmond International Kindergarten – Abu Hamour Branch.
+            We are delighted that you are considering our kindergarten as part of
+            your child’s early learning journey.
         </p>
+        <p>
+            We believe that every child is unique and deserves a caring,
+            supportive and stimulating environment. Our aim is to encourage
+            children to be curious, confident and happy learners through
+            meaningful experiences, play and exploration.
+        </p>
+        <p>
+            We value the partnership between school and family and look forward
+            to working together to support every child’s growth and development.
+        </p>
+        <p class="principal-signature">Warm regards,<br>Principal<br>Richmond International Kindergarten – Abu Hamour Branch</p>
     </div>
-
-    <div class="principal-container">
-
-        <div class="principal-photo">
-            <!-- Replace principal-abh.jpg with the approved Principal's photo. -->
-            <img src="principal-abh.jpg"
-                 alt="Principal of Richmond International Kindergarten – Abu Hamour Branch">
-        </div>
-
-        <div class="principal-message">
-            <span class="section-label">Principal's Message</span>
-            <h2 class="section-title">Every Child Matters</h2>
-
-            <p>
-                Welcome to Richmond International Kindergarten – Abu Hamour Branch.
-                We are delighted to be part of your child's early learning journey.
-            </p>
-
-            <p>
-                We believe that every child is unique and deserves a welcoming,
-                caring and supportive environment. Our aim is to encourage children
-                to explore, build confidence, develop friendships and enjoy learning
-                through meaningful experiences.
-            </p>
-
-            <p>
-                We value the partnership between school and family and look forward
-                to working together to support each child's growth and development.
-            </p>
-
-            <div class="principal-signature">
-                Principal<br>
-                Richmond International Kindergarten – Abu Hamour Branch
-            </div>
-        </div>
-
-    </div>
-
 </section>
 
+"""
+
+html = html.replace(
+    '<!-- =====================================================\n      PROGRAMMES',
+    principal_section + '\n<!-- =====================================================\n      PROGRAMMES',
+    1
+)
+
+classes_section = r"""
 
 <!-- =====================================================
      OUR CLASSES
 ===================================================== -->
 
 <section class="classes-section" id="classes">
-
     <div class="section-header">
-        <div class="section-label">Our Learning Groups</div>
-        <h2 class="section-title">Our Classes</h2>
+        <div class="section-label">Our Classes</div>
+        <h2 class="section-title">A Learning Journey for Every Child</h2>
         <p class="section-text">
-            We provide age-appropriate learning experiences that support children's
-            confidence, curiosity, communication and development.
+            We provide age-appropriate early learning experiences that help
+            children develop confidence, independence and a love of learning.
+            Please contact our Admissions Team for the current class groups,
+            age requirements and availability.
         </p>
     </div>
 
     <div class="classes-grid">
-
         <div class="class-card">
-            <div class="class-icon">🌱</div>
-            <h3>Nursery</h3>
-            <p>
-                A gentle introduction to the school environment through play,
-                exploration, social interaction and early communication.
-            </p>
+            <div class="feature-icon">🌱</div>
+            <h3>Early Years</h3>
+            <p>Building early communication, social interaction and independence through caring guidance and play.</p>
         </div>
-
         <div class="class-card">
-            <div class="class-icon">🎨</div>
-            <h3>Kindergarten 1</h3>
-            <p>
-                Encouraging creativity, early language, number awareness,
-                independence and positive relationships.
-            </p>
+            <div class="feature-icon">🧩</div>
+            <h3>Kindergarten Learning</h3>
+            <p>Encouraging children to explore, ask questions and develop early literacy and numeracy skills.</p>
         </div>
-
         <div class="class-card">
-            <div class="class-icon">📚</div>
-            <h3>Kindergarten 2</h3>
-            <p>
-                Building confidence and foundational skills to help children
-                prepare for their next stage of learning.
-            </p>
+            <div class="feature-icon">🌟</div>
+            <h3>School Readiness</h3>
+            <p>Supporting confidence, cooperation and the skills children need for their next stage of learning.</p>
         </div>
-
     </div>
-
-    <p class="gallery-caption">
-        Please contact the admissions team to confirm the available classes,
-        age requirements and enrolment details.
-    </p>
-
 </section>
 
 """
-html = html.replace("<!-- =====================================================\n     PROGRAMMES", principal_section + "\n<!-- =====================================================\n     PROGRAMMES", 1)
 
-# Events section after facilities.
+html = html.replace(
+    '<!-- =====================================================\n      SCHOOL AT A GLANCE',
+    classes_section + '\n<!-- =====================================================\n      SCHOOL AT A GLANCE',
+    1
+)
+
 activities_section = r"""
 
 <!-- =====================================================
@@ -529,149 +404,130 @@ activities_section = r"""
 ===================================================== -->
 
 <section class="activities-section" id="activities">
-
     <div class="section-header">
-        <div class="section-label">Memories & Experiences</div>
+        <div class="section-label">School Life</div>
         <h2 class="section-title">School Activities & Events</h2>
         <p class="section-text">
-            Children learn, participate and create special memories through
-            a variety of school activities and celebrations.
+            Children learn and grow through a variety of enjoyable experiences
+            that encourage creativity, communication, teamwork and discovery.
         </p>
     </div>
 
     <div class="activities-grid">
-
         <div class="activity-card">
-            <div class="activity-icon">🏅</div>
-            <h3>Sports Day</h3>
-            <p>Fun physical activities that encourage teamwork, participation and confidence.</p>
-        </div>
-
-        <div class="activity-card">
-            <div class="activity-icon">🎓</div>
-            <h3>Graduation</h3>
-            <p>Celebrating children's achievements and the milestones in their learning journey.</p>
-        </div>
-
-        <div class="activity-card">
-            <div class="activity-icon">🇶🇦</div>
-            <h3>National Celebrations</h3>
-            <p>Activities that help children learn about culture, community and special occasions.</p>
-        </div>
-
-        <div class="activity-card">
-            <div class="activity-icon">🎨</div>
+            <div class="feature-icon">🎨</div>
             <h3>Art & Creativity</h3>
-            <p>Creative opportunities for children to express ideas through art and hands-on activities.</p>
+            <p>Creative experiences that allow children to express ideas and explore colours, shapes and materials.</p>
         </div>
-
         <div class="activity-card">
-            <div class="activity-icon">📖</div>
-            <h3>Reading Activities</h3>
-            <p>Enjoyable storytelling and language activities that nurture a love of books and communication.</p>
+            <div class="feature-icon">📚</div>
+            <h3>Reading & Storytelling</h3>
+            <p>Stories, books and language activities that help develop imagination and communication.</p>
         </div>
-
         <div class="activity-card">
-            <div class="activity-icon">🌍</div>
-            <h3>Special School Events</h3>
-            <p>Shared experiences that bring children, teachers and families together as a school community.</p>
+            <div class="feature-icon">⚽</div>
+            <h3>Sports & Movement</h3>
+            <p>Fun movement activities that encourage coordination, confidence and healthy habits.</p>
         </div>
-
+        <div class="activity-card">
+            <div class="feature-icon">🎉</div>
+            <h3>Celebrations</h3>
+            <p>Special occasions and cultural celebrations that help children learn about their community.</p>
+        </div>
+        <div class="activity-card">
+            <div class="feature-icon">🔬</div>
+            <h3>Discovery Activities</h3>
+            <p>Simple hands-on experiences that encourage curiosity, observation and problem-solving.</p>
+        </div>
+        <div class="activity-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Group Activities</h3>
+            <p>Shared activities that help children practise cooperation, friendship and taking turns.</p>
+        </div>
     </div>
-
 </section>
 
 """
-html = html.replace("<!-- =====================================================\n     ADMISSIONS", activities_section + "\n<!-- =====================================================\n     ADMISSIONS", 1)
 
-# Add enquiry form inside admissions section, after existing admission-box.
-form_section = r"""
+html = html.replace(
+    '<!-- =====================================================\n      ADMISSIONS',
+    activities_section + '\n<!-- =====================================================\n      ADMISSIONS',
+    1
+)
 
-    <div class="admission-form-wrap">
+# Add the enquiry form below the existing admission call-to-action.
+enquiry_form = r"""
 
+    <div class="admission-enquiry">
         <h3>Admission Enquiry Form</h3>
-        <p class="admission-form-intro">
-            Complete the details below. Your enquiry will be prepared in WhatsApp
-            for our admissions team.
-        </p>
+        <p>Send an enquiry to our Admissions Team. Your email application will open with the details filled in.</p>
 
-        <form class="admission-form" id="admissionEnquiryForm">
-
-            <div class="form-field">
-                <label for="childName">Child's Full Name *</label>
-                <input type="text" id="childName" name="childName" required>
+        <form id="admissionEnquiryForm">
+            <div class="enquiry-grid">
+                <div class="enquiry-field">
+                    <label for="childName">Child's Name *</label>
+                    <input type="text" id="childName" name="childName" required>
+                </div>
+                <div class="enquiry-field">
+                    <label for="dateOfBirth">Child's Date of Birth</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth">
+                </div>
+                <div class="enquiry-field">
+                    <label for="classInterested">Class / Programme Interested In</label>
+                    <select id="classInterested" name="classInterested">
+                        <option value="">Please select</option>
+                        <option>Early Years</option>
+                        <option>Kindergarten Learning</option>
+                        <option>School Readiness</option>
+                        <option>Not sure – please advise</option>
+                    </select>
+                </div>
+                <div class="enquiry-field">
+                    <label for="parentName">Parent / Guardian Name *</label>
+                    <input type="text" id="parentName" name="parentName" required>
+                </div>
+                <div class="enquiry-field">
+                    <label for="parentPhone">Contact Number *</label>
+                    <input type="tel" id="parentPhone" name="parentPhone" required>
+                </div>
+                <div class="enquiry-field">
+                    <label for="parentEmail">Email Address</label>
+                    <input type="email" id="parentEmail" name="parentEmail">
+                </div>
+                <div class="enquiry-field full-width">
+                    <label for="enquiryMessage">Message</label>
+                    <textarea id="enquiryMessage" name="enquiryMessage" placeholder="Write your question or enquiry here..."></textarea>
+                </div>
             </div>
-
-            <div class="form-field">
-                <label for="dateOfBirth">Child's Date of Birth *</label>
-                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
-            </div>
-
-            <div class="form-field">
-                <label for="classInterested">Class Interested In *</label>
-                <select id="classInterested" name="classInterested" required>
-                    <option value="">Select a class</option>
-                    <option value="Nursery">Nursery</option>
-                    <option value="Kindergarten 1">Kindergarten 1</option>
-                    <option value="Kindergarten 2">Kindergarten 2</option>
-                    <option value="Not sure – please advise">Not sure – please advise</option>
-                </select>
-            </div>
-
-            <div class="form-field">
-                <label for="parentName">Parent / Guardian Name *</label>
-                <input type="text" id="parentName" name="parentName" required>
-            </div>
-
-            <div class="form-field">
-                <label for="parentPhone">Contact Number *</label>
-                <input type="tel" id="parentPhone" name="parentPhone"
-                       placeholder="+974 ..." required>
-            </div>
-
-            <div class="form-field">
-                <label for="parentEmail">Email Address</label>
-                <input type="email" id="parentEmail" name="parentEmail">
-            </div>
-
-            <div class="form-field full-width">
-                <label for="enquiryMessage">Your Message</label>
-                <textarea id="enquiryMessage" name="enquiryMessage"
-                          placeholder="Please write your question or enquiry here..."></textarea>
-            </div>
-
-            <button type="submit" class="button button-primary">
-                Send Enquiry via WhatsApp
-            </button>
-
+            <button type="submit" class="button button-primary enquiry-submit">Send Admission Enquiry</button>
+            <p class="enquiry-note">This form opens your email application. It does not store or submit information to a website database.</p>
         </form>
-
-        <p class="form-note">
-            This form opens WhatsApp with your enquiry details. It does not submit
-            or store information on this website.
-        </p>
-
     </div>
+
 """
-needle = """    </div>
+html = html.replace(
+    '\n</section>\n\n\n\n<!-- =====================================================\n      GALLERY',
+    enquiry_form + '\n</section>\n\n\n\n<!-- =====================================================\n      GALLERY',
+    1
+)
 
-</section>
+# Add map in the Visit Us contact card.
+map_html = r"""
+            <iframe
+                class="map-frame"
+                title="Map to Richmond International Kindergarten – Abu Hamour Branch"
+                src="https://www.google.com/maps?q=Building%2010%2C%20Wadi%20Al%20Egmairiya%20St%2C%20Doha%2C%20Qatar&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+"""
+html = html.replace(
+    '<!-- =====================================================\n      BACK TO MAIN SCHOOL',
+    map_html + '\n<!-- =====================================================\n      BACK TO MAIN SCHOOL',
+    1
+)
 
-
-
-<!-- =====================================================
-     GALLERY"""
-html = html.replace(needle, """    </div>
-""" + form_section + """
-
-</section>
-
-
-
-<!-- =====================================================
-     GALLERY""", 1)
-
-# FAQ section before contact.
 faq_section = r"""
 
 <!-- =====================================================
@@ -679,309 +535,133 @@ faq_section = r"""
 ===================================================== -->
 
 <section class="faq-section" id="faq">
-
     <div class="section-header">
-        <div class="section-label">Helpful Information</div>
+        <div class="section-label">Need Help?</div>
         <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-text">
-            Find answers to some common questions from parents and families.
-            Please contact us if you need further information.
-        </p>
+        <p class="section-text">Some helpful information for parents and families.</p>
     </div>
 
-    <div class="faq-container">
-
-        <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-                How can I enquire about admission?
-                <span class="faq-symbol">+</span>
-            </button>
-            <div class="faq-answer">
-                You can contact our admissions team by email or WhatsApp, or complete
-                the Admission Enquiry Form on this website.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-                Which classes are available?
-                <span class="faq-symbol">+</span>
-            </button>
-            <div class="faq-answer">
-                Please contact the admissions team to confirm the current classes,
-                age requirements and available places.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-                What documents are required for admission?
-                <span class="faq-symbol">+</span>
-            </button>
-            <div class="faq-answer">
-                Required documents may depend on the child's circumstances and
-                applicable school requirements. Please contact the admissions team
-                for the latest document checklist.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-                How can I arrange a school visit?
-                <span class="faq-symbol">+</span>
-            </button>
-            <div class="faq-answer">
-                Please contact the school by phone, WhatsApp or email to ask about
-                arranging a visit.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-                How can I contact the Abu Hamour Branch?
-                <span class="faq-symbol">+</span>
-            </button>
-            <div class="faq-answer">
-                You can call or WhatsApp +974 33413214, or email
-                admissions.abh@richmonddoha.com.
-            </div>
-        </div>
-
+    <div class="faq-list">
+        <details>
+            <summary>How can I enquire about admission?</summary>
+            <div class="faq-answer">You can contact our Admissions Team by email at admissions.abh@richmonddoha.com or use the admission enquiry form on this page.</div>
+        </details>
+        <details>
+            <summary>How can I find out which class is suitable for my child?</summary>
+            <div class="faq-answer">Please contact our Admissions Team with your child's date of birth. The team can advise you about the appropriate class group and current availability.</div>
+        </details>
+        <details>
+            <summary>Can I visit the kindergarten?</summary>
+            <div class="faq-answer">Please contact the kindergarten to arrange a visit and confirm a suitable time.</div>
+        </details>
+        <details>
+            <summary>What documents are required for admission?</summary>
+            <div class="faq-answer">Please contact the Admissions Team for the latest admission requirements and document checklist.</div>
+        </details>
+        <details>
+            <summary>How can I contact the Abu Hamour Branch?</summary>
+            <div class="faq-answer">You can call or WhatsApp +974 33413214, or email admissions.abh@richmonddoha.com.</div>
+        </details>
     </div>
-
 </section>
 
 """
-html = html.replace("<!-- =====================================================\n     CONTACT", faq_section + "\n<!-- =====================================================\n     CONTACT", 1)
 
-# Add map to Visit Us card, after email button area.
-map_section = r"""
+html = html.replace(
+    '<!-- =====================================================\n      CONTACT',
+    faq_section + '\n<!-- =====================================================\n      CONTACT',
+    1
+)
 
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps?q=Building%2010%2C%20Wadi%20Al%20Egmairiya%20Street%2C%20Doha%2C%20Qatar&output=embed"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Map showing the approximate address of Richmond International Kindergarten – Abu Hamour Branch">
-                </iframe>
-            </div>
+# Add WhatsApp floating shortcut and gallery lightbox before closing body.
+body_addition = r"""
 
-            <a class="map-link"
-               href="https://www.google.com/maps/search/?api=1&query=Building+10%2C+Wadi+Al+Egmairiya+Street%2C+Doha%2C+Qatar"
-               target="_blank" rel="noopener">
-                Open Location in Google Maps
-            </a>
-"""
-needle_map = """            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     BACK TO MAIN SCHOOL"""
-html = html.replace(needle_map, """            </div>
-""" + map_section + """
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     BACK TO MAIN SCHOOL""", 1)
-
-# Add footer navigation items.
-old_footer = """        <a href="#about">
-            About
-        </a>
-
-        <a href="#programmes">"""
-new_footer = """        <a href="#about">
-            About
-        </a>
-
-        <a href="#principal">
-            Principal
-        </a>
-
-        <a href="#classes">
-            Classes
-        </a>
-
-        <a href="#programmes">"""
-html = html.replace(old_footer, new_footer, 1)
-
-old_footer2 = """        <a href="#facilities">
-            Facilities
-        </a>
-
-        <a href="#admissions">"""
-new_footer2 = """        <a href="#facilities">
-            Facilities
-        </a>
-
-        <a href="#activities">
-            Events
-        </a>
-
-        <a href="#admissions">"""
-html = html.replace(old_footer2, new_footer2, 1)
-
-old_footer3 = """        <a href="#contact">
-            Contact
-        </a>"""
-new_footer3 = """        <a href="#faq">
-            FAQs
-        </a>
-
-        <a href="#contact">
-            Contact
-        </a>"""
-html = html.replace(old_footer3, new_footer3, 1)
-
-# Add modal, floating WhatsApp link and scripts before closing body.
-scripts_and_widgets = r"""
-
-<!-- =====================================================
-     GALLERY IMAGE LIGHTBOX
-===================================================== -->
-
-<div class="lightbox" id="galleryLightbox" aria-modal="true" role="dialog"
-     aria-label="Gallery image viewer">
-    <button class="lightbox-close" id="lightboxClose" type="button"
-            aria-label="Close image viewer">&times;</button>
-    <img id="lightboxImage" src="" alt="Enlarged kindergarten gallery image">
-</div>
-
-
-<!-- =====================================================
-     FLOATING WHATSAPP BUTTON
-===================================================== -->
-
+<!-- WhatsApp Floating Button -->
 <a class="whatsapp-float"
    href="https://wa.me/97433413214"
    target="_blank"
    rel="noopener"
-   aria-label="Chat with Richmond International Kindergarten on WhatsApp">
-    ☎
-    <span>WhatsApp</span>
-</a>
+   aria-label="Chat with Richmond International Kindergarten on WhatsApp"
+   title="Chat with us on WhatsApp">✆</a>
 
-
-<!-- =====================================================
-     INTERACTIVE FEATURES
-===================================================== -->
+<!-- Gallery Image Lightbox -->
+<div class="lightbox" id="galleryLightbox" aria-modal="true" role="dialog" aria-label="Gallery image viewer">
+    <button class="lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
+    <img src="" alt="Enlarged kindergarten gallery image" id="lightboxImage">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
-    /* Gallery lightbox */
+    // Gallery lightbox
     const lightbox = document.getElementById("galleryLightbox");
     const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const closeLightbox = document.querySelector(".lightbox-close");
 
     document.querySelectorAll(".gallery-item img").forEach(function (image) {
         image.addEventListener("click", function () {
             lightboxImage.src = image.src;
             lightboxImage.alt = image.alt || "Kindergarten gallery image";
-            lightbox.classList.add("open");
+            lightboxCaption.textContent = image.alt || "";
+            lightbox.classList.add("active");
             document.body.style.overflow = "hidden";
         });
     });
 
-    function closeLightbox() {
-        lightbox.classList.remove("open");
+    function hideLightbox() {
+        lightbox.classList.remove("active");
         lightboxImage.src = "";
         document.body.style.overflow = "";
     }
 
-    lightboxClose.addEventListener("click", closeLightbox);
-
+    closeLightbox.addEventListener("click", hideLightbox);
     lightbox.addEventListener("click", function (event) {
-        if (event.target === lightbox) {
-            closeLightbox();
-        }
+        if (event.target === lightbox) hideLightbox();
     });
-
     document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && lightbox.classList.contains("open")) {
-            closeLightbox();
-        }
+        if (event.key === "Escape") hideLightbox();
     });
 
-    /* FAQ accordion */
-    document.querySelectorAll(".faq-question").forEach(function (button) {
-        button.addEventListener("click", function () {
-            const item = button.closest(".faq-item");
-            const isOpen = item.classList.contains("active");
+    // Admission enquiry: opens the visitor's email application.
+    const enquiryForm = document.getElementById("admissionEnquiryForm");
+    if (enquiryForm) {
+        enquiryForm.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-            document.querySelectorAll(".faq-item").forEach(function (faqItem) {
-                faqItem.classList.remove("active");
-                faqItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
-                faqItem.querySelector(".faq-symbol").textContent = "+";
-            });
+            const formData = new FormData(enquiryForm);
+            const subject = "Admission Enquiry - Richmond International Kindergarten Abu Hamour";
+            const message = [
+                "Child's Name: " + (formData.get("childName") || ""),
+                "Date of Birth: " + (formData.get("dateOfBirth") || ""),
+                "Class / Programme: " + (formData.get("classInterested") || ""),
+                "Parent / Guardian: " + (formData.get("parentName") || ""),
+                "Contact Number: " + (formData.get("parentPhone") || ""),
+                "Email Address: " + (formData.get("parentEmail") || ""),
+                "Message: " + (formData.get("enquiryMessage") || "")
+            ].join("\\n");
 
-            if (!isOpen) {
-                item.classList.add("active");
-                button.setAttribute("aria-expanded", "true");
-                button.querySelector(".faq-symbol").textContent = "−";
-            }
+            window.location.href =
+                "mailto:admissions.abh@richmonddoha.com" +
+                "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(message);
         });
-    });
-
-    /* Admission enquiry form - opens WhatsApp with the entered details */
-    const admissionForm = document.getElementById("admissionEnquiryForm");
-
-    admissionForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        if (!admissionForm.reportValidity()) {
-            return;
-        }
-
-        const childName = document.getElementById("childName").value.trim();
-        const dateOfBirth = document.getElementById("dateOfBirth").value;
-        const classInterested = document.getElementById("classInterested").value;
-        const parentName = document.getElementById("parentName").value.trim();
-        const parentPhone = document.getElementById("parentPhone").value.trim();
-        const parentEmail = document.getElementById("parentEmail").value.trim();
-        const enquiryMessage = document.getElementById("enquiryMessage").value.trim();
-
-        const message =
-            "Hello Richmond International Kindergarten – Abu Hamour Branch,%0A%0A" +
-            "*Admission Enquiry*%0A" +
-            "Child's Name: " + encodeURIComponent(childName) + "%0A" +
-            "Date of Birth: " + encodeURIComponent(dateOfBirth) + "%0A" +
-            "Class Interested In: " + encodeURIComponent(classInterested) + "%0A" +
-            "Parent / Guardian: " + encodeURIComponent(parentName) + "%0A" +
-            "Contact Number: " + encodeURIComponent(parentPhone) + "%0A" +
-            "Email: " + encodeURIComponent(parentEmail || "Not provided") + "%0A" +
-            "Message: " + encodeURIComponent(enquiryMessage || "No additional message");
-
-        const whatsappUrl = "https://wa.me/97474767266?text=" + message;
-        window.open(whatsappUrl, "_blank", "noopener");
-    });
-
+    }
 });
 </script>
 
 """
-html = html.replace("</body>", scripts_and_widgets + "\n</body>", 1)
+html = html.replace("</body>", body_addition + "\n</body>", 1)
 
-# Save complete updated HTML.
-output_path = Path("/mnt/data/richmond-kindergarten-abu-hamour-updated.html")
-output_path.write_text(html, encoding="utf-8")
+# Update footer links with new sections, retaining existing ones.
+html = html.replace(
+    '<a href="#about">\n            About\n        </a>',
+    '<a href="#about">\n            About\n        </a>\n\n        <a href="#principal">Principal</a>\n        <a href="#classes">Classes</a>\n        <a href="#activities">Activities</a>\n        <a href="#faq">FAQs</a>'
+)
 
-print(f"Created: {output_path}")
-print(f"HTML size: {len(html):,} characters")
-print("Preserved original content and added the requested sections, styles, and interactions.")
+out = Path("/mnt/data/richmond-kindergarten-abu-hamour-original-preserved-updated.html")
+out.write_text(html, encoding="utf-8")
+
+print(f"Created: {out}")
+print(f"Size: {out.stat().st_size:,} bytes")
+print("Sections:", {name: (f'id=\"{name}\"' in html) for name in ["principal", "classes", "activities", "faq", "admissions", "gallery", "contact"]})
