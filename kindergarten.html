@@ -1,667 +1,2329 @@
-from pathlib import Path
-import re
+<!DOCTYPE html>
+<html lang="en">
 
-source_path = Path("/mnt/data/Pasted text(20261103-082155).txt")
-html = source_path.read_text(encoding="utf-8")
+<head>
 
-# Remove the conversational note that was accidentally pasted inside <head>, not website content.
-html = html.replace("me​​ka tawa add wenna thiynne monwda", "")
-html = html.replace("meka tawa add wenna thiynne monwda", "")
 
-css_addition = r"""
+meka tawa add wenna thiynne monwda
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Richmond International Kindergarten – Abu Hamour Branch</title>
+
+<style>
 
 /* =====================================================
-   ADDITIONAL SECTIONS & FEATURES
-   Added without replacing the original website styles
+   GLOBAL
 ===================================================== */
 
-.principal-welcome {
-    background: #ffffff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.principal-card {
-    max-width: 1050px;
-    margin: auto;
-    padding: 42px;
-    background: var(--light-bg);
-    border-left: 5px solid var(--gold);
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+html {
+    scroll-behavior: smooth;
 }
-.principal-card h3 {
-    color: var(--purple);
-    font-size: 23px;
-    margin-bottom: 16px;
-}
-.principal-card p {
-    color: var(--gray);
-    line-height: 1.9;
-    margin-bottom: 14px;
-}
-.principal-signature {
-    color: var(--purple) !important;
-    font-weight: 700;
-    margin-top: 22px;
-}
-.classes-section {
-    background: var(--light-bg);
-}
-.classes-grid, .activities-grid {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-.class-card, .activity-card {
-    background: #ffffff;
-    padding: 28px 24px;
-    border-radius: 12px;
-    border: 1px solid #eee;
-    border-bottom: 3px solid var(--gold);
-    text-align: center;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.045);
-    transition: 0.3s ease;
-}
-.class-card:hover, .activity-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(50,20,95,0.10);
-}
-.class-card .feature-icon, .activity-card .feature-icon {
-    font-size: 32px;
-    margin-bottom: 13px;
-}
-.class-card h3, .activity-card h3 {
-    color: var(--purple);
-    margin-bottom: 10px;
-    font-size: 19px;
-}
-.class-card p, .activity-card p {
-    color: var(--gray);
-    font-size: 14px;
-    line-height: 1.8;
-}
-.activities-section {
-    background: #ffffff;
-}
-.faq-section {
-    background: var(--light-bg);
-}
-.faq-list {
-    max-width: 950px;
-    margin: auto;
-}
-.faq-list details {
-    background: #ffffff;
-    margin-bottom: 13px;
-    border-radius: 9px;
-    border: 1px solid #e9e3f0;
-    overflow: hidden;
-}
-.faq-list summary {
-    cursor: pointer;
-    list-style: none;
-    padding: 19px 22px;
-    color: var(--purple);
-    font-weight: 700;
-    position: relative;
-    padding-right: 50px;
-}
-.faq-list summary::-webkit-details-marker {
-    display: none;
-}
-.faq-list summary::after {
-    content: "+";
-    position: absolute;
-    right: 22px;
-    top: 12px;
-    color: var(--gold);
-    font-size: 25px;
-}
-.faq-list details[open] summary::after {
-    content: "−";
-}
-.faq-answer {
-    padding: 0 22px 20px;
-    color: var(--gray);
-    line-height: 1.8;
-}
-.admission-enquiry {
-    max-width: 950px;
-    margin: 35px auto 0;
-    padding: 38px;
-    background: var(--light-bg);
-    border-radius: 14px;
-    border: 1px solid #eee;
-    text-align: left;
-}
-.admission-enquiry h3 {
-    text-align: center;
-    color: var(--purple);
-    font-size: 25px;
-    margin-bottom: 8px;
-}
-.admission-enquiry > p {
-    text-align: center;
-    color: var(--gray);
-    margin-bottom: 25px;
-}
-.enquiry-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 17px;
-}
-.enquiry-field {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
-.enquiry-field.full-width {
-    grid-column: 1 / -1;
-}
-.enquiry-field label {
-    color: var(--purple);
-    font-size: 14px;
-    font-weight: 700;
-}
-.enquiry-field input, .enquiry-field select, .enquiry-field textarea {
-    width: 100%;
-    padding: 12px 13px;
-    border: 1px solid #d9d2e2;
-    border-radius: 6px;
-    background: #ffffff;
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
-    font: inherit;
+    background: #f8f6fb;
+    line-height: 1.6;
 }
-.enquiry-field input:focus, .enquiry-field select:focus, .enquiry-field textarea:focus {
-    outline: 2px solid rgba(212,175,55,0.35);
-    border-color: var(--gold);
-}
-.enquiry-field textarea {
-    min-height: 110px;
-    resize: vertical;
-}
-.enquiry-submit {
+
+img {
+    max-width: 100%;
     display: block;
-    margin: 22px auto 0;
-    border: 0;
-    cursor: pointer;
 }
-.enquiry-note {
-    font-size: 12px;
-    color: #777;
-    text-align: center;
-    margin-top: 13px;
+
+a {
+    text-decoration: none;
 }
-.map-frame {
-    width: 100%;
-    height: 280px;
-    border: 0;
-    border-radius: 10px;
-    margin-top: 20px;
+
+
+/* =====================================================
+   COLOURS
+===================================================== */
+
+:root {
+    --purple: #32145f;
+    --dark-purple: #241044;
+    --light-purple: #f1eafb;
+    --gold: #d4af37;
+    --light-gold: #f3df9b;
+    --white: #ffffff;
+    --dark: #222222;
+    --gray: #666666;
+    --light-bg: #f8f6fb;
 }
-.whatsapp-float {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 1500;
-    width: 58px;
-    height: 58px;
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    background: #32145f;
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 4px solid #d4af37;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.18),
+        0 2px 0 rgba(230,201,106,0.35);
+}
+
+.header-container {
+    width: 92%;
+    max-width: 1350px;
+    margin: auto;
+    min-height: 120px;
+
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #25D366;
-    color: #ffffff;
-    font-size: 29px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
-    transition: 0.25s ease;
+    justify-content: space-between;
+
+    gap: 35px;
 }
-.whatsapp-float:hover {
-    transform: translateY(-4px) scale(1.04);
-    color: #ffffff;
-}
-.gallery-item img {
-    cursor: zoom-in;
-}
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 3000;
-    padding: 35px 18px;
-    background: rgba(0,0,0,0.92);
-    align-items: center;
-    justify-content: center;
-}
-.lightbox.active {
+
+
+/* =====================================================
+   LOGO AREA
+===================================================== */
+
+.logo-area {
     display: flex;
+    align-items: center;
+    gap: 20px;
 }
-.lightbox img {
-    max-width: 92vw;
-    max-height: 88vh;
+
+
+/* PROFESSIONAL LOGO FRAME */
+
+.logo-area img {
+    width: 185px;
+    height: 105px;
+
     object-fit: contain;
+
+    background: #ffffff;
+    padding: 10px 14px;
+
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 7px 22px rgba(0,0,0,0.25),
+        0 0 0 4px rgba(212,175,55,0.08);
+
+    display: block;
+}
+
+
+/* =====================================================
+   SCHOOL NAME
+===================================================== */
+
+.school-name h1 {
+    color: #ffffff !important;
+
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 700;
+
+    margin: 0;
+}
+
+.school-name p {
+    color: #e6c96a !important;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-top: 7px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    color: #ffffff !important;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    position: relative;
+
+    padding: 45px 0;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e6c96a !important;
+}
+
+
+/* GOLD UNDERLINE */
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 32px;
+
+    width: 0;
+    height: 3px;
+
+    background: #d4af37;
+
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   MOBILE HEADER
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .header-container {
+        flex-direction: column;
+
+        padding: 15px 0 20px;
+
+        gap: 15px;
+    }
+
+    .logo-area {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .logo-area img {
+        width: 170px;
+        height: 98px;
+    }
+
+    .school-name h1 {
+        font-size: 19px;
+    }
+
+    .school-name p {
+        font-size: 12px;
+    }
+
+    nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+    nav a {
+        padding: 5px 0;
+    }
+
+    nav a::after {
+        bottom: 0;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .logo-area img {
+        width: 145px;
+        height: 85px;
+    }
+
+    .school-name h1 {
+        font-size: 17px;
+    }
+
+    .school-name p {
+        font-size: 11px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================================
+   PREMIUM HERO
+===================================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(50,20,95,0.94),
+            rgba(7,27,58,0.78)
+        ),
+        url("kindergarten-bg.jpg");
+
+    background-size: cover;
+
+    background-position: center 50%;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(212,175,55,0.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,0.08),
+            transparent 30%
+        );
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            #f1d77a,
+            #d4af37
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 950px;
+
+    padding: 40px 25px;
+}
+
+.hero-content::before {
+    content: "";
+
+    display: block;
+
+    width: 75px;
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 0 auto 25px;
+
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 58px;
+
+    line-height: 1.12;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 4px 18px rgba(0,0,0,0.35);
+}
+
+.hero h2 span {
+    color: var(--light-gold);
+}
+
+.hero p {
+    max-width: 780px;
+
+    margin: 0 auto 38px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #f5f5f5;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    margin: 5px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.button-primary {
+    background: var(--gold);
+
+    color: var(--dark-purple);
+}
+
+.button-primary:hover {
+    background: white;
+
+    transform: translateY(-2px);
+}
+
+.button-outline {
+    border: 1px solid white;
+
+    color: white;
+}
+
+.button-outline:hover {
+    background: white;
+
+    color: var(--purple);
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+section {
+    padding: 85px 7%;
+}
+
+.section-header {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 50px;
+}
+
+.section-label {
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.section-title {
+    color: var(--purple);
+
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+}
+
+.section-text {
+    color: var(--gray);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome {
+    background: white;
+}
+
+.welcome-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+/* =====================================================
+   PROFESSIONAL GOLD PHOTO FRAME
+===================================================== */
+
+.welcome-image {
+    height: 380px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
     border: 3px solid var(--gold);
+
+    padding: 5px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.14),
+        0 0 0 4px rgba(212,175,55,0.12);
+}
+
+.welcome-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
     border-radius: 8px;
 }
-.lightbox-close {
-    position: absolute;
-    top: 14px;
-    right: 25px;
-    color: #ffffff;
-    font-size: 42px;
-    line-height: 1;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
+
+.welcome-content .section-title {
+    text-align: left;
 }
-.lightbox-caption {
-    position: absolute;
-    bottom: 12px;
-    color: #ffffff;
+
+.welcome-content .section-label {
+    display: block;
+}
+
+.welcome-content p {
+    color: var(--gray);
+
+    margin-bottom: 18px;
+
+    line-height: 1.8;
+}
+
+.welcome-list {
+    list-style: none;
+
+    margin-top: 25px;
+}
+
+.welcome-list li {
+    margin-bottom: 12px;
+
+    color: #444;
+}
+
+.welcome-list span {
+    color: var(--gold);
+
+    font-weight: bold;
+
+    margin-right: 8px;
+}
+
+
+/* =====================================================
+   LEARNING PROGRAMMES
+===================================================== */
+
+.programmes {
+    background: var(--light-bg);
+}
+
+.programme-grid {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.programme-card {
+    background: white;
+
+    padding: 35px 28px;
+
+    border-radius: 12px;
+
+    border: 1px solid #eee;
+
     text-align: center;
+
+    transition: 0.3s;
+}
+
+.programme-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(50,20,95,0.12);
+}
+
+.programme-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: var(--light-purple);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.programme-card h3 {
+    color: var(--purple);
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.programme-card p {
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   SCHOOL AT A GLANCE
+===================================================== */
+
+.glance {
+    background: white;
+}
+
+.glance-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.glance-card {
+    background: var(--light-bg);
+
+    padding: 30px 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    border-bottom: 3px solid var(--gold);
+}
+
+.glance-card h3 {
+    color: var(--purple);
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.glance-card p {
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
+
+.why-us {
+    background: var(--purple);
+
+    color: white;
+}
+
+.why-us .section-label {
+    color: var(--light-gold);
+}
+
+.why-us .section-title {
+    color: white;
+}
+
+.why-us .section-text {
+    color: #ddd5e9;
+}
+
+.why-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.why-card {
+    padding: 30px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.05);
+
+    text-align: center;
+}
+
+.why-card .icon {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    color: var(--light-gold);
+
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: #eee;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   FACILITIES
+===================================================== */
+
+.facilities {
+    background: var(--light-bg);
+}
+
+.facilities-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.facility {
+    background: white;
+
+    padding: 25px 15px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 18px rgba(0,0,0,0.05);
+
+    transition: 0.3s;
+}
+
+.facility:hover {
+    transform: translateY(-4px);
+}
+
+.facility-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.facility h3 {
+    color: var(--purple);
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   ADMISSIONS
+===================================================== */
+
+.admissions {
+    background: white;
+}
+
+.admission-box {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 55px 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--dark-purple)
+        );
+
+    border-radius: 15px;
+
+    border: 2px solid rgba(212,175,55,0.55);
+
+    box-shadow:
+        0 15px 35px rgba(36,16,68,0.18);
+
+    text-align: center;
+
+    color: white;
+}
+
+.admission-box h2 {
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+.admission-box p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #e7e1ef;
+}
+
+.admission-buttons {
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery {
+    background: var(--light-bg);
+}
+
+.gallery-container {
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =====================================================
+   PROFESSIONAL GOLD GALLERY FRAME
+===================================================== */
+
+.gallery-item {
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 3px solid var(--gold);
+
+    padding: 5px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.10),
+        0 0 0 4px rgba(212,175,55,0.10);
+
+    transition: 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 16px 35px rgba(50,20,95,0.18),
+        0 0 0 5px rgba(212,175,55,0.16);
+}
+
+.gallery-item img {
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    transition: 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-caption {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.contact-card {
+    background: var(--light-bg);
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    border-left: 4px solid var(--gold);
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.04);
+}
+
+.contact-card h3 {
+    color: var(--purple);
+
+    margin-bottom: 20px;
+
+    font-size: 22px;
+}
+
+.contact-item {
+    margin-bottom: 16px;
+
+    color: #555;
+}
+
+.contact-item strong {
+    color: var(--purple);
+}
+
+.contact-button-area {
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   BACK TO MAIN SCHOOL
+===================================================== */
+
+.back-school {
+    background: var(--light-purple);
+
+    text-align: center;
+
+    padding: 55px 20px;
+}
+
+.back-school h2 {
+    color: var(--purple);
+
+    margin-bottom: 12px;
+}
+
+.back-school p {
+    color: var(--gray);
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: var(--dark-purple);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    border-top: 3px solid var(--gold);
+}
+
+.footer-logo {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.footer-tagline {
+    color: var(--light-gold);
+
+    margin-bottom: 18px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #ddd;
+
+    margin: 0 10px;
+
     font-size: 13px;
 }
-@media (max-width: 800px) {
-    .classes-grid, .activities-grid {
+
+.footer-links a:hover {
+    color: var(--light-gold);
+}
+
+.footer-copy {
+    font-size: 12px;
+
+    color: #aaa;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .header-container {
+        flex-direction: column;
+
+        padding: 15px 0 18px;
+
+        gap: 15px;
+    }
+
+    .logo-area {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    nav a {
+        padding: 5px 0;
+    }
+
+    nav a::after {
+        bottom: 0;
+    }
+
+    .hero h2 {
+        font-size: 45px;
+    }
+
+    .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* =====================================================
+   MOBILE 650
+===================================================== */
+
 @media (max-width: 650px) {
-    .principal-card {
-        padding: 27px 22px;
+
+    .logo-area img {
+        width: 78px;
+
+        height: 78px;
+
+        padding: 7px;
     }
-    .classes-grid, .activities-grid {
+
+    .school-name h1 {
+        font-size: 17px;
+    }
+
+    .school-name p {
+        font-size: 11px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .gallery-grid {
         grid-template-columns: 1fr;
     }
-    .admission-enquiry {
-        padding: 27px 18px;
+
+    .gallery-item img {
+        height: 250px;
     }
-    .enquiry-grid {
-        grid-template-columns: 1fr;
-    }
-    .enquiry-field.full-width {
-        grid-column: auto;
-    }
-    .map-frame {
-        height: 240px;
-    }
-    .whatsapp-float {
-        width: 54px;
-        height: 54px;
-        right: 15px;
-        bottom: 15px;
+
+    .welcome-image {
+        height: 320px;
     }
 }
-"""
 
-# Add the new CSS immediately before the original style closing tag.
-html = html.replace("</style>", css_addition + "\n</style>", 1)
 
-# Add links to new sections while preserving all existing navigation links.
-html = html.replace(
-    '<a href="#about">About</a>',
-    '<a href="#about">About</a>\n            <a href="#principal">Principal</a>\n            <a href="#classes">Classes</a>'
-)
-html = html.replace(
-    '<a href="#facilities">Facilities</a>',
-    '<a href="#facilities">Facilities</a>\n            <a href="#activities">Activities</a>'
-)
-html = html.replace(
-    '<a href="#gallery">Gallery</a>',
-    '<a href="#gallery">Gallery</a>\n            <a href="#faq">FAQs</a>'
-)
+/* =====================================================
+   SMALL PHONES
+===================================================== */
 
-principal_section = r"""
+@media (max-width: 400px) {
 
-<!-- =====================================================
-     PRINCIPAL'S WELCOME
-===================================================== -->
+    .hero h2 {
+        font-size: 31px;
+    }
 
-<section class="principal-welcome" id="principal">
-    <div class="section-header">
-        <div class="section-label">A Message from Our Principal</div>
-        <h2 class="section-title">A Warm Welcome to Our Kindergarten</h2>
-    </div>
+    .hero p {
+        font-size: 15px;
+    }
 
-    <div class="principal-card">
-        <h3>Dear Parents and Families,</h3>
-        <p>
-            Welcome to Richmond International Kindergarten – Abu Hamour Branch.
-            We are delighted that you are considering our kindergarten as part of
-            your child’s early learning journey.
-        </p>
-        <p>
-            We believe that every child is unique and deserves a caring,
-            supportive and stimulating environment. Our aim is to encourage
-            children to be curious, confident and happy learners through
-            meaningful experiences, play and exploration.
-        </p>
-        <p>
-            We value the partnership between school and family and look forward
-            to working together to support every child’s growth and development.
-        </p>
-        <p class="principal-signature">Warm regards,<br>Principal<br>Richmond International Kindergarten – Abu Hamour Branch</p>
-    </div>
-</section>
+    .button {
+        display: block;
 
-"""
+        width: 100%;
 
-html = html.replace(
-    '<!-- =====================================================\n      PROGRAMMES',
-    principal_section + '\n<!-- =====================================================\n      PROGRAMMES',
-    1
-)
+        max-width: 280px;
 
-classes_section = r"""
+        margin: 8px auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
 
 <!-- =====================================================
-     OUR CLASSES
+     HEADER
 ===================================================== -->
 
-<section class="classes-section" id="classes">
-    <div class="section-header">
-        <div class="section-label">Our Classes</div>
-        <h2 class="section-title">A Learning Journey for Every Child</h2>
-        <p class="section-text">
-            We provide age-appropriate early learning experiences that help
-            children develop confidence, independence and a love of learning.
-            Please contact our Admissions Team for the current class groups,
-            age requirements and availability.
-        </p>
-    </div>
+<header>
 
-    <div class="classes-grid">
-        <div class="class-card">
-            <div class="feature-icon">🌱</div>
-            <h3>Early Years</h3>
-            <p>Building early communication, social interaction and independence through caring guidance and play.</p>
-        </div>
-        <div class="class-card">
-            <div class="feature-icon">🧩</div>
-            <h3>Kindergarten Learning</h3>
-            <p>Encouraging children to explore, ask questions and develop early literacy and numeracy skills.</p>
-        </div>
-        <div class="class-card">
-            <div class="feature-icon">🌟</div>
-            <h3>School Readiness</h3>
-            <p>Supporting confidence, cooperation and the skills children need for their next stage of learning.</p>
-        </div>
-    </div>
-</section>
+    <div class="header-container">
 
-"""
+        <div class="logo-area">
 
-html = html.replace(
-    '<!-- =====================================================\n      SCHOOL AT A GLANCE',
-    classes_section + '\n<!-- =====================================================\n      SCHOOL AT A GLANCE',
-    1
-)
+            <img
+                src="RIKAH_LOGO_525x185.png"
+                alt="Richmond International Kindergarten Logo"
+            >
 
-activities_section = r"""
+            <div class="school-name">
 
-<!-- =====================================================
-     SCHOOL ACTIVITIES & EVENTS
-===================================================== -->
+                <h1>
+                    Richmond International Kindergarten
+                </h1>
 
-<section class="activities-section" id="activities">
-    <div class="section-header">
-        <div class="section-label">School Life</div>
-        <h2 class="section-title">School Activities & Events</h2>
-        <p class="section-text">
-            Children learn and grow through a variety of enjoyable experiences
-            that encourage creativity, communication, teamwork and discovery.
-        </p>
-    </div>
+                <p>
+                    Abu Hamour Branch • Nurturing tomorrow’s leaders
+                </p>
 
-    <div class="activities-grid">
-        <div class="activity-card">
-            <div class="feature-icon">🎨</div>
-            <h3>Art & Creativity</h3>
-            <p>Creative experiences that allow children to express ideas and explore colours, shapes and materials.</p>
-        </div>
-        <div class="activity-card">
-            <div class="feature-icon">📚</div>
-            <h3>Reading & Storytelling</h3>
-            <p>Stories, books and language activities that help develop imagination and communication.</p>
-        </div>
-        <div class="activity-card">
-            <div class="feature-icon">⚽</div>
-            <h3>Sports & Movement</h3>
-            <p>Fun movement activities that encourage coordination, confidence and healthy habits.</p>
-        </div>
-        <div class="activity-card">
-            <div class="feature-icon">🎉</div>
-            <h3>Celebrations</h3>
-            <p>Special occasions and cultural celebrations that help children learn about their community.</p>
-        </div>
-        <div class="activity-card">
-            <div class="feature-icon">🔬</div>
-            <h3>Discovery Activities</h3>
-            <p>Simple hands-on experiences that encourage curiosity, observation and problem-solving.</p>
-        </div>
-        <div class="activity-card">
-            <div class="feature-icon">🤝</div>
-            <h3>Group Activities</h3>
-            <p>Shared activities that help children practise cooperation, friendship and taking turns.</p>
-        </div>
-    </div>
-</section>
-
-"""
-
-html = html.replace(
-    '<!-- =====================================================\n      ADMISSIONS',
-    activities_section + '\n<!-- =====================================================\n      ADMISSIONS',
-    1
-)
-
-# Add the enquiry form below the existing admission call-to-action.
-enquiry_form = r"""
-
-    <div class="admission-enquiry">
-        <h3>Admission Enquiry Form</h3>
-        <p>Send an enquiry to our Admissions Team. Your email application will open with the details filled in.</p>
-
-        <form id="admissionEnquiryForm">
-            <div class="enquiry-grid">
-                <div class="enquiry-field">
-                    <label for="childName">Child's Name *</label>
-                    <input type="text" id="childName" name="childName" required>
-                </div>
-                <div class="enquiry-field">
-                    <label for="dateOfBirth">Child's Date of Birth</label>
-                    <input type="date" id="dateOfBirth" name="dateOfBirth">
-                </div>
-                <div class="enquiry-field">
-                    <label for="classInterested">Class / Programme Interested In</label>
-                    <select id="classInterested" name="classInterested">
-                        <option value="">Please select</option>
-                        <option>Early Years</option>
-                        <option>Kindergarten Learning</option>
-                        <option>School Readiness</option>
-                        <option>Not sure – please advise</option>
-                    </select>
-                </div>
-                <div class="enquiry-field">
-                    <label for="parentName">Parent / Guardian Name *</label>
-                    <input type="text" id="parentName" name="parentName" required>
-                </div>
-                <div class="enquiry-field">
-                    <label for="parentPhone">Contact Number *</label>
-                    <input type="tel" id="parentPhone" name="parentPhone" required>
-                </div>
-                <div class="enquiry-field">
-                    <label for="parentEmail">Email Address</label>
-                    <input type="email" id="parentEmail" name="parentEmail">
-                </div>
-                <div class="enquiry-field full-width">
-                    <label for="enquiryMessage">Message</label>
-                    <textarea id="enquiryMessage" name="enquiryMessage" placeholder="Write your question or enquiry here..."></textarea>
-                </div>
             </div>
-            <button type="submit" class="button button-primary enquiry-submit">Send Admission Enquiry</button>
-            <p class="enquiry-note">This form opens your email application. It does not store or submit information to a website database.</p>
-        </form>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#programmes">Learning</a>
+
+            <a href="#facilities">Facilities</a>
+
+            <a href="#admissions">Admissions</a>
+
+            <a href="#gallery">Gallery</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
     </div>
 
-"""
-html = html.replace(
-    '\n</section>\n\n\n\n<!-- =====================================================\n      GALLERY',
-    enquiry_form + '\n</section>\n\n\n\n<!-- =====================================================\n      GALLERY',
-    1
-)
+</header>
 
-# Add map in the Visit Us contact card.
-map_html = r"""
-            <iframe
-                class="map-frame"
-                title="Map to Richmond International Kindergarten – Abu Hamour Branch"
-                src="https://www.google.com/maps?q=Building%2010%2C%20Wadi%20Al%20Egmairiya%20St%2C%20Doha%2C%20Qatar&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen>
-            </iframe>
-"""
-html = html.replace(
-    '<!-- =====================================================\n      BACK TO MAIN SCHOOL',
-    map_html + '\n<!-- =====================================================\n      BACK TO MAIN SCHOOL',
-    1
-)
 
-faq_section = r"""
 
 <!-- =====================================================
-     FREQUENTLY ASKED QUESTIONS
+     HERO
 ===================================================== -->
 
-<section class="faq-section" id="faq">
-    <div class="section-header">
-        <div class="section-label">Need Help?</div>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-text">Some helpful information for parents and families.</p>
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-tag">
+            RICHMOND INTERNATIONAL KINDERGARTEN
+        </div>
+
+        <h2>
+            Little Minds.<br>
+            <span>Big Dreams.</span>
+        </h2>
+
+        <p>
+
+            Welcome to Richmond International Kindergarten –
+            Abu Hamour Branch, where children are encouraged to
+            explore, discover, create and grow in a caring
+            and inspiring learning environment.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#admissions"
+                class="button button-primary"
+            >
+                Apply for Admission
+            </a>
+
+            <a
+                href="#about"
+                class="button button-outline"
+            >
+                Discover Our Kindergarten
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="faq-list">
-        <details>
-            <summary>How can I enquire about admission?</summary>
-            <div class="faq-answer">You can contact our Admissions Team by email at admissions.abh@richmonddoha.com or use the admission enquiry form on this page.</div>
-        </details>
-        <details>
-            <summary>How can I find out which class is suitable for my child?</summary>
-            <div class="faq-answer">Please contact our Admissions Team with your child's date of birth. The team can advise you about the appropriate class group and current availability.</div>
-        </details>
-        <details>
-            <summary>Can I visit the kindergarten?</summary>
-            <div class="faq-answer">Please contact the kindergarten to arrange a visit and confirm a suitable time.</div>
-        </details>
-        <details>
-            <summary>What documents are required for admission?</summary>
-            <div class="faq-answer">Please contact the Admissions Team for the latest admission requirements and document checklist.</div>
-        </details>
-        <details>
-            <summary>How can I contact the Abu Hamour Branch?</summary>
-            <div class="faq-answer">You can call or WhatsApp +974 33413214, or email admissions.abh@richmonddoha.com.</div>
-        </details>
-    </div>
 </section>
 
-"""
 
-html = html.replace(
-    '<!-- =====================================================\n      CONTACT',
-    faq_section + '\n<!-- =====================================================\n      CONTACT',
-    1
-)
 
-# Add WhatsApp floating shortcut and gallery lightbox before closing body.
-body_addition = r"""
+<!-- =====================================================
+     ABOUT / WELCOME
+===================================================== -->
 
-<!-- WhatsApp Floating Button -->
-<a class="whatsapp-float"
-   href="https://wa.me/97433413214"
-   target="_blank"
-   rel="noopener"
-   aria-label="Chat with Richmond International Kindergarten on WhatsApp"
-   title="Chat with us on WhatsApp">✆</a>
+<section class="welcome" id="about">
 
-<!-- Gallery Image Lightbox -->
-<div class="lightbox" id="galleryLightbox" aria-modal="true" role="dialog" aria-label="Gallery image viewer">
-    <button class="lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
-    <img src="" alt="Enlarged kindergarten gallery image" id="lightboxImage">
-    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="welcome-container">
+
+
+        <div class="welcome-image">
+
+            <img
+                src="kindergarten-welcome.jpg"
+                alt="Richmond International Kindergarten"
+            >
+
+        </div>
+
+
+        <div class="welcome-content">
+
+            <span class="section-label">
+                Welcome to Richmond
+            </span>
+
+            <h2 class="section-title">
+                A Happy Beginning to Every Child’s Journey
+            </h2>
+
+            <p>
+
+                At Richmond International Kindergarten –
+                Abu Hamour Branch, we believe that the early
+                years are an important foundation for a child's
+                future learning and development.
+
+            </p>
+
+            <p>
+
+                Our environment is designed to help children
+                feel safe, valued and confident while developing
+                important social, emotional, communication and
+                learning skills.
+
+            </p>
+
+
+            <ul class="welcome-list">
+
+                <li>
+                    <span>✓</span>
+                    Safe and caring learning environment
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Learning through exploration and play
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Encouraging creativity and confidence
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Supportive relationships with families
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROGRAMMES
+===================================================== -->
+
+<section class="programmes" id="programmes">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Early Learning
+        </div>
+
+        <h2 class="section-title">
+            Learning Through Every Experience
+        </h2>
+
+        <p class="section-text">
+
+            Our kindergarten learning environment encourages
+            children to learn naturally through play,
+            creativity, communication and discovery.
+
+        </p>
+
+    </div>
+
+
+    <div class="programme-grid">
+
+
+        <div class="programme-card">
+
+            <div class="programme-icon">
+                🌱
+            </div>
+
+            <h3>
+                Early Years
+            </h3>
+
+            <p>
+
+                Supporting children's early development,
+                independence, communication and confidence
+                in a caring environment.
+
+            </p>
+
+        </div>
+
+
+        <div class="programme-card">
+
+            <div class="programme-icon">
+                🎨
+            </div>
+
+            <h3>
+                Creative Learning
+            </h3>
+
+            <p>
+
+                Art, music, imagination and creative activities
+                help children express their ideas and develop
+                their natural curiosity.
+
+            </p>
+
+        </div>
+
+
+        <div class="programme-card">
+
+            <div class="programme-icon">
+                🧩
+            </div>
+
+            <h3>
+                Learning Through Play
+            </h3>
+
+            <p>
+
+                Purposeful play gives children opportunities
+                to explore ideas, solve problems and develop
+                important skills.
+
+            </p>
+
+        </div>
+
+
+        <div class="programme-card">
+
+            <div class="programme-icon">
+                📚
+            </div>
+
+            <h3>
+                Language & Communication
+            </h3>
+
+            <p>
+
+                Children are encouraged to communicate,
+                listen, share ideas and develop confidence
+                in expressing themselves.
+
+            </p>
+
+        </div>
+
+
+        <div class="programme-card">
+
+            <div class="programme-icon">
+                🔢
+            </div>
+
+            <h3>
+                Early Numeracy
+            </h3>
+
+            <p>
+
+                Fun activities introduce children to numbers,
+                patterns, shapes, counting and early
+                problem-solving.
+
+            </p>
+
+        </div>
+
+
+        <div class="programme-card">
+
+            <div class="programme-icon">
+                🤝
+            </div>
+
+            <h3>
+                Personal & Social Development
+            </h3>
+
+            <p>
+
+                Children develop friendships, cooperation,
+                independence and positive relationships
+                with others.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCHOOL AT A GLANCE
+===================================================== -->
+
+<section class="glance">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            At a Glance
+        </div>
+
+        <h2 class="section-title">
+            Our Kindergarten
+        </h2>
+
+    </div>
+
+
+    <div class="glance-grid">
+
+
+        <div class="glance-card">
+
+            <h3>
+                Early Years
+            </h3>
+
+            <p>
+                A strong foundation for lifelong learning.
+            </p>
+
+        </div>
+
+
+        <div class="glance-card">
+
+            <h3>
+                Caring Environment
+            </h3>
+
+            <p>
+                A safe and welcoming space for children.
+            </p>
+
+        </div>
+
+
+        <div class="glance-card">
+
+            <h3>
+                Child-Centred
+            </h3>
+
+            <p>
+                Learning experiences designed around children.
+            </p>
+
+        </div>
+
+
+        <div class="glance-card">
+
+            <h3>
+                Family Partnership
+            </h3>
+
+            <p>
+                Working together with families.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY CHOOSE US
+===================================================== -->
+
+<section class="why-us">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Our Approach
+        </div>
+
+        <h2 class="section-title">
+            Growing Together
+        </h2>
+
+        <p class="section-text">
+
+            We aim to create an environment where every child
+            feels respected, supported and encouraged to
+            discover their potential.
+
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                ❤️
+            </div>
+
+            <h3>
+                Care & Wellbeing
+            </h3>
+
+            <p>
+
+                We value children's happiness, wellbeing
+                and sense of belonging.
+
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                🌟
+            </div>
+
+            <h3>
+                Confidence
+            </h3>
+
+            <p>
+
+                Children are encouraged to participate,
+                communicate and try new things.
+
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                🔍
+            </div>
+
+            <h3>
+                Curiosity
+            </h3>
+
+            <p>
+
+                We encourage children to ask questions,
+                explore ideas and discover the world.
+
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                🎯
+            </div>
+
+            <h3>
+                Development
+            </h3>
+
+            <p>
+
+                Learning experiences support children's
+                academic, social and personal development.
+
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                👨‍👩‍👧
+            </div>
+
+            <h3>
+                Family Partnership
+            </h3>
+
+            <p>
+
+                We value communication and positive
+                relationships with families.
+
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                🌍
+            </div>
+
+            <h3>
+                Future Ready
+            </h3>
+
+            <p>
+
+                We help children build the confidence
+                and skills needed for their next steps.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FACILITIES
+===================================================== -->
+
+<section class="facilities" id="facilities">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Our Environment
+        </div>
+
+        <h2 class="section-title">
+            Facilities & Learning Spaces
+        </h2>
+
+        <p class="section-text">
+
+            Our learning environment is designed to provide
+            children with opportunities to learn, play,
+            create and explore.
+
+        </p>
+
+    </div>
+
+
+    <div class="facilities-grid">
+
+
+        <div class="facility">
+
+            <div class="facility-icon">
+                🏫
+            </div>
+
+            <h3>
+                Learning Classrooms
+            </h3>
+
+        </div>
+
+
+        <div class="facility">
+
+            <div class="facility-icon">
+                🎨
+            </div>
+
+            <h3>
+                Creative Activities
+            </h3>
+
+        </div>
+
+
+        <div class="facility">
+
+            <div class="facility-icon">
+                📚
+            </div>
+
+            <h3>
+                Learning Resources
+            </h3>
+
+        </div>
+
+
+        <div class="facility">
+
+            <div class="facility-icon">
+                🧸
+            </div>
+
+            <h3>
+                Play-Based Learning
+            </h3>
+
+        </div>
+
+
+        <div class="facility">
+
+            <div class="facility-icon">
+                💻
+            </div>
+
+            <h3>
+                Digital Learning
+            </h3>
+
+        </div>
+
+
+        <div class="facility">
+
+            <div class="facility-icon">
+                🎵
+            </div>
+
+            <h3>
+                Music & Activities
+            </h3>
+
+        </div>
+
+
+        <div class="facility">
+
+            <div class="facility-icon">
+                🌳
+            </div>
+
+            <h3>
+                Outdoor Activities
+            </h3>
+
+        </div>
+
+
+        <div class="facility">
+
+            <div class="facility-icon">
+                🤝
+            </div>
+
+            <h3>
+                Social Learning
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADMISSIONS
+===================================================== -->
+
+<section class="admissions" id="admissions">
+
+    <div class="admission-box">
+
+        <h2>
+            Begin Your Child's Journey
+        </h2>
+
+        <p>
+
+            We welcome families who are looking for a
+            caring and inspiring environment for their
+            child's early educational journey.
+
+            Contact our admissions team to learn more
+            about enrolment and available places.
+
+        </p>
+
+
+        <div class="admission-buttons">
+
+            <a
+                href="mailto:admissions@richmonddoha.com"
+                class="button button-primary"
+            >
+                Email Admissions
+            </a>
+
+
+            <a
+                href="https://wa.me/97474767266"
+                target="_blank"
+                class="button button-outline"
+            >
+                WhatsApp Admissions
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            School Life
+        </div>
+
+        <h2 class="section-title">
+            Kindergarten Gallery
+        </h2>
+
+        <p class="section-text">
+
+            Discover some of the spaces and experiences
+            that make life at Richmond International
+            Kindergarten special.
+
+        </p>
+
+    </div>
+
+
+    <div class="gallery-container">
+
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-01.jpg"
+                    alt="Richmond International Kindergarten Gallery 1"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-02.jpg"
+                    alt="Richmond International Kindergarten Gallery 2"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-03.jpg"
+                    alt="Richmond International Kindergarten Gallery 3"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-04.jpg"
+                    alt="Richmond International Kindergarten Gallery 4"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-05.jpg"
+                    alt="Richmond International Kindergarten Gallery 5"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="kindergarten-gallery-06.jpg"
+                    alt="Richmond International Kindergarten Gallery 6"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <p class="gallery-caption">
+            Richmond International Kindergarten – Abu Hamour Branch
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Get in Touch
+        </div>
+
+        <h2 class="section-title">
+            Contact Us
+        </h2>
+
+        <p class="section-text">
+
+            Our team will be happy to assist you with
+            admissions, enquiries and further information.
+
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <div class="contact-card">
+
+            <h3>
+                CONTACT US
+            </h3>
+
+
+            <div class="contact-item">
+
+    <strong>General:</strong><br>
+
+    <a
+        href="https://wa.me/97433413214"
+        target="_blank"
+        style="color: var(--purple); font-weight: 600;"
+    >
+        +974 33413214
+    </a>
+
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Gallery lightbox
-    const lightbox = document.getElementById("galleryLightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxCaption = document.getElementById("lightboxCaption");
-    const closeLightbox = document.querySelector(".lightbox-close");
 
-    document.querySelectorAll(".gallery-item img").forEach(function (image) {
-        image.addEventListener("click", function () {
-            lightboxImage.src = image.src;
-            lightboxImage.alt = image.alt || "Kindergarten gallery image";
-            lightboxCaption.textContent = image.alt || "";
-            lightbox.classList.add("active");
-            document.body.style.overflow = "hidden";
-        });
-    });
+            <div class="contact-item">
 
-    function hideLightbox() {
-        lightbox.classList.remove("active");
-        lightboxImage.src = "";
-        document.body.style.overflow = "";
-    }
+                <strong>Building No:</strong><br>
 
-    closeLightbox.addEventListener("click", hideLightbox);
-    lightbox.addEventListener("click", function (event) {
-        if (event.target === lightbox) hideLightbox();
-    });
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") hideLightbox();
-    });
+                10
 
-    // Admission enquiry: opens the visitor's email application.
-    const enquiryForm = document.getElementById("admissionEnquiryForm");
-    if (enquiryForm) {
-        enquiryForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+            </div>
 
-            const formData = new FormData(enquiryForm);
-            const subject = "Admission Enquiry - Richmond International Kindergarten Abu Hamour";
-            const message = [
-                "Child's Name: " + (formData.get("childName") || ""),
-                "Date of Birth: " + (formData.get("dateOfBirth") || ""),
-                "Class / Programme: " + (formData.get("classInterested") || ""),
-                "Parent / Guardian: " + (formData.get("parentName") || ""),
-                "Contact Number: " + (formData.get("parentPhone") || ""),
-                "Email Address: " + (formData.get("parentEmail") || ""),
-                "Message: " + (formData.get("enquiryMessage") || "")
-            ].join("\\n");
 
-            window.location.href =
-                "mailto:admissions.abh@richmonddoha.com" +
-                "?subject=" + encodeURIComponent(subject) +
-                "&body=" + encodeURIComponent(message);
-        });
-    }
-});
-</script>
+            <div class="contact-item">
 
-"""
-html = html.replace("</body>", body_addition + "\n</body>", 1)
+                <strong>Address:</strong><br>
 
-# Update footer links with new sections, retaining existing ones.
-html = html.replace(
-    '<a href="#about">\n            About\n        </a>',
-    '<a href="#about">\n            About\n        </a>\n\n        <a href="#principal">Principal</a>\n        <a href="#classes">Classes</a>\n        <a href="#activities">Activities</a>\n        <a href="#faq">FAQs</a>'
-)
+                Wadi Al Egmairiya St Street.<br>
 
-out = Path("/mnt/data/richmond-kindergarten-abu-hamour-original-preserved-updated.html")
-out.write_text(html, encoding="utf-8")
+                Doha-Qatar
 
-print(f"Created: {out}")
-print(f"Size: {out.stat().st_size:,} bytes")
-print("Sections:", {name: (f'id=\"{name}\"' in html) for name in ["principal", "classes", "activities", "faq", "admissions", "gallery", "contact"]})
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>General:</strong><br>
+
+                +974 33413214
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>Email:</strong><br>
+
+                admissions.abh@richmonddoha.com
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>
+                VISIT US
+            </h3>
+
+
+            <p>
+
+                Richmond International Kindergarten –
+                Abu Hamour Branch
+
+            </p>
+
+
+            <div class="contact-button-area">
+
+                <a
+                    href="mailto:admissions.abh@richmonddoha.com"
+                    class="button button-primary"
+                >
+                    Email Us
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BACK TO MAIN SCHOOL
+===================================================== -->
+
+<section class="back-school">
+
+    <h2>
+        Looking for Richmond International School?
+    </h2>
+
+    <p>
+
+        Visit our Al Markhiya Main Branch website
+        to explore the wider school community.
+
+    </p>
+
+
+    <a
+        href="main.html"
+        class="button button-primary"
+    >
+        Visit Main Branch
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        Richmond International Kindergarten
+    </div>
+
+    <div class="footer-tagline">
+        Abu Hamour Branch • Nurturing tomorrow’s leaders
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#programmes">
+            Learning
+        </a>
+
+        <a href="#facilities">
+            Facilities
+        </a>
+
+        <a href="#admissions">
+            Admissions
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="footer-copy">
+
+        © 2026 Richmond International Kindergarten –
+        Abu Hamour Branch. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
